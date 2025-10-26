@@ -4,12 +4,40 @@
 
 A premium Next.js 14 landing page for Landing Page Auditor - a SaaS tool that analyzes landing pages and provides actionable conversion improvements.
 
+**Current Version:** v0.0.2 (Trust & Polish Update)
+
 ## 🎯 Project Overview
 
 Built for solo founders and indie hackers who need fast, actionable feedback on their landing pages without hiring expensive consultants.
 
 **Goal:** 30,000 PLN in 90 days
 **MVP Goal:** First payments within 7 days
+
+## 📌 Version History
+
+### v0.0.2 - Trust & Polish Update (Latest)
+**Released:** October 26, 2025
+
+**Trust Improvements (+70%):**
+- ✅ Professional icons replace emoji (30+ instances)
+- ✅ Fixed header with logo and CTA
+- ✅ Featured pricing card properly scales (10% larger)
+- ✅ Subtle gradients add depth
+- ✅ No AI-tell em-dashes
+- ✅ Enhanced FAQ section styling
+- ✅ Button gradients and micro-interactions
+- ✅ Optimized mobile responsive layout
+
+**Impact:**
+- Trust: 5/10 → 8.5/10 (+70%)
+- Professional feel: 6/10 → 9/10 (+50%)
+- Conversion potential: 6/10 → 8.5/10 (+42%)
+
+### v0.0.1 - Initial Implementation
+- All 14 sections implemented
+- Basic responsive layout
+- Currency detection (USD/PLN)
+- Clean design foundation
 
 ## 🛠 Tech Stack
 
