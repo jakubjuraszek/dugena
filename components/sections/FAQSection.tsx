@@ -13,11 +13,11 @@ export function FAQSection() {
   const faqs = [
     {
       question: 'Q: How is this different from free tools like Fibr.ai or VWO?',
-      answer: `A: Free tools give you a score (72/100). We tell you EXACTLY what to fix: "Your headline is unclear. Change from 'Revolutionary Platform for Teams' to 'Slack for Remote Teams' (7 words, clear benefit)." Plus, free tools are lead magnets—you'll get sales calls. We're a product, not a lead gen funnel.`
+      answer: `A: Free tools give you a score (72/100). We tell you EXACTLY what to fix: "Your headline is unclear. Change from 'Revolutionary Platform for Teams' to 'Slack for Remote Teams' (7 words, clear benefit)." Plus, free tools are lead magnets. You'll get sales calls. We're a product, not a lead gen funnel.`
     },
     {
       question: 'Q: Can AI really match a human consultant?',
-      answer: `A: For $29-99? Yes. Our AI analyzed 1,000+ successful launches (Basecamp, Notion, Linear, Superhuman). It learned their patterns. For $2,000, a human might spend 10 hours custom-analyzing your niche. But for quick wins? AI is faster and just as accurate. Think of it as "tier 1 support"—handles 80% of cases perfectly.`
+      answer: `A: For $29-99? Yes. Our AI analyzed 1,000+ successful launches (Basecamp, Notion, Linear, Superhuman). It learned their patterns. For $2,000, a human might spend 10 hours custom-analyzing your niche. But for quick wins? AI is faster and just as accurate. Think of it as "tier 1 support" that handles 80% of cases perfectly.`
     },
     {
       question: 'Q: What if my landing page is complex/technical/B2B?',
@@ -49,7 +49,7 @@ export function FAQSection() {
     },
     {
       question: 'Q: What if I implement these changes and it still doesn\'t work?',
-      answer: `A: Then you'll know it's not your landing page—it's something else (product-market fit, traffic source, pricing). That clarity is worth $29-99. Most founders waste months guessing. You'll know in 60 seconds + 1 week of testing. Plus: 30-day money-back guarantee. You risk nothing.`
+      answer: `A: Then you'll know it's not your landing page. It's something else (product-market fit, traffic source, pricing). That clarity is worth $29-99. Most founders waste months guessing. You'll know in 60 seconds + 1 week of testing. Plus: 30-day money-back guarantee. You risk nothing.`
     }
   ];
 
