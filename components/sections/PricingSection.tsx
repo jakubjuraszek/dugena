@@ -4,6 +4,7 @@ import { Section } from '../Section';
 import { Card } from '../Card';
 import { Button } from '../Button';
 import { useState } from 'react';
+import { CheckCircle, Star } from 'lucide-react';
 
 /**
  * PRICING SECTION - ⭐ MOST IMPORTANT
@@ -70,7 +71,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-12">
           {/* Quick Audit */}
           <Card>
             <h3 className="text-2xl font-bold mb-4 text-slate-900">Quick Audit</h3>
@@ -80,28 +81,28 @@ export function PricingSection() {
             <p className="text-lg text-slate-600 mb-8">Quick insights to start</p>
 
             <ul className="space-y-3 mb-8 text-slate-700">
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>10-point conversion analysis</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>PDF report (5-7 pages)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Problem heatmap (P0/P1/P2)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Top 3 Quick Wins (20 min to implement)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Before/After for top 3 issues</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>60-second delivery</span>
               </li>
             </ul>
@@ -116,7 +117,7 @@ export function PricingSection() {
           </Card>
 
           {/* Professional Audit - FEATURED */}
-          <Card featured badge="⭐ MOST POPULAR">
+          <Card featured badge={<><Star className="w-4 h-4 inline" fill="currentColor" /> MOST POPULAR</>}>
             <h3 className="text-2xl font-bold mb-4 text-slate-900">Professional Audit</h3>
             <div className="mb-6">
               <span className="text-4xl font-bold text-slate-900">{prices.professional}</span>
@@ -124,36 +125,36 @@ export function PricingSection() {
             <p className="text-lg text-slate-600 mb-8">Everything you need to convert</p>
 
             <ul className="space-y-3 mb-8 text-slate-700">
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span className="font-semibold">Everything in Quick, PLUS:</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>20-point analysis (vs 10)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>PDF report (10-15 pages)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Before/After for EVERY problem</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Top 5 Quick Wins (30 min to implement)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Competitor comparison (optional, 1-3 sites)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>50% off re-test in 7 days</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Priority email support</span>
               </li>
             </ul>
@@ -176,40 +177,40 @@ export function PricingSection() {
             <p className="text-lg text-slate-600 mb-8">Professional insights + ongoing support</p>
 
             <ul className="space-y-3 mb-8 text-slate-700">
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span className="font-semibold">Everything in Professional, PLUS:</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>30-point deep analysis (vs 20)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>PDF report (20-25 pages)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Video Walkthrough (5-10 min screen recording)</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>3 alternative headlines</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>3 alternative CTAs</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Dedicated mobile analysis</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>FREE re-test within 30 days</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-emerald-500 mr-2">✅</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span>Priority support (24h response)</span>
               </li>
             </ul>

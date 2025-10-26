@@ -13,11 +13,11 @@ export function FAQSection() {
   const faqs = [
     {
       question: 'Q: How is this different from free tools like Fibr.ai or VWO?',
-      answer: `A: Free tools give you a score (72/100). We tell you EXACTLY what to fix: "Your headline is unclear. Change from 'Revolutionary Platform for Teams' to 'Slack for Remote Teams' (7 words, clear benefit)." Plus, free tools are lead magnets—you'll get sales calls. We're a product, not a lead gen funnel.`
+      answer: `A: Free tools give you a score (72/100). We tell you EXACTLY what to fix: "Your headline is unclear. Change from 'Revolutionary Platform for Teams' to 'Slack for Remote Teams' (7 words, clear benefit)." Plus, free tools are lead magnets. You'll get sales calls. We're a product, not a lead gen funnel.`
     },
     {
       question: 'Q: Can AI really match a human consultant?',
-      answer: `A: For $29-99? Yes. Our AI analyzed 1,000+ successful launches (Basecamp, Notion, Linear, Superhuman). It learned their patterns. For $2,000, a human might spend 10 hours custom-analyzing your niche. But for quick wins? AI is faster and just as accurate. Think of it as "tier 1 support"—handles 80% of cases perfectly.`
+      answer: `A: For $29-99? Yes. Our AI analyzed 1,000+ successful launches (Basecamp, Notion, Linear, Superhuman). It learned their patterns. For $2,000, a human might spend 10 hours custom-analyzing your niche. But for quick wins? AI is faster and just as accurate. Think of it as "tier 1 support" that handles 80% of cases perfectly.`
     },
     {
       question: 'Q: What if my landing page is complex/technical/B2B?',
@@ -49,26 +49,34 @@ export function FAQSection() {
     },
     {
       question: 'Q: What if I implement these changes and it still doesn\'t work?',
-      answer: `A: Then you'll know it's not your landing page—it's something else (product-market fit, traffic source, pricing). That clarity is worth $29-99. Most founders waste months guessing. You'll know in 60 seconds + 1 week of testing. Plus: 30-day money-back guarantee. You risk nothing.`
+      answer: `A: Then you'll know it's not your landing page. It's something else (product-market fit, traffic source, pricing). That clarity is worth $29-99. Most founders waste months guessing. You'll know in 60 seconds + 1 week of testing. Plus: 30-day money-back guarantee. You risk nothing.`
     }
   ];
 
   return (
     <Section background="slate" id="faq">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-3xl font-bold text-center mb-16 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold text-center mb-4 text-slate-900">
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-8">
+        <p className="text-lg text-center text-slate-600 mb-16">
+          Everything you need to know about Landing Page Auditor
+        </p>
+
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold mb-4 text-slate-900">
-                {faq.question}
+            <div
+              key={index}
+              className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200"
+            >
+              <h3 className="text-xl font-bold mb-4 text-slate-900 flex items-start gap-3">
+                <span className="text-blue-600 flex-shrink-0">Q:</span>
+                <span>{faq.question.replace('Q: ', '')}</span>
               </h3>
-              <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-line">
-                {faq.answer}
-              </p>
+              <div className="text-slate-700 leading-relaxed pl-8">
+                <span className="font-semibold text-slate-900">A:</span> {faq.answer.replace('A: ', '')}
+              </div>
             </div>
           ))}
         </div>

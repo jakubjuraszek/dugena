@@ -21,7 +21,7 @@ export function PSSection() {
         <div className="bg-slate-50 rounded-xl p-12 shadow-sm">
           <div className="space-y-6 text-lg text-slate-700">
             <p>
-              <strong className="text-slate-900">P.S.</strong> — If you're still reading, you're the type of founder I built this for:
+              <strong className="text-slate-900">P.S.</strong> – If you're still reading, you're the type of founder I built this for:
             </p>
 
             <p className="italic">
@@ -41,7 +41,7 @@ export function PSSection() {
             <hr className="border-slate-300 my-8" />
 
             <p>
-              <strong className="text-slate-900">P.P.S.</strong> — I built this after getting 0 sign-ups on my own landing page.
+              <strong className="text-slate-900">P.P.S.</strong> – I built this after getting 0 sign-ups on my own landing page.
             </p>
 
             <p className="italic">
@@ -53,7 +53,7 @@ export function PSSection() {
             </p>
 
             <p>
-              So I built this tool for myself—and now I'm sharing it with you.
+              So I built this tool for myself and now I'm sharing it with you.
             </p>
 
             <p className="font-medium text-slate-900">
@@ -61,7 +61,7 @@ export function PSSection() {
             </p>
 
             <p className="text-right text-xl font-semibold text-slate-900 mt-8">
-              — Jakub
+              – Jakub
             </p>
           </div>
         </div>

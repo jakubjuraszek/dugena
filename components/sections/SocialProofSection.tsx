@@ -1,4 +1,5 @@
 import { Section } from '../Section';
+import { CheckCircle } from 'lucide-react';
 
 /**
  * SOCIAL PROOF SECTION - Beta Honest Messaging
@@ -31,16 +32,16 @@ export function SocialProofSection() {
         </div>
 
         <div className="space-y-4 text-lg text-slate-700">
-          <p className="flex items-center justify-center">
-            <span className="text-emerald-500 mr-3 text-2xl">✅</span>
+          <p className="flex items-center justify-center gap-3">
+            <CheckCircle className="w-6 h-6 text-emerald-500" />
             <span>Trained on 1,000+ successful launches</span>
           </p>
-          <p className="flex items-center justify-center">
-            <span className="text-emerald-500 mr-3 text-2xl">✅</span>
+          <p className="flex items-center justify-center gap-3">
+            <CheckCircle className="w-6 h-6 text-emerald-500" />
             <span>30-day money-back guarantee</span>
           </p>
-          <p className="flex items-center justify-center">
-            <span className="text-emerald-500 mr-3 text-2xl">✅</span>
+          <p className="flex items-center justify-center gap-3">
+            <CheckCircle className="w-6 h-6 text-emerald-500" />
             <span>Made by a founder, for founders</span>
           </p>
         </div>
