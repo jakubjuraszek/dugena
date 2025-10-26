@@ -31,12 +31,12 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-4xl font-bold mb-8 leading-tight tracking-tighter text-slate-900">
-          You built a product. Nobody's converting.
+          You built a product. Nobody&apos;s converting.
         </h1>
 
         <p className="text-xl md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
           AI analyzes your landing page in 60 seconds.
-          See exactly what's killing your conversions.
+          See exactly what&apos;s killing your conversions.
           Fix it today. Starting at $29.
         </p>
 

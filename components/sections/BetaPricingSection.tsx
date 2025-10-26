@@ -67,7 +67,7 @@ export function BetaPricingSection() {
           <ul className="space-y-2 pl-6">
             <li className="flex items-start gap-3">
               <span className="mr-2">•</span>
-              <span>Your honest feedback (what worked, what didn't)</span>
+              <span>Your honest feedback (what worked, what didn&apos;t)</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mr-2">•</span>
