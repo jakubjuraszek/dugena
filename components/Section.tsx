@@ -3,7 +3,7 @@ import React from 'react';
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
-  background?: 'background' | 'card' | 'white' | 'slate';
+  background?: 'background' | 'elevated' | 'card' | 'white' | 'slate';
   id?: string;
 }
 
@@ -35,9 +35,10 @@ interface SectionProps {
 export function Section({ children, className = '', background = 'background', id }: SectionProps) {
   const bgMap = {
     'background': 'bg-background',
+    'elevated': 'bg-elevated',
     'card': 'bg-card',
     'white': 'bg-white',
-    'slate': 'bg-slate-50'
+    'slate': 'bg-background'
   };
 
   const bgClasses = bgMap[background] || 'bg-background';

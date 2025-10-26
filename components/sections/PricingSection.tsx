@@ -34,13 +34,16 @@ export function PricingSection() {
   };
 
   return (
-    <Section background="background" id="pricing">
-      <div className="max-w-7xl mx-auto">
+    <Section background="background" id="pricing" className="relative">
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#151515] to-transparent opacity-50 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-3xl font-bold mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight text-white">
             Choose Your Audit
           </h2>
-          <p className="text-xl text-muted mb-6">
+          <p className="text-xl font-medium text-white leading-relaxed mb-6 tracking-tight">
             One-time payment. No subscription. Start at {currency === 'USD' ? '$29' : '119 PLN'}.
           </p>
 
@@ -48,20 +51,20 @@ export function PricingSection() {
           <div className="flex justify-center gap-2 mb-8">
             <button
               onClick={() => setCurrency('USD')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+              className={`px-4 py-2 rounded-md font-bold transition-all ${
                 currency === 'USD'
-                  ? 'bg-primary text-white'
-                  : 'bg-card text-muted hover:bg-card border border-border'
+                  ? 'bg-primary text-white shadow-sm hover:scale-[1.02]'
+                  : 'bg-card text-white hover:bg-cardHover border border-border hover:border-primary/30'
               }`}
             >
               USD $
             </button>
             <button
               onClick={() => setCurrency('PLN')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+              className={`px-4 py-2 rounded-md font-bold transition-all ${
                 currency === 'PLN'
-                  ? 'bg-primary text-white'
-                  : 'bg-card text-muted hover:bg-card border border-border'
+                  ? 'bg-primary text-white shadow-sm hover:scale-[1.02]'
+                  : 'bg-card text-white hover:bg-cardHover border border-border hover:border-primary/30'
               }`}
             >
               PLN zł
@@ -129,9 +132,9 @@ export function PricingSection() {
           />
         </div>
 
-        <div className="text-center bg-card/50 border border-border rounded-xl p-6">
-          <p className="text-muted">
-            <strong className="text-foreground">All packages include:</strong> 30-day money-back guarantee, instant delivery, specific fix instructions
+        <div className="text-center bg-card border border-border rounded p-6">
+          <p className="text-white leading-relaxed">
+            <strong className="text-white">All packages include:</strong> 30-day money-back guarantee, instant delivery, specific fix instructions
           </p>
         </div>
       </div>

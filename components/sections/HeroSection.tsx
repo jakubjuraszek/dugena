@@ -24,19 +24,19 @@ import { Target } from 'lucide-react';
 export function HeroSection() {
   return (
     <Section background="background" id="hero" className="relative overflow-hidden">
-      {/* Decorative gradient backgrounds - subtle, ambient */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-10" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent-success/10 rounded-full blur-3xl opacity-10" />
-      </div>
+      {/* Radial orange glow from center - sophisticated depth */}
+      <div className="absolute inset-0 bg-gradient-radial from-orange-500/5 via-transparent to-transparent pointer-events-none" />
+
+      {/* Grid pattern */}
+      <div className="absolute inset-0 bg-grid opacity-[0.05] pointer-events-none" />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
+        <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-none tracking-tight text-foreground">
           You built a product.<br />
           Nobody&apos;s converting.
         </h1>
 
-        <p className="text-xl md:text-lg text-muted leading-relaxed max-w-2xl mx-auto mb-12">
+        <p className="text-xl md:text-2xl font-medium text-white leading-relaxed max-w-2xl mx-auto mb-12 tracking-tight">
           AI analyzes your landing page in 60 seconds.
           See exactly what&apos;s killing your conversions.
           Fix it today. Starting at $29.
@@ -51,7 +51,7 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <div className="flex items-center justify-center gap-2 text-sm text-muted">
+        <div className="flex items-center justify-center gap-2 text-sm font-medium text-white tracking-tight">
           <Target className="w-5 h-5 text-primary" />
           <span>Trained on </span>
           <AnimatedCounter from={0} to={1247} duration={2000} suffix="+" />

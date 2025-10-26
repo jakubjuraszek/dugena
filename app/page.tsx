@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       {/* Grid pattern background - fixed overlay */}
-      <div className="fixed inset-0 bg-grid opacity-[0.03] pointer-events-none" />
+      <div className="fixed inset-0 bg-grid opacity-[0.06] pointer-events-none" />
 
       {/* Main content */}
       <div className="relative">

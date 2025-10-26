@@ -12,13 +12,13 @@ import { Star } from 'lucide-react';
  */
 export function FinalCTASection() {
   return (
-    <Section background="slate" id="final-cta">
+    <Section background="background" id="final-cta">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-3xl font-bold mb-8 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold mb-8 text-white tracking-tight">
           Ready to Fix Your Conversions?
         </h2>
 
-        <p className="text-xl text-slate-600 mb-12">Choose your package:</p>
+        <p className="text-xl text-white leading-relaxed mb-12">Choose your package:</p>
 
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-8">
           <Button variant="secondary" href="#pricing">
@@ -36,7 +36,7 @@ export function FinalCTASection() {
           </Button>
         </div>
 
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-white">
           30-day money-back guarantee • Instant delivery • No subscription
         </p>
       </div>

@@ -15,32 +15,32 @@ import { Section } from '../Section';
  */
 export function ProblemSection() {
   return (
-    <Section background="slate" id="problem">
+    <Section background="elevated" id="problem">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl md:text-3xl font-bold mb-12 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold mb-12 text-white tracking-tight">
           You&apos;re not alone.
         </h2>
 
-        <p className="text-lg text-slate-700 mb-8">
+        <p className="text-lg text-white leading-relaxed mb-8">
           This is the #1 frustration for solo founders:
         </p>
 
-        <blockquote className="text-2xl md:text-xl italic text-slate-600 border-l-4 border-blue-600 pl-6 py-4 mb-12 text-left">
+        <blockquote className="text-2xl md:text-xl italic text-white border-l-4 border-primary pl-6 py-4 mb-12 text-left leading-relaxed">
           &quot;I spent months building. My landing page gets 100 visitors and 0 sign-ups.&quot;
         </blockquote>
 
-        <p className="text-2xl md:text-xl font-semibold text-slate-900 mb-3">
+        <p className="text-2xl md:text-xl font-semibold text-white mb-3">
           The problem isn&apos;t your product.
         </p>
-        <p className="text-2xl md:text-xl font-semibold text-slate-900 mb-16">
+        <p className="text-2xl md:text-xl font-semibold text-white mb-16">
           It&apos;s your landing page.
         </p>
 
-        <div className="bg-white rounded-xl p-8 shadow-sm mb-12">
-          <h3 className="text-2xl md:text-xl font-semibold mb-6 text-slate-900">
+        <div className="bg-card border border-medium rounded p-8 shadow-lg mb-12 transition-colors hover:bg-cardHover hover:shadow-xl">
+          <h3 className="text-2xl md:text-xl font-semibold mb-6 text-white">
             But you don&apos;t have time to:
           </h3>
-          <ul className="text-left space-y-4 text-lg text-slate-700">
+          <ul className="text-left space-y-4 text-lg text-white leading-relaxed">
             <li className="flex items-start">
               <span className="text-red-500 mr-3 text-xl">❌</span>
               <span>Learn conversion optimization (40+ hours)</span>
@@ -56,11 +56,11 @@ export function ProblemSection() {
           </ul>
         </div>
 
-        <p className="text-lg text-slate-700 mb-6">
+        <p className="text-lg text-white leading-relaxed mb-6">
           You need someone to tell you EXACTLY what to fix.
         </p>
 
-        <p className="text-4xl md:text-3xl font-bold text-slate-900">
+        <p className="text-4xl md:text-3xl font-bold text-white">
           Fast.
         </p>
       </div>

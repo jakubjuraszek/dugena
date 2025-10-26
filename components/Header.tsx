@@ -31,14 +31,14 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
+      <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/50 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-sm">
-              <FileText className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 rounded bg-zinc-900 border-l-2 border-primary flex items-center justify-center shadow-sm">
+              <FileText className="w-5 h-5 text-primary" />
             </div>
-            <span className="font-semibold text-lg text-slate-900">
+            <span className="font-bold text-lg text-foreground tracking-tight">
               Landing Page Auditor
             </span>
           </div>
@@ -47,12 +47,12 @@ export function Header() {
           <button
             onClick={scrollToPricing}
             className="
-              bg-blue-600 hover:bg-blue-700
-              text-white font-semibold text-sm
-              px-6 py-2.5 rounded-lg
-              shadow-sm hover:shadow-md
+              bg-primary hover:bg-primary-light
+              text-white font-bold text-sm
+              px-6 py-2.5 rounded-md
+              shadow-sm hover:shadow-md shadow-primary/20
               transition-all duration-200
-              hover:-translate-y-0.5
+              hover:scale-[1.02]
             "
           >
             Get Started

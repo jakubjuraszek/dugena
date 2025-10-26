@@ -27,26 +27,26 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  */
 export function Button({ variant = 'primary', children, href, className = '', ...props }: ButtonProps) {
   const baseClasses = `
-    font-semibold text-lg
+    font-bold text-lg
     px-8 py-4
-    rounded-lg
-    transform hover:scale-105 hover:-translate-y-0.5
+    rounded-md
+    transform hover:scale-[1.02]
     transition-all duration-200
-    focus:outline-none focus:ring-4 focus:ring-blue-200
+    focus:outline-none focus:ring-4 focus:ring-primary/20
     disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
   `;
 
   const variantClasses = {
     primary: `
-      bg-gradient-to-r from-blue-600 to-blue-700
-      hover:from-blue-700 hover:to-blue-800
+      bg-primary
+      hover:bg-primary-light
       text-white
-      shadow-lg hover:shadow-xl
+      shadow-lg hover:shadow-xl shadow-primary/20
     `,
     secondary: `
-      bg-white hover:bg-gray-50
-      text-blue-600
-      border-2 border-blue-600
+      bg-transparent hover:bg-primary/10
+      text-foreground
+      border-2 border-border hover:border-primary
       shadow-sm hover:shadow-md
     `,
   };

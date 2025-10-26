@@ -29,29 +29,29 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <Section background="white" id="how-it-works">
+    <Section background="background" id="how-it-works">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl md:text-3xl font-bold text-center mb-16 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold text-center mb-16 text-foreground">
           How It Works
         </h2>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
           {steps.map((step) => (
             <div key={step.number} className="text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-600 text-white rounded-full text-4xl font-bold mb-6">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary text-white rounded-full text-4xl font-bold mb-6">
                 {step.number}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-900">{step.title}</h3>
-              <p className="text-lg text-slate-600">{step.description}</p>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">{step.title}</h3>
+              <p className="text-lg text-white leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-emerald-50 rounded-xl p-8 text-center border-2 border-emerald-200">
-          <p className="text-2xl font-bold text-slate-900 mb-2">
+        <div className="bg-card rounded p-8 text-center border-2 border-accent-success/30">
+          <p className="text-2xl font-bold text-foreground mb-2">
             30-Day Money-Back Guarantee
           </p>
-          <p className="text-lg text-slate-700">
+          <p className="text-lg text-white leading-relaxed">
             Not happy? Full refund, no questions asked.
           </p>
         </div>

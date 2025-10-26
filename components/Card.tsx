@@ -36,18 +36,18 @@ interface CardProps {
  */
 export function Card({ children, className = '', featured = false, badge, hover = true }: CardProps) {
   const baseClasses = `
-    bg-white
-    rounded-xl
+    bg-card
+    rounded
     p-8
     relative
   `;
 
   const borderClasses = featured
-    ? 'border-2 border-blue-600'
-    : 'border border-slate-200';
+    ? 'border-2 border-primary'
+    : 'border border-border';
 
   const shadowClasses = featured
-    ? 'shadow-lg hover:shadow-xl'
+    ? 'shadow-lg hover:shadow-xl shadow-primary/20'
     : hover
     ? 'shadow-sm hover:shadow-md'
     : 'shadow-sm';
@@ -70,7 +70,7 @@ export function Card({ children, className = '', featured = false, badge, hover 
   return (
     <div className={combinedClasses}>
       {badge && (
-        <div className="absolute -top-3 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md">
+        <div className="absolute -top-3 right-4 bg-primary text-white px-4 py-1 rounded text-sm font-bold shadow-md">
           {badge}
         </div>
       )}

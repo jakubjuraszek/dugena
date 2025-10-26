@@ -43,24 +43,24 @@ export function ThisWorksSection() {
   ];
 
   return (
-    <Section background="slate" id="this-works">
+    <Section background="background" id="this-works">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-3xl font-bold text-center mb-6 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold text-center mb-6 text-white tracking-tight">
           This Works For You
         </h2>
-        <p className="text-xl text-center text-slate-600 mb-16">
+        <p className="text-xl text-center text-white leading-relaxed mb-16">
           Even if you think your case is different:
         </p>
 
         <div className="space-y-8">
           {scenarios.map((scenario, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold mb-4 text-emerald-600 flex items-start gap-3">
+            <div key={index} className="bg-card border border-medium rounded p-8 shadow-lg transition-colors hover:bg-cardHover hover:shadow-xl">
+              <h3 className="text-xl font-bold mb-4 text-accent-success flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
                 <span>{scenario.title.replace('✅ ', '')}</span>
               </h3>
-              <p className="text-lg text-slate-700">
-                <strong className="text-slate-900">{scenario.emphasis}</strong> {scenario.content}
+              <p className="text-lg text-white leading-relaxed">
+                <strong className="text-white">{scenario.emphasis}</strong> {scenario.content}
               </p>
             </div>
           ))}

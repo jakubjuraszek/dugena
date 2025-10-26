@@ -45,12 +45,12 @@ export function TransformationSection() {
   ];
 
   return (
-    <Section background="white" id="transformation">
+    <Section background="background" id="transformation">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-3xl font-bold text-center mb-6 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold text-center mb-6 text-foreground">
           Your Transformation
         </h2>
-        <p className="text-xl text-center text-slate-600 mb-16">
+        <p className="text-xl text-center text-white leading-relaxed mb-16">
           Here&apos;s what happens after you order:
         </p>
 
@@ -58,27 +58,27 @@ export function TransformationSection() {
           {steps.map((step, index) => (
             <div key={index} className="flex items-start">
               <div className="flex flex-col items-center mr-6">
-                <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold flex-shrink-0">
+                <div className="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center font-bold flex-shrink-0">
                   {index + 1}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="w-0.5 h-full bg-blue-200 mt-2" style={{minHeight: '60px'}}></div>
+                  <div className="w-0.5 h-full bg-primary/30 mt-2" style={{minHeight: '60px'}}></div>
                 )}
               </div>
               <div className="flex-1 pt-2">
-                <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-3 border border-blue-200">
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary-light px-4 py-2 rounded-full text-sm font-semibold mb-3 border border-primary/30">
                   <Clock className="w-4 h-4" />
                   {step.time}
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-slate-900">{step.title}</h3>
-                <p className="text-lg text-slate-600">{step.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-foreground">{step.title}</h3>
+                <p className="text-lg text-white leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-8 text-center">
-          <p className="text-xl font-semibold text-slate-900">
+        <div className="bg-card border-2 border-accent-success/30 rounded p-8 text-center">
+          <p className="text-xl font-semibold text-foreground">
             Total time investment: 35 minutes. Total cost: $29-99. Potential return: Unlimited.
           </p>
         </div>

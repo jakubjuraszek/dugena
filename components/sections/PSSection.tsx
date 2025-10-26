@@ -16,12 +16,12 @@ import { Section } from '../Section';
  */
 export function PSSection() {
   return (
-    <Section background="white" id="ps">
+    <Section background="elevated" id="ps">
       <div className="max-w-2xl mx-auto">
-        <div className="bg-slate-50 rounded-xl p-12 shadow-sm">
-          <div className="space-y-6 text-lg text-slate-700">
+        <div className="bg-card rounded p-12 shadow-sm border border-border">
+          <div className="space-y-6 text-lg text-white leading-relaxed">
             <p>
-              <strong className="text-slate-900">P.S.</strong> – If you&apos;re still reading, you&apos;re the type of founder I built this for:
+              <strong className="text-foreground">P.S.</strong> – If you&apos;re still reading, you&apos;re the type of founder I built this for:
             </p>
 
             <p className="italic">
@@ -34,14 +34,14 @@ export function PSSection() {
               $29-99 is less than a dinner. But it might unlock $10k in revenue.
             </p>
 
-            <p className="text-xl font-semibold text-slate-900">
+            <p className="text-xl font-semibold text-foreground">
               The decision is yours.
             </p>
 
-            <hr className="border-slate-300 my-8" />
+            <hr className="border-border my-8" />
 
             <p>
-              <strong className="text-slate-900">P.P.S.</strong> – I built this after getting 0 sign-ups on my own landing page.
+              <strong className="text-foreground">P.P.S.</strong> – I built this after getting 0 sign-ups on my own landing page.
             </p>
 
             <p className="italic">
@@ -56,11 +56,11 @@ export function PSSection() {
               So I built this tool for myself and now I&apos;m sharing it with you.
             </p>
 
-            <p className="font-medium text-slate-900">
+            <p className="font-medium text-foreground">
               No BS. Just a tool that helps you convert.
             </p>
 
-            <p className="text-right text-xl font-semibold text-slate-900 mt-8">
+            <p className="text-right text-xl font-semibold text-foreground mt-8">
               – Jakub
             </p>
           </div>

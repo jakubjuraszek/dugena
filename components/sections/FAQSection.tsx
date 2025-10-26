@@ -54,13 +54,13 @@ export function FAQSection() {
   ];
 
   return (
-    <Section background="slate" id="faq">
+    <Section background="background" id="faq">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-3xl font-bold text-center mb-4 text-slate-900">
+        <h2 className="text-4xl md:text-3xl font-bold text-center mb-4 text-white tracking-tight">
           Frequently Asked Questions
         </h2>
 
-        <p className="text-lg text-center text-slate-600 mb-16">
+        <p className="text-lg text-center text-white leading-relaxed mb-16">
           Everything you need to know about Landing Page Auditor
         </p>
 
@@ -68,14 +68,14 @@ export function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-card border border-medium rounded p-8 shadow-lg transition-colors hover:bg-cardHover hover:shadow-xl duration-200"
             >
-              <h3 className="text-xl font-bold mb-4 text-slate-900 flex items-start gap-3">
-                <span className="text-blue-600 flex-shrink-0">Q:</span>
+              <h3 className="text-xl font-bold mb-4 text-white flex items-start gap-3">
+                <span className="text-primary flex-shrink-0">Q:</span>
                 <span>{faq.question.replace('Q: ', '')}</span>
               </h3>
-              <div className="text-slate-700 leading-relaxed pl-8">
-                <span className="font-semibold text-slate-900">A:</span> {faq.answer.replace('A: ', '')}
+              <div className="text-white leading-relaxed pl-8">
+                <span className="font-semibold text-white">A:</span> {faq.answer.replace('A: ', '')}
               </div>
             </div>
           ))}
