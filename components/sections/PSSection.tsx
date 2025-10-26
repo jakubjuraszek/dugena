@@ -21,13 +21,13 @@ export function PSSection() {
         <div className="bg-slate-50 rounded-xl p-12 shadow-sm">
           <div className="space-y-6 text-lg text-slate-700">
             <p>
-              <strong className="text-slate-900">P.S.</strong> – If you're still reading, you're the type of founder I built this for:
+              <strong className="text-slate-900">P.S.</strong> – If you&apos;re still reading, you&apos;re the type of founder I built this for:
             </p>
 
             <p className="italic">
-              You don't want hype. You want clarity.<br />
-              You don't want to guess. You want data.<br />
-              You don't want to waste time. You want to ship and iterate.
+              You don&apos;t want hype. You want clarity.<br />
+              You don&apos;t want to guess. You want data.<br />
+              You don&apos;t want to waste time. You want to ship and iterate.
             </p>
 
             <p>
@@ -49,11 +49,11 @@ export function PSSection() {
             </p>
 
             <p>
-              I needed feedback that didn't cost $800 or take a week.
+              I needed feedback that didn&apos;t cost $800 or take a week.
             </p>
 
             <p>
-              So I built this tool for myself and now I'm sharing it with you.
+              So I built this tool for myself and now I&apos;m sharing it with you.
             </p>
 
             <p className="font-medium text-slate-900">

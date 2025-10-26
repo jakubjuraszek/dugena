@@ -24,14 +24,14 @@ export function BetaPricingSection() {
         </h2>
 
         <div className="space-y-6 text-lg text-slate-700 mb-12">
-          <p>I'm being honest with you: This is a new product.</p>
+          <p>I&apos;m being honest with you: This is a new product.</p>
 
           <p>
-            I've spent 7 years coding. I know how to build products.<br />
-            But I don't know if YOU will find this valuable until you try it.
+            I&apos;ve spent 7 years coding. I know how to build products.<br />
+            But I don&apos;t know if YOU will find this valuable until you try it.
           </p>
 
-          <p className="text-xl font-semibold text-slate-900">So here's the deal:</p>
+          <p className="text-xl font-semibold text-slate-900">So here&apos;s the deal:</p>
         </div>
 
         <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-8 mb-12">
@@ -75,7 +75,7 @@ export function BetaPricingSection() {
             </li>
             <li className="flex items-start gap-3">
               <span className="mr-2">•</span>
-              <span>Patience if there's a bug (I'll fix it same-day)</span>
+              <span>Patience if there&apos;s a bug (I&apos;ll fix it same-day)</span>
             </li>
           </ul>
         </div>
