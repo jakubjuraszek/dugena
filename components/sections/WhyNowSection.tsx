@@ -38,19 +38,19 @@ export function WhyNowSection() {
             <ul className="space-y-2 text-slate-600 mb-4">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Basecamp's landing page converts at 8% (industry average: 2%)</span>
+                <span>Basecamp&apos;s landing page converts at 8% (industry average: 2%)</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Notion's headline uses 7 words (not 15)</span>
+                <span>Notion&apos;s headline uses 7 words (not 15)</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Superhuman's CTA appears 3 times on the page (not once)</span>
+                <span>Superhuman&apos;s CTA appears 3 times on the page (not once)</span>
               </li>
             </ul>
             <p className="text-slate-700 font-medium">
-              This isn't theory. It's pattern recognition from winners.
+              This isn&apos;t theory. It&apos;s pattern recognition from winners.
             </p>
           </Card>
 
@@ -87,7 +87,7 @@ export function WhyNowSection() {
 
         <div className="bg-slate-50 rounded-xl p-8 text-center">
           <p className="text-xl text-slate-700">
-            You can't hire a $2,000 consultant. But you can afford $29-99 for AI that learned from them.
+            You can&apos;t hire a $2,000 consultant. But you can afford $29-99 for AI that learned from them.
           </p>
         </div>
       </div>

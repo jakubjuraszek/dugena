@@ -51,7 +51,7 @@ export function TransformationSection() {
           Your Transformation
         </h2>
         <p className="text-xl text-center text-slate-600 mb-16">
-          Here's what happens after you order:
+          Here&apos;s what happens after you order:
         </p>
 
         <div className="space-y-8 mb-12">

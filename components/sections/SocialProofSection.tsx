@@ -21,7 +21,7 @@ export function SocialProofSection() {
           What Beta Testers Say
         </h2>
         <p className="text-lg text-slate-600 mb-12">
-          We're in beta. First 100 customers get lifetime access to updates.
+          We&apos;re in beta. First 100 customers get lifetime access to updates.
         </p>
 
         <div className="bg-white rounded-xl p-12 shadow-sm mb-12 border-2 border-dashed border-slate-300">
