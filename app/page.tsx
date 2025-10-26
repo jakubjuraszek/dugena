@@ -47,22 +47,28 @@ import { Footer } from '@/components/sections/Footer';
  */
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <HeroSection />
-      <ProblemSection />
-      <WhyNowSection />
-      <ThisWorksSection />
-      <PricingSection />
-      <ComparisonSection />
-      <TransformationSection />
-      <SocialProofSection />
-      <HowItWorksSection />
-      <FAQSection />
-      <BetaPricingSection />
-      <FinalCTASection />
-      <PSSection />
-      <Footer />
+    <main className="relative min-h-screen">
+      {/* Grid pattern background - fixed overlay */}
+      <div className="fixed inset-0 bg-grid opacity-[0.03] pointer-events-none" />
+
+      {/* Main content */}
+      <div className="relative">
+        <Header />
+        <HeroSection />
+        <ProblemSection />
+        <WhyNowSection />
+        <ThisWorksSection />
+        <PricingSection />
+        <ComparisonSection />
+        <TransformationSection />
+        <SocialProofSection />
+        <HowItWorksSection />
+        <FAQSection />
+        <BetaPricingSection />
+        <FinalCTASection />
+        <PSSection />
+        <Footer />
+      </div>
     </main>
   );
 }

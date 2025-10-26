@@ -1,5 +1,6 @@
 import { Button } from '../Button';
 import { Section } from '../Section';
+import { AnimatedCounter } from '../AnimatedCounter';
 import { Target } from 'lucide-react';
 
 /**
@@ -22,19 +23,20 @@ import { Target } from 'lucide-react';
  */
 export function HeroSection() {
   return (
-    <Section background="white" id="hero" className="relative overflow-hidden">
+    <Section background="background" id="hero" className="relative overflow-hidden">
       {/* Decorative gradient backgrounds - subtle, ambient */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-20" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-10" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent-success/10 rounded-full blur-3xl opacity-10" />
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-4xl font-bold mb-8 leading-tight tracking-tighter text-slate-900">
-          You built a product. Nobody&apos;s converting.
+        <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
+          You built a product.<br />
+          Nobody&apos;s converting.
         </h1>
 
-        <p className="text-xl md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
+        <p className="text-xl md:text-lg text-muted leading-relaxed max-w-2xl mx-auto mb-12">
           AI analyzes your landing page in 60 seconds.
           See exactly what&apos;s killing your conversions.
           Fix it today. Starting at $29.
@@ -49,10 +51,12 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <p className="text-sm text-slate-500 flex items-center justify-center gap-2">
-          <Target className="w-5 h-5 text-blue-600" />
-          <span>Trained on 1,000+ successful SaaS launches</span>
-        </p>
+        <div className="flex items-center justify-center gap-2 text-sm text-muted">
+          <Target className="w-5 h-5 text-primary" />
+          <span>Trained on </span>
+          <AnimatedCounter from={0} to={1247} duration={2000} suffix="+" />
+          <span> successful SaaS launches</span>
+        </div>
       </div>
     </Section>
   );

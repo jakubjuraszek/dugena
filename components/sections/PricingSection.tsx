@@ -1,10 +1,8 @@
 'use client';
 
 import { Section } from '../Section';
-import { Card } from '../Card';
-import { Button } from '../Button';
+import { PricingCard } from '../PricingCard';
 import { useState } from 'react';
-import { CheckCircle, Star } from 'lucide-react';
 
 /**
  * PRICING SECTION - ⭐ MOST IMPORTANT
@@ -36,13 +34,13 @@ export function PricingSection() {
   };
 
   return (
-    <Section background="white" id="pricing">
+    <Section background="background" id="pricing">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-3xl font-bold mb-4 text-slate-900">
+          <h2 className="text-4xl md:text-3xl font-bold mb-4">
             Choose Your Audit
           </h2>
-          <p className="text-xl text-slate-600 mb-6">
+          <p className="text-xl text-muted mb-6">
             One-time payment. No subscription. Start at {currency === 'USD' ? '$29' : '119 PLN'}.
           </p>
 
@@ -52,8 +50,8 @@ export function PricingSection() {
               onClick={() => setCurrency('USD')}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 currency === 'USD'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-slate-600 hover:bg-gray-200'
+                  ? 'bg-primary text-white'
+                  : 'bg-card text-muted hover:bg-card border border-border'
               }`}
             >
               USD $
@@ -62,8 +60,8 @@ export function PricingSection() {
               onClick={() => setCurrency('PLN')}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 currency === 'PLN'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-slate-600 hover:bg-gray-200'
+                  ? 'bg-primary text-white'
+                  : 'bg-card text-muted hover:bg-card border border-border'
               }`}
             >
               PLN zł
@@ -73,161 +71,67 @@ export function PricingSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-12">
           {/* Quick Audit */}
-          <Card>
-            <h3 className="text-2xl font-bold mb-4 text-slate-900">Quick Audit</h3>
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-slate-900">{prices.quick}</span>
-            </div>
-            <p className="text-lg text-slate-600 mb-8">Quick insights to start</p>
-
-            <ul className="space-y-3 mb-8 text-slate-700">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>10-point conversion analysis</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>PDF report (5-7 pages)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Problem heatmap (P0/P1/P2)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Top 3 Quick Wins (20 min to implement)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Before/After for top 3 issues</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>60-second delivery</span>
-              </li>
-            </ul>
-
-            <p className="text-sm text-slate-600 mb-6 italic">
-              Best for: First optimization, budget-conscious founders
-            </p>
-
-            <Button variant="secondary" className="w-full">
-              Get Quick Audit - {prices.quick}
-            </Button>
-          </Card>
+          <PricingCard
+            name="Quick Audit"
+            price={prices.quick}
+            description="Quick insights to start"
+            points={10}
+            features={[
+              "10-point conversion analysis",
+              "PDF report (5-7 pages)",
+              "Problem heatmap (P0/P1/P2)",
+              "Top 3 Quick Wins",
+              "Before/After for top 3 issues",
+              "60-second delivery"
+            ]}
+            cta={`Get Quick Audit - ${prices.quick}`}
+          />
 
           {/* Professional Audit - FEATURED */}
-          <Card featured badge={<><Star className="w-4 h-4 inline" fill="currentColor" /> MOST POPULAR</>}>
-            <h3 className="text-2xl font-bold mb-4 text-slate-900">Professional Audit</h3>
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-slate-900">{prices.professional}</span>
-            </div>
-            <p className="text-lg text-slate-600 mb-8">Everything you need to convert</p>
-
-            <ul className="space-y-3 mb-8 text-slate-700">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span className="font-semibold">Everything in Quick, PLUS:</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>20-point analysis (vs 10)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>PDF report (10-15 pages)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Before/After for EVERY problem</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Top 5 Quick Wins (30 min to implement)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Competitor comparison (optional, 1-3 sites)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>50% off re-test in 7 days</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Priority email support</span>
-              </li>
-            </ul>
-
-            <p className="text-sm text-slate-600 mb-6 italic">
-              Best for: Serious founders, existing traffic with low conversion
-            </p>
-
-            <Button variant="primary" className="w-full">
-              Get Professional Audit - {prices.professional}
-            </Button>
-          </Card>
+          <PricingCard
+            name="Professional Audit"
+            price={prices.professional}
+            description="Everything you need to convert"
+            points={20}
+            popular={true}
+            badge="⭐ MOST POPULAR"
+            features={[
+              "Everything in Quick, PLUS:",
+              "20-point analysis (vs 10)",
+              "PDF report (10-15 pages)",
+              "Before/After for EVERY problem",
+              "Top 5 Quick Wins",
+              "Competitor comparison",
+              "50% off re-test in 7 days",
+              "Priority email support"
+            ]}
+            cta={`Get Professional Audit - ${prices.professional}`}
+          />
 
           {/* Premium Audit */}
-          <Card>
-            <h3 className="text-2xl font-bold mb-4 text-slate-900">Premium Audit</h3>
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-slate-900">{prices.premium}</span>
-            </div>
-            <p className="text-lg text-slate-600 mb-8">Professional insights + ongoing support</p>
-
-            <ul className="space-y-3 mb-8 text-slate-700">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span className="font-semibold">Everything in Professional, PLUS:</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>30-point deep analysis (vs 20)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>PDF report (20-25 pages)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Video Walkthrough (5-10 min screen recording)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>3 alternative headlines</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>3 alternative CTAs</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Dedicated mobile analysis</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>FREE re-test within 30 days</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                <span>Priority support (24h response)</span>
-              </li>
-            </ul>
-
-            <p className="text-sm text-slate-600 mb-6 italic">
-              Best for: High-stakes launches, complex products, teams
-            </p>
-
-            <Button variant="secondary" className="w-full">
-              Get Premium Audit - {prices.premium}
-            </Button>
-          </Card>
+          <PricingCard
+            name="Premium Audit"
+            price={prices.premium}
+            description="Professional insights + ongoing support"
+            points={30}
+            features={[
+              "Everything in Professional, PLUS:",
+              "30-point deep analysis (vs 20)",
+              "PDF report (20-25 pages)",
+              "Video Walkthrough",
+              "3 alternative headlines",
+              "3 alternative CTAs",
+              "Dedicated mobile analysis",
+              "FREE re-test within 30 days",
+              "Priority support (24h response)"
+            ]}
+            cta={`Get Premium Audit - ${prices.premium}`}
+          />
         </div>
 
-        <div className="text-center bg-slate-50 rounded-xl p-6">
-          <p className="text-slate-700">
-            <strong>All packages include:</strong> 30-day money-back guarantee, instant delivery, specific fix instructions
+        <div className="text-center bg-card/50 border border-border rounded-xl p-6">
+          <p className="text-muted">
+            <strong className="text-foreground">All packages include:</strong> 30-day money-back guarantee, instant delivery, specific fix instructions
           </p>
         </div>
       </div>

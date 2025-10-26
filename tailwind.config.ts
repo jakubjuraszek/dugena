@@ -9,12 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#2563eb', // blue-600
-        secondary: '#1e293b', // slate-800
-        accent: '#10b981', // emerald-500
+        background: '#0a0a0a',
+        foreground: '#fafafa',
+        primary: {
+          DEFAULT: '#6366f1',
+          light: '#818cf8',
+          dark: '#4f46e5',
+        },
+        accent: {
+          success: '#10b981',
+          warning: '#f59e0b',
+        },
+        border: '#27272a',
+        card: '#18181b',
+        muted: '#a1a1aa',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-space-grotesk)', 'Inter', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
         tighter: '-0.02em',

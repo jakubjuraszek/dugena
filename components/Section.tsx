@@ -3,7 +3,7 @@ import React from 'react';
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
-  background?: 'white' | 'slate';
+  background?: 'background' | 'card' | 'white' | 'slate';
   id?: string;
 }
 
@@ -32,8 +32,15 @@ interface SectionProps {
  * Odd sections (Hero, Solution, Pricing): background="white"
  * Even sections (Problem, Why Now): background="slate"
  */
-export function Section({ children, className = '', background = 'white', id }: SectionProps) {
-  const bgClasses = background === 'white' ? 'bg-white' : 'bg-slate-50';
+export function Section({ children, className = '', background = 'background', id }: SectionProps) {
+  const bgMap = {
+    'background': 'bg-background',
+    'card': 'bg-card',
+    'white': 'bg-white',
+    'slate': 'bg-slate-50'
+  };
+
+  const bgClasses = bgMap[background] || 'bg-background';
 
   const combinedClasses = `
     py-24 md:py-16

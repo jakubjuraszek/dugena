@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Inter font from Google Fonts */
+/* Import Inter font from Google Fonts (fallback) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 /* Global smooth scroll */
@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply text-slate-800 antialiased;
+    @apply bg-background text-foreground antialiased;
   }
 
   /* Ensure proper font rendering */
@@ -45,5 +45,18 @@
   /* Reading width for paragraphs */
   .reading-width {
     @apply max-w-2xl;
+  }
+
+  /* Grid pattern background */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, #27272a 1px, transparent 1px),
+      linear-gradient(to bottom, #27272a 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-foreground to-muted bg-clip-text text-transparent;
   }
 }
