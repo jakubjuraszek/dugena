@@ -1,4 +1,5 @@
 import { Section } from '../Section';
+import { CheckCircle } from 'lucide-react';
 
 /**
  * THIS WORKS FOR YOU SECTION - Address Objections
@@ -54,8 +55,9 @@ export function ThisWorksSection() {
         <div className="space-y-8">
           {scenarios.map((scenario, index) => (
             <div key={index} className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold mb-4 text-emerald-600">
-                {scenario.title}
+              <h3 className="text-xl font-bold mb-4 text-emerald-600 flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                <span>{scenario.title.replace('✅ ', '')}</span>
               </h3>
               <p className="text-lg text-slate-700">
                 <strong className="text-slate-900">{scenario.emphasis}</strong> {scenario.content}

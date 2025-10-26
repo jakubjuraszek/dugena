@@ -1,4 +1,5 @@
 import { Section } from '../Section';
+import { Star } from 'lucide-react';
 
 /**
  * COMPARISON TABLE SECTION
@@ -41,7 +42,11 @@ export function ComparisonSection() {
                 <td className="px-6 py-4 text-slate-700">10-point AI analysis, specific fixes</td>
               </tr>
               <tr className="bg-blue-50 border-l-4 border-blue-600">
-                <td className="px-6 py-4 font-bold text-slate-900">Professional Audit ⭐</td>
+                <td className="px-6 py-4 font-bold text-slate-900">
+                  <span className="inline-flex items-center gap-1">
+                    Professional Audit <Star className="w-4 h-4 inline" fill="currentColor" />
+                  </span>
+                </td>
                 <td className="px-6 py-4 text-slate-700">60 sec</td>
                 <td className="px-6 py-4 text-slate-700">$49</td>
                 <td className="px-6 py-4 text-slate-700">20 points + competitors + re-test</td>

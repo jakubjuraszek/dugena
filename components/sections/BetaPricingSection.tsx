@@ -1,4 +1,5 @@
 import { Section } from '../Section';
+import { CheckCircle, Clock } from 'lucide-react';
 
 /**
  * BETA PRICING SECTION - Authentic Communication
@@ -38,24 +39,24 @@ export function BetaPricingSection() {
             First 100 Customers Get:
           </h3>
           <ul className="space-y-3 text-lg text-slate-700">
-            <li className="flex items-start">
-              <span className="text-emerald-500 mr-3">✅</span>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
               <span>Full access to all features (10/20/30-point audits)</span>
             </li>
-            <li className="flex items-start">
-              <span className="text-emerald-500 mr-3">✅</span>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
               <span>Beta pricing locked forever (no price increases)</span>
             </li>
-            <li className="flex items-start">
-              <span className="text-emerald-500 mr-3">✅</span>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
               <span>Free access to future updates (video walkthroughs, competitor deep-dives)</span>
             </li>
-            <li className="flex items-start">
-              <span className="text-emerald-500 mr-3">✅</span>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
               <span>Direct line to me for feedback/feature requests</span>
             </li>
-            <li className="flex items-start">
-              <span className="text-emerald-500 mr-3">✅</span>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
               <span>Early access to v2.0 features (A/B test suggestions, heatmap analysis)</span>
             </li>
           </ul>
@@ -64,15 +65,15 @@ export function BetaPricingSection() {
         <div className="space-y-4 text-lg text-slate-700 mb-12">
           <p className="font-semibold text-slate-900">In exchange, I ask for:</p>
           <ul className="space-y-2 pl-6">
-            <li className="flex items-start">
+            <li className="flex items-start gap-3">
               <span className="mr-2">•</span>
               <span>Your honest feedback (what worked, what didn't)</span>
             </li>
-            <li className="flex items-start">
+            <li className="flex items-start gap-3">
               <span className="mr-2">•</span>
               <span>A testimonial if it helps you convert (optional, but appreciated)</span>
             </li>
-            <li className="flex items-start">
+            <li className="flex items-start gap-3">
               <span className="mr-2">•</span>
               <span>Patience if there's a bug (I'll fix it same-day)</span>
             </li>
@@ -84,8 +85,10 @@ export function BetaPricingSection() {
         </p>
 
         <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 text-center">
-          <p className="text-lg">
-            ⏰ <strong className="text-slate-900">67 / 100 spots taken</strong> <span className="text-slate-600">(updated daily)</span>
+          <p className="text-lg flex items-center justify-center gap-2">
+            <Clock className="w-5 h-5 text-blue-600" />
+            <strong className="text-slate-900">67 / 100 spots taken</strong>
+            <span className="text-slate-600">(updated daily)</span>
           </p>
           <p className="text-sm text-slate-500 mt-2">
             {/* TODO: Replace with real Stripe customer count via API */}

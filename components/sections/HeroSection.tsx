@@ -1,5 +1,6 @@
 import { Button } from '../Button';
 import { Section } from '../Section';
+import { Target } from 'lucide-react';
 
 /**
  * HERO SECTION - Above the Fold
@@ -42,8 +43,9 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <p className="text-sm text-slate-500">
-          🎯 Trained on 1,000+ successful SaaS launches
+        <p className="text-sm text-slate-500 flex items-center justify-center gap-2">
+          <Target className="w-5 h-5 text-blue-600" />
+          <span>Trained on 1,000+ successful SaaS launches</span>
         </p>
       </div>
     </Section>

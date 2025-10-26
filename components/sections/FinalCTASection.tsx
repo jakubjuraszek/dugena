@@ -1,5 +1,6 @@
 import { Section } from '../Section';
 import { Button } from '../Button';
+import { Star } from 'lucide-react';
 
 /**
  * FINAL CTA SECTION - Last Push to Convert
@@ -25,7 +26,9 @@ export function FinalCTASection() {
           </Button>
           <div className="transform lg:scale-110">
             <Button variant="primary" href="#pricing">
-              Professional Audit - $49 ⭐
+              <span className="inline-flex items-center gap-1">
+                Professional Audit - $49 <Star className="w-4 h-4" fill="currentColor" />
+              </span>
             </Button>
           </div>
           <Button variant="secondary" href="#pricing">

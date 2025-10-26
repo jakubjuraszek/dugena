@@ -4,7 +4,7 @@ interface CardProps {
   children: React.ReactNode;
   className?: string;
   featured?: boolean;
-  badge?: string;
+  badge?: React.ReactNode;
   hover?: boolean;
 }
 
