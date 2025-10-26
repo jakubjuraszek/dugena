@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Global smooth scroll */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-slate-800 antialiased;
+  }
+
+  /* Ensure proper font rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom utilities for design excellence */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Breathing room utilities */
+  .section-padding {
+    @apply py-24 px-4;
+  }
+
+  .section-padding-mobile {
+    @apply py-16 px-4;
+  }
+
+  /* Container with proper max-width */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  /* Reading width for paragraphs */
+  .reading-width {
+    @apply max-w-2xl;
+  }
+}
