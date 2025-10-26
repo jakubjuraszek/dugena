@@ -33,6 +33,13 @@ export async function generateMetadata({
     description: t('description'),
     keywords: t('keywords').split(', '),
     authors: [{ name: t('authors') }],
+    icons: {
+      icon: [
+        { url: '/icon', type: 'image/png', sizes: '32x32' },
+        { url: '/favicon.svg', type: 'image/svg+xml' },
+      ],
+      apple: '/apple-icon',
+    },
     openGraph: {
       title: t('ogTitle'),
       description: t('ogDescription'),

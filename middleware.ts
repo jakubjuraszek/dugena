@@ -20,6 +20,7 @@ export const config = {
   // Match all pathnames except for:
   // - /api routes
   // - /_next (Next.js internals)
-  // - Static files (images, fonts, etc.)
-  matcher: ['/', '/(pl|en)/:path*', '/((?!api|_next|.*\\..*).*)']
+  // - /favicon.ico, /icon, /apple-icon (favicons)
+  // - Static files (images, fonts, etc. - files with dots)
+  matcher: ['/', '/(pl|en)/:path*', '/((?!api|_next|favicon\\.ico|icon|apple-icon|.*\\..*).*)']
 };
