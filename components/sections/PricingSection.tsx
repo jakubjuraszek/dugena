@@ -35,9 +35,6 @@ export function PricingSection() {
 
   return (
     <Section background="background" id="pricing" className="relative">
-      {/* Subtle gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#151515] to-transparent opacity-50 pointer-events-none" />
-
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight text-white">

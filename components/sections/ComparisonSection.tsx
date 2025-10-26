@@ -15,8 +15,6 @@ import { Section } from '../Section';
 export function ComparisonSection() {
   return (
     <Section background="elevated" id="comparison">
-      {/* Subtle gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#202020] to-transparent opacity-50 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center tracking-tight text-foreground">

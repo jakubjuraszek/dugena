@@ -42,15 +42,11 @@ export function PricingCard({
       )}
 
       <div className={`relative h-full ${popular ? 'pt-6' : ''}`}>
-        {popular && (
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent rounded" />
-        )}
-
         <div className={`
           relative h-full p-8 rounded transition-all duration-300
           ${popular
-            ? 'backdrop-blur-sm bg-gradient-to-b from-[#2a2a2a] to-[#222222] border-2 border-primary shadow-2xl shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.02]'
-            : 'bg-gradient-to-b from-[#222222] to-[#1a1a1a] border border hover:border-primary/30 hover:shadow-xl shadow-lg shadow-black/20 hover:scale-[1.01]'
+            ? 'bg-gradient-to-b from-[#2a2a2a] to-[#222222] border-2 border-primary shadow-2xl shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.02]'
+            : 'bg-gradient-to-b from-[#222222] to-[#1a1a1a] border border hover:border-primary/30 hover:shadow-xl shadow-lg hover:scale-[1.01]'
           }
         `}>
           <h3 className="text-3xl font-bold mb-2 tracking-tight text-white">{name}</h3>
