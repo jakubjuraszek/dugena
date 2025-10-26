@@ -30,15 +30,16 @@ export function Button({ variant = 'primary', children, href, className = '', ..
     font-semibold text-lg
     px-8 py-4
     rounded-lg
-    transform hover:scale-105
+    transform hover:scale-105 hover:-translate-y-0.5
     transition-all duration-200
-    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+    focus:outline-none focus:ring-4 focus:ring-blue-200
     disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
   `;
 
   const variantClasses = {
     primary: `
-      bg-blue-600 hover:bg-blue-700
+      bg-gradient-to-r from-blue-600 to-blue-700
+      hover:from-blue-700 hover:to-blue-800
       text-white
       shadow-lg hover:shadow-xl
     `,
