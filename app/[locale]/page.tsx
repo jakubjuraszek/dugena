@@ -15,7 +15,7 @@ import { PSSection } from '@/components/sections/PSSection';
 import { Footer } from '@/components/sections/Footer';
 
 /**
- * LANDING PAGE AUDITOR - Main Page
+ * LANDING PAGE AUDITOR - Main Page (i18n enabled)
  *
  * STRUCTURE (13 sections):
  * 1. Hero (above fold)
@@ -44,6 +44,10 @@ import { Footer } from '@/components/sections/Footer';
  * - Honesty / Simplicity
  * - Quality / Calm
  * - Bootstrapper-to-bootstrapper
+ *
+ * i18n:
+ * - Supports pl (Polish) and en (English)
+ * - All text content loaded from messages/{locale}.json
  */
 export default function Home() {
   return (

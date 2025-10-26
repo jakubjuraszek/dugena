@@ -1,7 +1,11 @@
+'use client';
+
 import { Button } from '../Button';
 import { Section } from '../Section';
 import { AnimatedCounter } from '../AnimatedCounter';
 import { Target } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useCurrency } from '../CurrencyContext';
 
 /**
  * HERO SECTION - Above the Fold
@@ -22,6 +26,12 @@ import { Target } from 'lucide-react';
  * - Immediate clarity on value prop
  */
 export function HeroSection() {
+  const t = useTranslations('hero');
+  const tPricing = useTranslations('pricing');
+  const { currency } = useCurrency();
+
+  const quickPrice = currency === 'USD' ? tPricing('tiers.quick.price.usd') : tPricing('tiers.quick.price.pln');
+
   return (
     <Section background="background" id="hero" className="relative overflow-hidden">
       {/* Radial orange glow from center - sophisticated depth */}
@@ -32,30 +42,30 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-none tracking-tight text-foreground">
-          You built a product.<br />
-          Nobody&apos;s converting.
+          {t('title').split('\n').map((line, i) => (
+            <span key={i}>
+              {line}
+              {i === 0 && <br />}
+            </span>
+          ))}
         </h1>
 
         <p className="text-xl md:text-2xl font-medium text-white leading-relaxed max-w-2xl mx-auto mb-12 tracking-tight">
-          AI analyzes your landing page in 60 seconds.
-          See exactly what&apos;s killing your conversions.
-          Fix it today. Starting at $29.
+          {t('subtitle')}
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
           <Button variant="primary" href="#pricing">
-            Get Your Audit - $29
+            Get Your Audit - {quickPrice}
           </Button>
           <Button variant="secondary" href="#how-it-works">
-            See How It Works ↓
+            {t('ctaSecondary')}
           </Button>
         </div>
 
         <div className="flex items-center justify-center gap-2 text-sm font-medium text-white tracking-tight">
           <Target className="w-5 h-5 text-primary" />
-          <span>Trained on </span>
-          <AnimatedCounter from={0} to={1247} duration={2000} suffix="+" />
-          <span> successful SaaS launches</span>
+          <span>{t('socialProof', { count: 1247 })}</span>
         </div>
       </div>
     </Section>

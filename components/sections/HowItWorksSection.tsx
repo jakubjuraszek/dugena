@@ -1,4 +1,8 @@
+'use client';
+
 import { Section } from '../Section';
+import { useTranslations } from 'next-intl';
+import { useCurrency } from '../CurrencyContext';
 
 /**
  * HOW IT WORKS SECTION - 3 Simple Steps
@@ -10,29 +14,36 @@ import { Section } from '../Section';
  * - Guarantee box in green accent
  */
 export function HowItWorksSection() {
-  const steps = [
-    {
-      number: 1,
-      title: 'Choose Your Package',
-      description: 'Quick ($29), Professional ($49), or Premium ($99)'
-    },
-    {
-      number: 2,
-      title: 'Submit Your URL',
-      description: 'After payment, enter your landing page URL'
-    },
-    {
-      number: 3,
-      title: 'Get Your Report',
-      description: 'AI analyzes in 60 seconds. PDF delivered to your email.'
-    }
-  ];
+  const t = useTranslations('howItWorks');
+  const tPricing = useTranslations('pricing');
+  const { currency } = useCurrency();
+
+  interface Step {
+    number: string;
+    title: string;
+    description: string;
+  }
+
+  const steps = t.raw('steps') as Step[];
+
+  // Get dynamic prices
+  const quickPrice = currency === 'USD' ? tPricing('tiers.quick.price.usd') : tPricing('tiers.quick.price.pln');
+  const professionalPrice = currency === 'USD' ? tPricing('tiers.professional.price.usd') : tPricing('tiers.professional.price.pln');
+  const premiumPrice = currency === 'USD' ? tPricing('tiers.premium.price.usd') : tPricing('tiers.premium.price.pln');
+
+  // Replace price placeholders in step descriptions
+  const getDescriptionWithPrices = (description: string) => {
+    return description
+      .replace(/Quick \(\$29\)|Quick \(119 PLN\)/, `Quick (${quickPrice})`)
+      .replace(/Professional \(\$49\)|Professional \(199 PLN\)/, `Professional (${professionalPrice})`)
+      .replace(/Premium \(\$99\)|Premium \(399 PLN\)/, `Premium (${premiumPrice})`);
+  };
 
   return (
     <Section background="background" id="how-it-works">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl md:text-3xl font-bold text-center mb-16 text-foreground">
-          How It Works
+          {t('title')}
         </h2>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
@@ -42,17 +53,17 @@ export function HowItWorksSection() {
                 {step.number}
               </div>
               <h3 className="text-2xl font-bold mb-4 text-foreground">{step.title}</h3>
-              <p className="text-lg text-white leading-relaxed">{step.description}</p>
+              <p className="text-lg text-white leading-relaxed">{getDescriptionWithPrices(step.description)}</p>
             </div>
           ))}
         </div>
 
         <div className="bg-card rounded p-8 text-center border-2 border-accent-success/30">
           <p className="text-2xl font-bold text-foreground mb-2">
-            30-Day Money-Back Guarantee
+            {t('guaranteeTitle')}
           </p>
           <p className="text-lg text-white leading-relaxed">
-            Not happy? Full refund, no questions asked.
+            {t('guaranteeText')}
           </p>
         </div>
       </div>

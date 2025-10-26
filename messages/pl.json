@@ -1,0 +1,380 @@
+{
+  "metadata": {
+    "title": "ConvertFix - Analiza Konwersji AI w 60 Sekund",
+    "description": "Profesjonalny audyt landing page w 60 sekund. AI analizuje Twoją stronę i pokazuje dokładnie co naprawić. Od 119 PLN. Bez subskrypcji.",
+    "keywords": "audyt landing page, optymalizacja konwersji, SaaS, analiza AI, CRO",
+    "authors": "Jakub",
+    "ogTitle": "ConvertFix - Napraw Konwersje w 60 Sekund",
+    "ogDescription": "AI analizuje Twoją landing page i mówi dokładnie co naprawić. 119-399 PLN, bez subskrypcji."
+  },
+  "header": {
+    "logoText": "ConvertFix",
+    "ctaButton": "Rozpocznij"
+  },
+  "hero": {
+    "title": "Zbudowałeś produkt.\nNikt się nie zapisuje.",
+    "subtitle": "AI analizuje Twoją landing page w 60 sekund.\nZobacz dokładnie co zabija Twoje konwersje.\nNapraw to dzisiaj.\n\nOd 119 PLN.",
+    "ctaPrimary": "Zamów Audyt - 119 PLN",
+    "ctaSecondary": "Zobacz Jak To Działa ↓",
+    "socialProof": "Wytrenowane na 1000+ udanych produktach SaaS"
+  },
+  "problem": {
+    "title": "Nie jesteś sam.",
+    "intro": "To frustracja numer 1 wśród solo founderów:",
+    "quote": "Spędziłem miesiące na budowaniu.\nMoja strona ma 100 wejść i 0 zapisów.",
+    "problem1": "Problem nie leży w Twoim produkcie.",
+    "problem2": "Leży w Twojej landing page.",
+    "noTimeTitle": "Ale nie masz czasu na:",
+    "noTimeItems": [
+      "Naukę optymalizacji konwersji (40+ godzin)",
+      "Zatrudnienie konsultanta (3000-8000 PLN)",
+      "Nieskończone zgadywanie i testowanie"
+    ],
+    "needSolution": "Potrzebujesz kogoś kto powie Ci DOKŁADNIE co naprawić.",
+    "fast": "Szybko."
+  },
+  "whyNow": {
+    "title": "Dlaczego To Jest Teraz Możliwe",
+    "subtitle": "Trzy przełomy wszystko zmieniły:",
+    "breakthrough1": {
+      "title": "1. Trening AI na Prawdziwych Danych",
+      "intro": "GPT-4 przeanalizował 1000+ udanych produktów SaaS.",
+      "knowsTitle": "Wie że:",
+      "points": [
+        "Landing page Basecamp konwertuje na 8% (średnia w branży: 2%)",
+        "Nagłówek Notion ma 7 słów (nie 15)",
+        "CTA Superhuman pojawia się 3 razy na stronie (nie raz)"
+      ],
+      "conclusion": "To nie teoria.\nTo rozpoznawanie wzorców od zwycięzców."
+    },
+    "breakthrough2": {
+      "title": "2. Przesunięcie Ekonomii Kosztów",
+      "before": "2020: Audyt agencji = 8000 PLN (5-7 dni oczekiwania)",
+      "after": "2025: Audyt AI = 119-399 PLN (60 sekund)",
+      "value": "Ta sama jakość. 20x taniej. 100x szybciej."
+    },
+    "breakthrough3": {
+      "title": "3. Eksplozja No-Code SaaS",
+      "point1": "100 000+ solo founderów uruchomiło produkty w tym roku.",
+      "point2": "Większość umie budować. Niewielu umie konwertować.",
+      "conclusion": "Wąskie gardło przesunęło się z KODU na COPY."
+    },
+    "finalNote": "Nie możesz zatrudnić konsultanta za 8000 PLN.\nAle możesz sobie pozwolić na 119-399 PLN za AI które się od nich uczyło."
+  },
+  "thisWorks": {
+    "title": "To Działa Dla Ciebie",
+    "subtitle": "Nawet jeśli myślisz że Twój przypadek jest inny:",
+    "scenarios": [
+      {
+        "title": "\"Jestem przed startem (brak ruchu)\"",
+        "emphasis": "Idealnie.",
+        "content": "Napraw stronę ZANIM wydasz na reklamy.\n\nWiększość founderów traci 2000-8000 PLN na ruch do zepsutej strony.\nTy wydasz 119-399 PLN żeby naprawić ją najpierw."
+      },
+      {
+        "title": "\"Mam ruch ale zero konwersji\"",
+        "emphasis": "To dosłownie Twój case.",
+        "content": "Wskażemy co zabija konwersje:\nNiejasny nagłówek? Słabe CTA? Brak social proof?\n\nDowiesz się w 60 sekund."
+      },
+      {
+        "title": "\"Nie jestem techniczny\"",
+        "emphasis": "Jeszcze lepiej.",
+        "content": "Raport pokazuje DOKŁADNIE co zmienić:\n\n\"Zmień nagłówek z [tego] na [to]\"\n\"Przenieś przycisk CTA z [tutaj] [tam]\"\n\nBez kodu. Tylko kopiuj-wklej."
+      },
+      {
+        "title": "\"Mój produkt jest złożony/B2B/nisza\"",
+        "emphasis": "AI trenowane na 1000+ stronach.",
+        "content": "Włącznie z: Enterprise SaaS, DevTools, Fintech, Health Tech.\n\nWidziało Twoją niszę. Zna Twoich kupujących."
+      },
+      {
+        "title": "\"Próbowałem już darmowych narzędzi\"",
+        "emphasis": "Darmowe narzędzia dają ogólne wyniki.",
+        "content": "My dajemy konkretne poprawki:\n\n\"Twój nagłówek ma 23 słowa. Skróć do 7 słów jak Notion.\"\n\nTo jest różnica."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Wybierz Swój Audyt",
+    "subtitle": "Płatność jednorazowa. Bez subskrypcji.",
+    "currencyUSD": "USD $",
+    "currencyPLN": "PLN zł",
+    "tiers": {
+      "quick": {
+        "name": "Audyt Quick",
+        "price": {
+          "usd": "$29",
+          "pln": "119 PLN"
+        },
+        "description": "Szybkie insighty na start",
+        "points": "10",
+        "features": [
+          "Analiza 10 punktów konwersji",
+          "Raport PDF (5-7 stron)",
+          "Mapa problemów (P0/P1/P2)",
+          "Top 3 Quick Wins",
+          "Before/After dla top 3 problemów",
+          "Dostawa w 60 sekund"
+        ],
+        "cta": "Zamów Quick Audit - {price}"
+      },
+      "professional": {
+        "name": "Audyt Professional",
+        "price": {
+          "usd": "$49",
+          "pln": "199 PLN"
+        },
+        "description": "Wszystko czego potrzebujesz do konwersji",
+        "points": "20",
+        "badge": "⭐ NAJPOPULARNIEJSZY",
+        "features": [
+          "Wszystko z Quick, PLUS:",
+          "Analiza 20 punktów (vs 10)",
+          "Raport PDF (10-15 stron)",
+          "Before/After dla KAŻDEGO problemu",
+          "Top 5 Quick Wins",
+          "Porównanie z konkurencją",
+          "50% zniżki na re-test za 7 dni",
+          "Priorytetowe wsparcie email"
+        ],
+        "cta": "Zamów Professional Audit - {price}"
+      },
+      "premium": {
+        "name": "Audyt Premium",
+        "price": {
+          "usd": "$99",
+          "pln": "399 PLN"
+        },
+        "description": "Profesjonalne insighty + wsparcie",
+        "points": "30",
+        "features": [
+          "Wszystko z Professional, PLUS:",
+          "Głęboka analiza 30 punktów (vs 20)",
+          "Raport PDF (20-25 stron)",
+          "Video Walkthrough (5-10 min)",
+          "3 alternatywne nagłówki",
+          "3 alternatywne CTA",
+          "Dedykowana analiza mobile",
+          "DARMOWY re-test w ciągu 30 dni",
+          "Wsparcie priorytetowe (odpowiedź 24h)"
+        ],
+        "cta": "Zamów Premium Audit - {price}"
+      }
+    },
+    "allPackages": "Wszystkie pakiety zawierają: 30-dniowa gwarancja zwrotu • Natychmiastowa dostawa • Konkretne instrukcje poprawek"
+  },
+  "comparison": {
+    "title": "Jak Się Porównujemy",
+    "items": [
+      {
+        "name": "Darmowe narzędzia",
+        "subtitle": "(Fibr, VWO)",
+        "time": "5 min",
+        "price": "0 PLN",
+        "description": "Ogólny feedback, pułapka lead gen"
+      },
+      {
+        "name": "Quick Audit",
+        "subtitle": "NASZ PRODUKT",
+        "time": "60 sek",
+        "price": "119 PLN",
+        "description": "10-punktowa analiza AI, konkretne poprawki"
+      },
+      {
+        "name": "Professional Audit",
+        "subtitle": "⭐ NAJLEPSZA WARTOŚĆ",
+        "badge": "NAJPOPULARNIEJSZY",
+        "time": "60 sek",
+        "price": "199 PLN",
+        "description": "20 punktów + konkurencja + re-test"
+      },
+      {
+        "name": "Premium Audit",
+        "subtitle": "NASZ PRODUKT",
+        "time": "90 sek",
+        "price": "399 PLN",
+        "description": "30 punktów + video + copy + mobile"
+      },
+      {
+        "name": "Freelancer",
+        "subtitle": "(Useme, Upwork)",
+        "time": "3-5 godzin",
+        "price": "800-2000 PLN",
+        "description": "Ludzki przegląd, czekanie 2-5 dni"
+      },
+      {
+        "name": "Agencja",
+        "subtitle": "",
+        "time": "5-7 dni",
+        "price": "3000-8000 PLN",
+        "description": "Kompleksowo, wolno, drogo"
+      }
+    ]
+  },
+  "transformation": {
+    "title": "Twoja Transformacja",
+    "subtitle": "Oto co się stanie po zamówieniu:",
+    "steps": [
+      {
+        "time": "60 sekund",
+        "title": "Wysyłasz URL",
+        "description": "AI analizuje Twoją stronę, sprawdza 10-30 punktów konwersji"
+      },
+      {
+        "time": "5 minut",
+        "title": "Czytasz raport",
+        "description": "PDF w Twojej skrzynce. Przeglądasz podsumowanie. Identyfikujesz top 3 Quick Wins."
+      },
+      {
+        "time": "30 minut",
+        "title": "Wdrażasz poprawki",
+        "description": "Zmieniasz nagłówek. Wzmacniasz CTA. Dodajesz social proof.\n(Bez kodowania)"
+      },
+      {
+        "time": "1 tydzień",
+        "title": "Widzisz rezultaty",
+        "description": "Conversion rate idzie z 0.5% → 2% (4x poprawa).\n20 więcej zapisów z tych samych 1000 odwiedzin"
+      },
+      {
+        "time": "1 miesiąc",
+        "title": "Skalujesz",
+        "description": "Z udowodnioną konwersją, pewnie wydajesz na reklamy.\n199 PLN audyt → 20 000 PLN nowego MRR"
+      }
+    ],
+    "summary": "Łączny czas: 35 minut.\nŁączny koszt: 119-399 PLN.\nPotencjalny zwrot: Nieograniczony."
+  },
+  "socialProof": {
+    "title": "Co Mówią Beta Testerzy",
+    "subtitle": "Jesteśmy w beta. Pierwsze 100 osób dostaje dożywotni dostęp do aktualizacji.",
+    "placeholderTitle": "Opinie beta wkrótce...",
+    "placeholderText": "Bądź w pierwszej setce.\nZdobądź wczesną cenę.\nPomóż kształtować produkt.",
+    "trustSignals": [
+      "Wytrenowane na 1000+ udanych produktach",
+      "30-dniowa gwarancja zwrotu pieniędzy",
+      "Stworzony przez foundera, dla founderów"
+    ]
+  },
+  "howItWorks": {
+    "title": "Jak To Działa",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Wybierz Pakiet",
+        "description": "Quick (119 PLN), Professional (199 PLN), lub Premium (399 PLN)"
+      },
+      {
+        "number": "2",
+        "title": "Wyślij Swój URL",
+        "description": "Po płatności, wpisz URL swojej landing page"
+      },
+      {
+        "number": "3",
+        "title": "Odbierz Raport",
+        "description": "AI analizuje w 60 sekund.\nPDF dostarczony na email."
+      }
+    ],
+    "guaranteeTitle": "30-Dniowa Gwarancja Zwrotu",
+    "guaranteeText": "Niezadowolony? Pełny zwrot, bez pytań."
+  },
+  "faq": {
+    "title": "Najczęściej Zadawane Pytania",
+    "subtitle": "Wszystko co musisz wiedzieć o ConvertFix",
+    "items": [
+      {
+        "question": "Czym to się różni od darmowych narzędzi jak Fibr.ai czy VWO?",
+        "answer": "Darmowe narzędzia dają Ci wynik (72/100).\n\nMy mówimy Ci DOKŁADNIE co naprawić:\n\"Twój nagłówek jest niejasny. Zmień z 'Rewolucyjna Platforma dla Zespołów' na 'Slack dla Zdalnych Zespołów' (7 słów, jasna korzyść).\"\n\nPoza tym, darmowe narzędzia to magnesy lead gen. Dostaniesz telefony sprzedażowe.\n\nMy jesteśmy produktem, nie lejkiem lead gen."
+      },
+      {
+        "question": "Czy AI naprawdę może dorównać ludzkiemu konsultantowi?",
+        "answer": "Za 119-399 PLN? Tak.\n\nNasza AI przeanalizowała 1000+ udanych produktów (Basecamp, Notion, Linear, Superhuman). Nauczyła się ich wzorców.\n\nZa 8000 PLN, człowiek może spędzić 10 godzin analizując Twoją niszę na zamówienie.\n\nAle dla quick wins? AI jest szybsze i równie trafne.\n\nPomyśl o tym jak o \"tier 1 support\" który perfekcyjnie obsługuje 80% przypadków."
+      },
+      {
+        "question": "Co jeśli moja landing page jest złożona/techniczna/B2B?",
+        "answer": "AI trenowane na każdej kategorii:\nDev Tools, Enterprise SaaS, Fintech, Health Tech, Crypto.\n\nJeśli jesteś B2B SaaS, widziało 200+ podobnych stron.\nWie że Twoi kupujący dbają o ROI, integracje, bezpieczeństwo.\n\nZłożone = większy powód do audytu.\nProstsze strony łatwiej zgadnąć. Twoja wymaga danych."
+      },
+      {
+        "question": "Jak długo to trwa?",
+        "answer": "60-90 sekund po wysłaniu URL.\n\nBez czekania dni na konsultanta.\n\nBędziesz miał PDF w skrzynce zanim skończysz kawę."
+      },
+      {
+        "question": "Co jeśli się nie zgadzam z rekomendacjami?",
+        "answer": "To ich nie wdrażaj.\n\nPokazujemy Ci wzorce oparte na danych (np. \"nagłówek Notion ma 7 słów, Twój ma 23\").\n\nTy decydujesz czy to ma zastosowanie do Twojego przypadku.\n\nAle pamiętaj: AI przeanalizowała 1000+ udanych produktów. Wzorce istnieją z jakiegoś powodu."
+      },
+      {
+        "question": "Czy potrzebuję umiejętności kodowania żeby wdrożyć poprawki?",
+        "answer": "Nie.\n\n80% poprawek to zmiany tekstów:\n• Nagłówek: Skopiuj-wklej nowy tekst\n• CTA: Zmień tekst przycisku\n• Social proof: Dodaj sekcję z opiniami\n\n20% to poprawki layoutu (przenieś CTA wyżej, dodaj tabelę cen).\n\nJeśli używasz Webflow/Wix/Squarespace, możesz kliknąć-i-przeciągnąć.\n\nBez kodowania."
+      },
+      {
+        "question": "Co zawiera re-test?",
+        "answer": "Professional: 50% zniżki na drugi audyt po 7 dniach (99.50 PLN zamiast 199 PLN).\n\nPremium: DARMOWY re-audyt w ciągu 30 dni.\n\nUżyj go po wdrożeniu poprawek żeby zmierzyć poprawę."
+      },
+      {
+        "question": "Czy mogę dostać zwrot pieniędzy?",
+        "answer": "Tak.\n\n30-dniowa gwarancja zwrotu, bez pytań.\n\nZwrot przez Stripe pojawia się na koncie w ciągu 5-10 dni roboczych."
+      },
+      {
+        "question": "Czy to płatność jednorazowa czy subskrypcja?",
+        "answer": "Jednorazowa.\n\nBez opłat cyklicznych.\n\nPłacisz raz, dostajesz audyt. Tyle."
+      },
+      {
+        "question": "Co jeśli wdrożę te zmiany a i tak nie zadziała?",
+        "answer": "Wtedy będziesz wiedział że to nie landing page.\n\nTo coś innego (product-market fit, źródło ruchu, cena).\n\nTa jasność jest warta 119-399 PLN.\n\nWiększość founderów traci miesiące na zgadywanie.\nTy dowiesz się w 60 sekund + 1 tydzień testów.\n\nPoza tym: 30-dniowa gwarancja zwrotu.\nNie ryzykujesz niczego."
+      }
+    ]
+  },
+  "betaPricing": {
+    "title": "Cena Beta (Pierwsze 100 Osób)",
+    "intro": [
+      "Będę z Tobą szczery:",
+      "To nowy produkt.",
+      "",
+      "Spędziłem 7 lat kodując. Wiem jak budować produkty.",
+      "Ale nie wiem czy TY uznasz to za wartościowe dopóki nie spróbujesz.",
+      "",
+      "Więc mamy taki deal:"
+    ],
+    "benefitsTitle": "Pierwsze 100 Osób Dostaje:",
+    "benefits": [
+      "Pełny dostęp do wszystkich funkcji (10/20/30-punktowe audyty)",
+      "Cenę beta zablokowaną na zawsze (bez podwyżek)",
+      "Darmowy dostęp do przyszłych aktualizacji (video walkthroughs, głęboka analiza konkurencji)",
+      "Bezpośredni kontakt ze mną po feedback/propozycje funkcji",
+      "Wczesny dostęp do funkcji v2.0 (sugestie testów A/B, analiza heatmap)"
+    ],
+    "askTitle": "W zamian proszę o:",
+    "asks": [
+      "Twój szczery feedback (co zadziałało, co nie)",
+      "Opinię jeśli pomoże Ci konwertować (opcjonalnie, ale docenię)",
+      "Cierpliwość jeśli będzie bug (naprawię tego samego dnia)"
+    ],
+    "closing": "To bootstrapper do bootstrappera.\nBez bzdur. Tylko narzędzie które pomaga konwertować.",
+    "spotsText": "{taken} / {total} miejsc zajętych",
+    "spotsNote": "(aktualizowane codziennie)"
+  },
+  "finalCTA": {
+    "title": "Gotowy Naprawić Swoje Konwersje?",
+    "subtitle": "Wybierz swój pakiet:",
+    "quickCTA": "Quick Audit - 119 PLN",
+    "professionalCTA": "Professional Audit - 199 PLN ⭐",
+    "premiumCTA": "Premium Audit - 399 PLN",
+    "guarantee": "30-dniowa gwarancja zwrotu • Natychmiastowa dostawa • Bez subskrypcji"
+  },
+  "ps": {
+    "intro": "P.S. – Jeśli wciąż czytasz, jesteś typem foundera dla którego to zbudowałem:",
+    "qualities": "Nie chcesz hype. Chcesz jasności.\nNie chcesz zgadywać. Chcesz danych.\nNie chcesz tracić czasu. Chcesz shipować i iterować.",
+    "value": "119-399 PLN to mniej niż kolacja.\nAle może odblokować 40 000 PLN przychodu.",
+    "decision": "Decyzja należy do Ciebie.",
+    "ppsIntro": "P.P.S. – Zbudowałem to po tym jak dostałem 0 zapisów na mojej własnej landing page.",
+    "backstory": "7 lat kodowania. Zero umiejętności marketingowych.",
+    "motivation": "Potrzebowałem feedbacku który nie kosztuje 3000 PLN ani nie zajmuje tygodnia.",
+    "solution": "Więc zbudowałem to narzędzie dla siebie—a teraz dzielę się nim z Tobą.",
+    "closing": "Bez bzdur. Tylko narzędzie które pomaga konwertować.",
+    "signature": "– Jakub"
+  },
+  "footer": {
+    "faq": "FAQ",
+    "privacy": "Polityka Prywatności",
+    "terms": "Warunki Usługi",
+    "contact": "Kontakt",
+    "copyright": "© 2025 ConvertFix. Stworzony przez foundera, dla founderów.",
+    "location": "Zbudowany we Wrocławiu, Polska 🇵🇱"
+  }
+}

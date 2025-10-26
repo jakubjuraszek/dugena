@@ -1,5 +1,8 @@
+'use client';
+
 import { Section } from '../Section';
 import { CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 /**
  * SOCIAL PROOF SECTION - Beta Honest Messaging
@@ -14,36 +17,31 @@ import { CheckCircle } from 'lucide-react';
  * - Invite early adopters to be part of journey
  */
 export function SocialProofSection() {
+  const t = useTranslations('socialProof');
   return (
     <Section background="elevated" id="social-proof">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-3xl font-bold mb-6 text-white tracking-tight">
-          What Beta Testers Say
+          {t('title')}
         </h2>
         <p className="text-lg text-white leading-relaxed mb-12">
-          We&apos;re in beta. First 100 customers get lifetime access to updates.
+          {t('subtitle')}
         </p>
 
         <div className="bg-card border-2 border-dashed border-medium rounded p-12 shadow-lg mb-12">
-          <p className="text-xl text-secondary mb-4">Beta testimonials coming soon...</p>
+          <p className="text-xl text-secondary mb-4">{t('placeholderTitle')}</p>
           <p className="text-lg text-white leading-relaxed">
-            Be one of the first 100. Get early pricing. Help shape the product.
+            {t('placeholderText')}
           </p>
         </div>
 
         <div className="space-y-4 text-lg text-white leading-relaxed">
-          <p className="flex items-center justify-center gap-3">
-            <CheckCircle className="w-6 h-6 text-accent-success" />
-            <span>Trained on 1,000+ successful launches</span>
-          </p>
-          <p className="flex items-center justify-center gap-3">
-            <CheckCircle className="w-6 h-6 text-accent-success" />
-            <span>30-day money-back guarantee</span>
-          </p>
-          <p className="flex items-center justify-center gap-3">
-            <CheckCircle className="w-6 h-6 text-accent-success" />
-            <span>Made by a founder, for founders</span>
-          </p>
+          {(t.raw('trustSignals') as string[]).map((signal, index) => (
+            <p key={index} className="flex items-center justify-center gap-3">
+              <CheckCircle className="w-6 h-6 text-accent-success" />
+              <span>{signal}</span>
+            </p>
+          ))}
         </div>
       </div>
     </Section>

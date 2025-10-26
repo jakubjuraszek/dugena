@@ -1,4 +1,8 @@
+'use client';
+
 import { Section } from '../Section';
+import { useTranslations } from 'next-intl';
+import { useCurrency } from '../CurrencyContext';
 
 /**
  * COMPARISON SECTION - Card-Based Layout
@@ -13,12 +17,34 @@ import { Section } from '../Section';
  * - Mobile responsive: stack on mobile, 4 columns on desktop
  */
 export function ComparisonSection() {
+  const t = useTranslations('comparison');
+  const tPricing = useTranslations('pricing');
+  const { currency } = useCurrency();
+
+  interface ComparisonItem {
+    name: string;
+    subtitle: string;
+    badge?: string;
+    time: string;
+    price: string;
+    description: string;
+  }
+
+  const items = t.raw('items') as ComparisonItem[];
+
+  // Get dynamic prices based on currency
+  const prices = {
+    quick: currency === 'USD' ? tPricing('tiers.quick.price.usd') : tPricing('tiers.quick.price.pln'),
+    professional: currency === 'USD' ? tPricing('tiers.professional.price.usd') : tPricing('tiers.professional.price.pln'),
+    premium: currency === 'USD' ? tPricing('tiers.premium.price.usd') : tPricing('tiers.premium.price.pln'),
+  };
+
   return (
     <Section background="elevated" id="comparison">
 
       <div className="relative max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-5xl md:text-6xl font-bold mb-16 text-center tracking-tight text-foreground">
-          How We Compare
+          {t('title')}
         </h2>
 
         <div className="space-y-2">
@@ -32,12 +58,12 @@ export function ComparisonSection() {
             grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center
           ">
             <div>
-              <div className="font-medium text-[#71717a]">Free tools</div>
-              <div className="text-xs text-[#71717a] mt-1">(Fibr, VWO)</div>
+              <div className="font-medium text-[#71717a]">{items[0].name}</div>
+              <div className="text-xs text-[#71717a] mt-1">{items[0].subtitle}</div>
             </div>
-            <div className="text-[#71717a]">5 min</div>
-            <div className="text-[#71717a]">$0</div>
-            <div className="text-sm text-[#71717a]">Generic feedback, lead gen trap</div>
+            <div className="text-[#71717a]">{items[0].time}</div>
+            <div className="text-[#71717a]">{items[0].price}</div>
+            <div className="text-sm text-[#71717a]">{items[0].description}</div>
           </div>
 
           {/* QUICK AUDIT - Our product, visible */}
@@ -50,12 +76,12 @@ export function ComparisonSection() {
             transition-all
           ">
             <div>
-              <div className="font-bold text-white">Quick Audit</div>
-              <div className="text-xs text-primary mt-1">OUR PRODUCT</div>
+              <div className="font-bold text-white">{items[1].name}</div>
+              <div className="text-xs text-primary mt-1">{items[1].subtitle}</div>
             </div>
-            <div className="font-medium text-white">60 sec</div>
-            <div className="text-primary font-bold">$29</div>
-            <div className="text-sm text-white">10-point AI analysis, specific fixes</div>
+            <div className="font-medium text-white">{items[1].time}</div>
+            <div className="text-primary font-bold">{prices.quick}</div>
+            <div className="text-sm text-white">{items[1].description}</div>
           </div>
 
           {/* PROFESSIONAL AUDIT - Our main product, GLOWS */}
@@ -73,16 +99,16 @@ export function ComparisonSection() {
             ">
               <div>
                 <div className="font-bold text-white flex flex-wrap items-center gap-2">
-                  Professional Audit
+                  {items[2].name}
                   <span className="text-xs bg-primary text-white px-2 py-0.5 rounded font-bold">
-                    ⭐ BEST VALUE
+                    {items[2].badge}
                   </span>
                 </div>
-                <div className="text-xs text-orange-400 mt-1">OUR MAIN PRODUCT</div>
+                <div className="text-xs text-orange-400 mt-1">{items[2].subtitle}</div>
               </div>
-              <div className="font-medium text-white">60 sec</div>
-              <div className="text-primary font-bold text-xl">$49</div>
-              <div className="text-sm text-white">20 points + competitors + re-test</div>
+              <div className="font-medium text-white">{items[2].time}</div>
+              <div className="text-primary font-bold text-xl">{prices.professional}</div>
+              <div className="text-sm text-white">{items[2].description}</div>
             </div>
           </div>
 
@@ -96,12 +122,12 @@ export function ComparisonSection() {
             transition-all
           ">
             <div>
-              <div className="font-bold text-white">Premium Audit</div>
-              <div className="text-xs text-primary mt-1">OUR PRODUCT</div>
+              <div className="font-bold text-white">{items[3].name}</div>
+              <div className="text-xs text-primary mt-1">{items[3].subtitle}</div>
             </div>
-            <div className="font-medium text-white">90 sec</div>
-            <div className="text-primary font-bold">$99</div>
-            <div className="text-sm text-white">30 points + video + copy + mobile</div>
+            <div className="font-medium text-white">{items[3].time}</div>
+            <div className="text-primary font-bold">{prices.premium}</div>
+            <div className="text-sm text-white">{items[3].description}</div>
           </div>
 
           {/* FREELANCER - Dimmed, competitor */}
@@ -113,12 +139,12 @@ export function ComparisonSection() {
             grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center
           ">
             <div>
-              <div className="font-medium text-[#71717a]">Freelancer</div>
-              <div className="text-xs text-[#71717a] mt-1">(Upwork)</div>
+              <div className="font-medium text-[#71717a]">{items[4].name}</div>
+              <div className="text-xs text-[#71717a] mt-1">{items[4].subtitle}</div>
             </div>
-            <div className="text-[#71717a]">3-5 hours</div>
-            <div className="text-[#71717a]">$200-500</div>
-            <div className="text-sm text-[#71717a]">Human review, 2-5 days wait</div>
+            <div className="text-[#71717a]">{items[4].time}</div>
+            <div className="text-[#71717a]">{items[4].price}</div>
+            <div className="text-sm text-[#71717a]">{items[4].description}</div>
           </div>
 
           {/* AGENCY - Dimmed, competitor */}
@@ -129,10 +155,13 @@ export function ComparisonSection() {
             rounded p-6
             grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-center
           ">
-            <div className="font-medium text-[#71717a]">Agency</div>
-            <div className="text-[#71717a]">5-7 days</div>
-            <div className="text-[#71717a]">$800-2000</div>
-            <div className="text-sm text-[#71717a]">Comprehensive, slow, expensive</div>
+            <div>
+              <div className="font-medium text-[#71717a]">{items[5].name}</div>
+              {items[5].subtitle && <div className="text-xs text-[#71717a] mt-1">{items[5].subtitle}</div>}
+            </div>
+            <div className="text-[#71717a]">{items[5].time}</div>
+            <div className="text-[#71717a]">{items[5].price}</div>
+            <div className="text-sm text-[#71717a]">{items[5].description}</div>
           </div>
 
         </div>

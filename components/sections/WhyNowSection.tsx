@@ -1,5 +1,8 @@
+'use client';
+
 import { Section } from '../Section';
 import { Card } from '../Card';
+import { useTranslations } from 'next-intl';
 
 /**
  * WHY NOW SECTION - Explain the Opportunity
@@ -16,78 +19,73 @@ import { Card } from '../Card';
  * - Breakthrough 3: Market timing (urgency)
  */
 export function WhyNowSection() {
+  const t = useTranslations('whyNow');
   return (
     <Section background="elevated" id="why-now">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-3xl font-bold text-center mb-6 text-white">
-          Why This Is Possible Now
+          {t('title')}
         </h2>
         <p className="text-xl text-center text-white leading-relaxed mb-16 max-w-2xl mx-auto">
-          Three breakthroughs changed everything:
+          {t('subtitle')}
         </p>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <Card>
             <h3 className="text-xl font-bold mb-4 text-primary">
-              1. AI Training on Real Data
+              {t('breakthrough1.title')}
             </h3>
             <p className="text-white leading-relaxed mb-4">
-              GPT-4 analyzed 1,000+ successful SaaS launches.
+              {t('breakthrough1.intro')}
             </p>
-            <p className="font-semibold text-white mb-3">It knows:</p>
+            <p className="font-semibold text-white mb-3">{t('breakthrough1.knowsTitle')}</p>
             <ul className="space-y-2 text-white leading-relaxed mb-4">
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Basecamp&apos;s landing page converts at 8% (industry average: 2%)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Notion&apos;s headline uses 7 words (not 15)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Superhuman&apos;s CTA appears 3 times on the page (not once)</span>
-              </li>
+              {(t.raw('breakthrough1.points') as string[]).map((point, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-white font-medium leading-relaxed">
-              This isn&apos;t theory. It&apos;s pattern recognition from winners.
+              {t('breakthrough1.conclusion')}
             </p>
           </Card>
 
           <Card>
             <h3 className="text-xl font-bold mb-4 text-primary">
-              2. Cost Economics Shifted
+              {t('breakthrough2.title')}
             </h3>
             <p className="text-white leading-relaxed mb-3">
-              <strong>2020:</strong> Agency audit = $2,000 (5-7 days wait)
+              {t('breakthrough2.before')}
             </p>
             <p className="text-white leading-relaxed mb-6">
-              <strong>2025:</strong> AI audit = $29-99 (60 seconds)
+              {t('breakthrough2.after')}
             </p>
             <p className="text-lg font-semibold text-white">
-              Same quality. 20x cheaper. 100x faster.
+              {t('breakthrough2.value')}
             </p>
           </Card>
 
           <Card>
             <h3 className="text-xl font-bold mb-4 text-primary">
-              3. No-Code SaaS Explosion
+              {t('breakthrough3.title')}
             </h3>
             <p className="text-white leading-relaxed mb-3">
-              100,000+ solo founders launched products this year.
+              {t('breakthrough3.point1')}
             </p>
             <p className="text-white leading-relaxed mb-3">
-              Most can build. Few can convert.
+              {t('breakthrough3.point2')}
             </p>
             <p className="text-lg font-semibold text-white">
-              The bottleneck moved from CODE to COPY.
+              {t('breakthrough3.conclusion')}
             </p>
           </Card>
         </div>
 
         <div className="bg-card rounded p-8 text-center border border-border">
           <p className="text-xl text-white leading-relaxed">
-            You can&apos;t hire a $2,000 consultant. But you can afford $29-99 for AI that learned from them.
+            {t('finalNote')}
           </p>
         </div>
       </div>

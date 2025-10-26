@@ -2,7 +2,8 @@
 
 import { Section } from '../Section';
 import { PricingCard } from '../PricingCard';
-import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { useCurrency } from '../CurrencyContext';
 
 /**
  * PRICING SECTION - ⭐ MOST IMPORTANT
@@ -25,12 +26,13 @@ import { useState } from 'react';
  * - Clear recommendation (MOST POPULAR badge)
  */
 export function PricingSection() {
-  const [currency, setCurrency] = useState<'USD' | 'PLN'>('USD');
+  const t = useTranslations('pricing');
+  const { currency, setCurrency } = useCurrency();
 
   const prices = {
-    quick: currency === 'USD' ? '$29' : '119 PLN',
-    professional: currency === 'USD' ? '$49' : '199 PLN',
-    premium: currency === 'USD' ? '$99' : '399 PLN',
+    quick: currency === 'USD' ? t('tiers.quick.price.usd') : t('tiers.quick.price.pln'),
+    professional: currency === 'USD' ? t('tiers.professional.price.usd') : t('tiers.professional.price.pln'),
+    premium: currency === 'USD' ? t('tiers.premium.price.usd') : t('tiers.premium.price.pln'),
   };
 
   return (
@@ -38,10 +40,10 @@ export function PricingSection() {
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight text-white">
-            Choose Your Audit
+            {t('title')}
           </h2>
           <p className="text-xl font-medium text-white leading-relaxed mb-6 tracking-tight">
-            One-time payment. No subscription. Start at {currency === 'USD' ? '$29' : '119 PLN'}.
+            {t('subtitle', { currency: currency === 'USD' ? t('tiers.quick.price.usd') : t('tiers.quick.price.pln') })}
           </p>
 
           {/* Currency Toggle */}
@@ -54,7 +56,7 @@ export function PricingSection() {
                   : 'bg-card text-white hover:bg-cardHover border border-border hover:border-primary/30'
               }`}
             >
-              USD $
+              {t('currencyUSD')}
             </button>
             <button
               onClick={() => setCurrency('PLN')}
@@ -64,7 +66,7 @@ export function PricingSection() {
                   : 'bg-card text-white hover:bg-cardHover border border-border hover:border-primary/30'
               }`}
             >
-              PLN zł
+              {t('currencyPLN')}
             </button>
           </div>
         </div>
@@ -72,66 +74,40 @@ export function PricingSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-12">
           {/* Quick Audit */}
           <PricingCard
-            name="Quick Audit"
+            name={t('tiers.quick.name')}
             price={prices.quick}
-            description="Quick insights to start"
-            points={10}
-            features={[
-              "10-point conversion analysis",
-              "PDF report (5-7 pages)",
-              "Problem heatmap (P0/P1/P2)",
-              "Top 3 Quick Wins",
-              "Before/After for top 3 issues",
-              "60-second delivery"
-            ]}
-            cta={`Get Quick Audit - ${prices.quick}`}
+            description={t('tiers.quick.description')}
+            points={parseInt(t('tiers.quick.points'))}
+            features={t.raw('tiers.quick.features') as string[]}
+            cta={t('tiers.quick.cta', { price: prices.quick })}
           />
 
           {/* Professional Audit - FEATURED */}
           <PricingCard
-            name="Professional Audit"
+            name={t('tiers.professional.name')}
             price={prices.professional}
-            description="Everything you need to convert"
-            points={20}
+            description={t('tiers.professional.description')}
+            points={parseInt(t('tiers.professional.points'))}
             popular={true}
-            badge="⭐ MOST POPULAR"
-            features={[
-              "Everything in Quick, PLUS:",
-              "20-point analysis (vs 10)",
-              "PDF report (10-15 pages)",
-              "Before/After for EVERY problem",
-              "Top 5 Quick Wins",
-              "Competitor comparison",
-              "50% off re-test in 7 days",
-              "Priority email support"
-            ]}
-            cta={`Get Professional Audit - ${prices.professional}`}
+            badge={t('tiers.professional.badge')}
+            features={t.raw('tiers.professional.features') as string[]}
+            cta={t('tiers.professional.cta', { price: prices.professional })}
           />
 
           {/* Premium Audit */}
           <PricingCard
-            name="Premium Audit"
+            name={t('tiers.premium.name')}
             price={prices.premium}
-            description="Professional insights + ongoing support"
-            points={30}
-            features={[
-              "Everything in Professional, PLUS:",
-              "30-point deep analysis (vs 20)",
-              "PDF report (20-25 pages)",
-              "Video Walkthrough",
-              "3 alternative headlines",
-              "3 alternative CTAs",
-              "Dedicated mobile analysis",
-              "FREE re-test within 30 days",
-              "Priority support (24h response)"
-            ]}
-            cta={`Get Premium Audit - ${prices.premium}`}
+            description={t('tiers.premium.description')}
+            points={parseInt(t('tiers.premium.points'))}
+            features={t.raw('tiers.premium.features') as string[]}
+            cta={t('tiers.premium.cta', { price: prices.premium })}
           />
         </div>
 
         <div className="text-center bg-card border border-border rounded p-6">
           <p className="text-white leading-relaxed">
-            <strong className="text-white">All packages include:</strong> 30-day money-back guarantee, instant delivery, specific fix instructions
+            {t('allPackages')}
           </p>
         </div>
       </div>

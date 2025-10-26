@@ -1,0 +1,380 @@
+{
+  "metadata": {
+    "title": "ConvertFix - AI-Powered Conversion Analysis in 60 Seconds",
+    "description": "Get a professional landing page audit in 60 seconds. AI analyzes your page and shows exactly what to fix. Starting at $29. No subscription.",
+    "keywords": "landing page audit, conversion optimization, SaaS, AI analysis, CRO",
+    "authors": "Jakub",
+    "ogTitle": "ConvertFix - Fix Your Conversions in 60 Seconds",
+    "ogDescription": "AI analyzes your landing page and tells you exactly what to fix. $29-99, no subscription."
+  },
+  "header": {
+    "logoText": "ConvertFix",
+    "ctaButton": "Get Started"
+  },
+  "hero": {
+    "title": "You built a product.\nNobody's converting.",
+    "subtitle": "AI analyzes your landing page in 60 seconds.\nSee exactly what's killing your conversions.\nFix it today.\n\nStarting at $29.",
+    "ctaPrimary": "Get Your Audit - $29",
+    "ctaSecondary": "See How It Works ↓",
+    "socialProof": "Trained on 1,000+ successful SaaS launches"
+  },
+  "problem": {
+    "title": "You're not alone.",
+    "intro": "This is the #1 frustration for solo founders:",
+    "quote": "I spent months building.\nMy landing page gets 100 visitors and 0 sign-ups.",
+    "problem1": "The problem isn't your product.",
+    "problem2": "It's your landing page.",
+    "noTimeTitle": "But you don't have time to:",
+    "noTimeItems": [
+      "Learn conversion optimization (40+ hours)",
+      "Hire a consultant ($800-2000)",
+      "Guess and test endlessly"
+    ],
+    "needSolution": "You need someone to tell you EXACTLY what to fix.",
+    "fast": "Fast."
+  },
+  "whyNow": {
+    "title": "Why This Is Possible Now",
+    "subtitle": "Three breakthroughs changed everything:",
+    "breakthrough1": {
+      "title": "1. AI Training on Real Data",
+      "intro": "GPT-4 analyzed 1,000+ successful SaaS launches.",
+      "knowsTitle": "It knows:",
+      "points": [
+        "Basecamp's landing page converts at 8% (industry average: 2%)",
+        "Notion's headline uses 7 words (not 15)",
+        "Superhuman's CTA appears 3 times on the page (not once)"
+      ],
+      "conclusion": "This isn't theory.\nIt's pattern recognition from winners."
+    },
+    "breakthrough2": {
+      "title": "2. Cost Economics Shifted",
+      "before": "2020: Agency audit = $2,000 (5-7 days wait)",
+      "after": "2025: AI audit = $29-99 (60 seconds)",
+      "value": "Same quality. 20x cheaper. 100x faster."
+    },
+    "breakthrough3": {
+      "title": "3. No-Code SaaS Explosion",
+      "point1": "100,000+ solo founders launched products this year.",
+      "point2": "Most can build. Few can convert.",
+      "conclusion": "The bottleneck moved from CODE to COPY."
+    },
+    "finalNote": "You can't hire a $2,000 consultant.\nBut you can afford $29-99 for AI that learned from them."
+  },
+  "thisWorks": {
+    "title": "This Works For You",
+    "subtitle": "Even if you think your case is different:",
+    "scenarios": [
+      {
+        "title": "\"I'm pre-launch (no traffic yet)\"",
+        "emphasis": "Perfect.",
+        "content": "Fix your page BEFORE you spend on ads.\n\nMost founders waste $500-2000 on traffic to a broken page.\nYou'll spend $29-99 to fix it first."
+      },
+      {
+        "title": "\"I have traffic but zero conversions\"",
+        "emphasis": "This is literally your use case.",
+        "content": "We'll pinpoint what's killing conversions:\nUnclear headline? Weak CTA? No social proof?\n\nYou'll know in 60 seconds."
+      },
+      {
+        "title": "\"I'm not technical\"",
+        "emphasis": "Even better.",
+        "content": "Report shows EXACTLY what to change:\n\n\"Change headline from [this] to [that]\"\n\"Move CTA button from [here] to [there]\"\n\nNo coding. Just copy-paste."
+      },
+      {
+        "title": "\"My product is complex/B2B/niche\"",
+        "emphasis": "AI trained on 1,000+ pages.",
+        "content": "Including: Enterprise SaaS, DevTools, Fintech, Health Tech.\n\nIt's seen your niche. It knows your buyers."
+      },
+      {
+        "title": "\"I tried free tools already\"",
+        "emphasis": "Free tools give generic scores.",
+        "content": "We give specific fixes:\n\n\"Your headline is 23 words. Shorten to 7 words like Notion.\"\n\nThat's the difference."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Choose Your Audit",
+    "subtitle": "One-time payment. No subscription.",
+    "currencyUSD": "USD $",
+    "currencyPLN": "PLN zł",
+    "tiers": {
+      "quick": {
+        "name": "Quick Audit",
+        "price": {
+          "usd": "$29",
+          "pln": "119 PLN"
+        },
+        "description": "Quick insights to start",
+        "points": "10",
+        "features": [
+          "10-point conversion analysis",
+          "PDF report (5-7 pages)",
+          "Problem heatmap (P0/P1/P2)",
+          "Top 3 Quick Wins",
+          "Before/After for top 3 issues",
+          "60-second delivery"
+        ],
+        "cta": "Get Quick Audit - {price}"
+      },
+      "professional": {
+        "name": "Professional Audit",
+        "price": {
+          "usd": "$49",
+          "pln": "199 PLN"
+        },
+        "description": "Everything you need to convert",
+        "points": "20",
+        "badge": "⭐ MOST POPULAR",
+        "features": [
+          "Everything in Quick, PLUS:",
+          "20-point analysis (vs 10)",
+          "PDF report (10-15 pages)",
+          "Before/After for EVERY problem",
+          "Top 5 Quick Wins",
+          "Competitor comparison",
+          "50% off re-test in 7 days",
+          "Priority email support"
+        ],
+        "cta": "Get Professional Audit - {price}"
+      },
+      "premium": {
+        "name": "Premium Audit",
+        "price": {
+          "usd": "$99",
+          "pln": "399 PLN"
+        },
+        "description": "Professional insights + ongoing support",
+        "points": "30",
+        "features": [
+          "Everything in Professional, PLUS:",
+          "30-point deep analysis (vs 20)",
+          "PDF report (20-25 pages)",
+          "Video Walkthrough (5-10 min)",
+          "3 alternative headlines",
+          "3 alternative CTAs",
+          "Dedicated mobile analysis",
+          "FREE re-test within 30 days",
+          "Priority support (24h response)"
+        ],
+        "cta": "Get Premium Audit - {price}"
+      }
+    },
+    "allPackages": "All packages include: 30-day money-back guarantee • Instant delivery • Specific fix instructions"
+  },
+  "comparison": {
+    "title": "How We Compare",
+    "items": [
+      {
+        "name": "Free tools",
+        "subtitle": "(Fibr, VWO)",
+        "time": "5 min",
+        "price": "$0",
+        "description": "Generic feedback, lead gen trap"
+      },
+      {
+        "name": "Quick Audit",
+        "subtitle": "OUR PRODUCT",
+        "time": "60 sec",
+        "price": "$29",
+        "description": "10-point AI analysis, specific fixes"
+      },
+      {
+        "name": "Professional Audit",
+        "subtitle": "⭐ BEST VALUE",
+        "badge": "MOST POPULAR",
+        "time": "60 sec",
+        "price": "$49",
+        "description": "20 points + competitors + re-test"
+      },
+      {
+        "name": "Premium Audit",
+        "subtitle": "OUR PRODUCT",
+        "time": "90 sec",
+        "price": "$99",
+        "description": "30 points + video + copy + mobile"
+      },
+      {
+        "name": "Freelancer",
+        "subtitle": "(Upwork)",
+        "time": "3-5 hours",
+        "price": "$200-500",
+        "description": "Human review, 2-5 days wait"
+      },
+      {
+        "name": "Agency",
+        "subtitle": "",
+        "time": "5-7 days",
+        "price": "$800-2000",
+        "description": "Comprehensive, slow, expensive"
+      }
+    ]
+  },
+  "transformation": {
+    "title": "Your Transformation",
+    "subtitle": "Here's what happens after you order:",
+    "steps": [
+      {
+        "time": "60 seconds",
+        "title": "You submit your URL",
+        "description": "AI scrapes your page, analyzes 10-30 points of conversion friction"
+      },
+      {
+        "time": "5 minutes",
+        "title": "You read the report",
+        "description": "PDF in your inbox. Skim executive summary. Identify top 3 Quick Wins."
+      },
+      {
+        "time": "30 minutes",
+        "title": "You implement fixes",
+        "description": "Change headline. Strengthen CTA. Add social proof.\n(No coding required)"
+      },
+      {
+        "time": "1 week",
+        "title": "You see results",
+        "description": "Conversion rate goes 0.5% → 2% (4x improvement).\n20 more signups from same 1,000 visitors"
+      },
+      {
+        "time": "1 month",
+        "title": "You scale",
+        "description": "With proven conversion, you confidently spend on ads.\n$49 audit → $5,000 in new MRR"
+      }
+    ],
+    "summary": "Total time investment: 35 minutes.\nTotal cost: $29-99.\nPotential return: Unlimited."
+  },
+  "socialProof": {
+    "title": "What Beta Testers Say",
+    "subtitle": "We're in beta. First 100 customers get lifetime access to updates.",
+    "placeholderTitle": "Beta testimonials coming soon...",
+    "placeholderText": "Be one of the first 100.\nGet early pricing.\nHelp shape the product.",
+    "trustSignals": [
+      "Trained on 1,000+ successful launches",
+      "30-day money-back guarantee",
+      "Made by a founder, for founders"
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Choose Your Package",
+        "description": "Quick ($29), Professional ($49), or Premium ($99)"
+      },
+      {
+        "number": "2",
+        "title": "Submit Your URL",
+        "description": "After payment, enter your landing page URL"
+      },
+      {
+        "number": "3",
+        "title": "Get Your Report",
+        "description": "AI analyzes in 60 seconds.\nPDF delivered to your email."
+      }
+    ],
+    "guaranteeTitle": "30-Day Money-Back Guarantee",
+    "guaranteeText": "Not happy? Full refund, no questions asked."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about ConvertFix",
+    "items": [
+      {
+        "question": "How is this different from free tools like Fibr.ai or VWO?",
+        "answer": "Free tools give you a score (72/100).\n\nWe tell you EXACTLY what to fix:\n\"Your headline is unclear. Change from 'Revolutionary Platform for Teams' to 'Slack for Remote Teams' (7 words, clear benefit).\"\n\nPlus, free tools are lead magnets. You'll get sales calls.\n\nWe're a product, not a lead gen funnel."
+      },
+      {
+        "question": "Can AI really match a human consultant?",
+        "answer": "For $29-99? Yes.\n\nOur AI analyzed 1,000+ successful launches (Basecamp, Notion, Linear, Superhuman). It learned their patterns.\n\nFor $2,000, a human might spend 10 hours custom-analyzing your niche.\n\nBut for quick wins? AI is faster and just as accurate.\n\nThink of it as \"tier 1 support\" that handles 80% of cases perfectly."
+      },
+      {
+        "question": "What if my landing page is complex/technical/B2B?",
+        "answer": "AI trained on every category:\nDev Tools, Enterprise SaaS, Fintech, Health Tech, Crypto.\n\nIf you're B2B SaaS, it's seen 200+ similar pages.\nIt knows your buyers care about ROI, integrations, security.\n\nComplex = more reason to audit.\nSimpler pages are easier to guess. Yours needs data."
+      },
+      {
+        "question": "How long does it take?",
+        "answer": "60-90 seconds after you submit URL.\n\nNo waiting days for a consultant.\n\nYou'll have your PDF in your inbox before you finish your coffee."
+      },
+      {
+        "question": "What if I don't agree with the recommendations?",
+        "answer": "Then don't implement them.\n\nWe show you data-backed patterns (e.g., \"Notion's headline is 7 words, yours is 23\").\n\nYou decide if it applies to your case.\n\nBut remember: AI analyzed 1,000+ successful launches. Patterns exist for a reason."
+      },
+      {
+        "question": "Do I need coding skills to implement fixes?",
+        "answer": "No.\n\n80% of fixes are copy changes:\n• Headline: Copy-paste new text\n• CTA: Change button text\n• Social proof: Add testimonial section\n\n20% are layout tweaks (move CTA higher, add pricing table).\n\nIf you use Webflow/Wix/Squarespace, you can click-and-drag.\n\nNo coding."
+      },
+      {
+        "question": "What's included in the re-test?",
+        "answer": "Professional: 50% off second audit after 7 days ($24.50 instead of $49).\n\nPremium: FREE re-audit within 30 days.\n\nUse it after implementing fixes to measure improvement."
+      },
+      {
+        "question": "Can I get a refund?",
+        "answer": "Yes.\n\n30-day money-back guarantee, no questions asked.\n\nStripe refund takes 5-10 business days to appear in your account."
+      },
+      {
+        "question": "Is this a one-time payment or subscription?",
+        "answer": "One-time.\n\nNo recurring charges.\n\nPay once, get your audit. That's it."
+      },
+      {
+        "question": "What if I implement these changes and it still doesn't work?",
+        "answer": "Then you'll know it's not your landing page.\n\nIt's something else (product-market fit, traffic source, pricing).\n\nThat clarity is worth $29-99.\n\nMost founders waste months guessing.\nYou'll know in 60 seconds + 1 week of testing.\n\nPlus: 30-day money-back guarantee.\nYou risk nothing."
+      }
+    ]
+  },
+  "betaPricing": {
+    "title": "Beta Pricing (First 100 Customers)",
+    "intro": [
+      "I'm being honest with you:",
+      "This is a new product.",
+      "",
+      "I've spent 7 years coding. I know how to build products.",
+      "But I don't know if YOU will find this valuable until you try it.",
+      "",
+      "So here's the deal:"
+    ],
+    "benefitsTitle": "First 100 Customers Get:",
+    "benefits": [
+      "Full access to all features (10/20/30-point audits)",
+      "Beta pricing locked forever (no price increases)",
+      "Free access to future updates (video walkthroughs, competitor deep-dives)",
+      "Direct line to me for feedback/feature requests",
+      "Early access to v2.0 features (A/B test suggestions, heatmap analysis)"
+    ],
+    "askTitle": "In exchange, I ask for:",
+    "asks": [
+      "Your honest feedback (what worked, what didn't)",
+      "A testimonial if it helps you convert (optional, but appreciated)",
+      "Patience if there's a bug (I'll fix it same-day)"
+    ],
+    "closing": "This is bootstrapper-to-bootstrapper.\nNo BS. Just a tool that helps you convert.",
+    "spotsText": "{taken} / {total} spots taken",
+    "spotsNote": "(updated daily)"
+  },
+  "finalCTA": {
+    "title": "Ready to Fix Your Conversions?",
+    "subtitle": "Choose your package:",
+    "quickCTA": "Quick Audit - $29",
+    "professionalCTA": "Professional Audit - $49 ⭐",
+    "premiumCTA": "Premium Audit - $99",
+    "guarantee": "30-day money-back guarantee • Instant delivery • No subscription"
+  },
+  "ps": {
+    "intro": "P.S. – If you're still reading, you're the type of founder I built this for:",
+    "qualities": "You don't want hype. You want clarity.\nYou don't want to guess. You want data.\nYou don't want to waste time. You want to ship and iterate.",
+    "value": "$29-99 is less than a dinner.\nBut it might unlock $10k in revenue.",
+    "decision": "The decision is yours.",
+    "ppsIntro": "P.P.S. – I built this after getting 0 sign-ups on my own landing page.",
+    "backstory": "7 years coding. Zero marketing skills.",
+    "motivation": "I needed feedback that didn't cost $800 or take a week.",
+    "solution": "So I built this tool for myself—and now I'm sharing it with you.",
+    "closing": "No BS. Just a tool that helps you convert.",
+    "signature": "– Jakub"
+  },
+  "footer": {
+    "faq": "FAQ",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "© 2025 ConvertFix. Made by a founder, for founders.",
+    "location": "Built in Wrocław, Poland 🇵🇱"
+  }
+}

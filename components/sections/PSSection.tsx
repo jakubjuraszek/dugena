@@ -1,4 +1,7 @@
+'use client';
+
 import { Section } from '../Section';
+import { useTranslations } from 'next-intl';
 
 /**
  * P.S. SECTION - Personal Note
@@ -15,53 +18,52 @@ import { Section } from '../Section';
  * - Final trust builder
  */
 export function PSSection() {
+  const t = useTranslations('ps');
   return (
     <Section background="elevated" id="ps">
       <div className="max-w-2xl mx-auto">
         <div className="bg-card rounded p-12 shadow-sm border border-border">
           <div className="space-y-6 text-lg text-white leading-relaxed">
             <p>
-              <strong className="text-foreground">P.S.</strong> – If you&apos;re still reading, you&apos;re the type of founder I built this for:
+              <strong className="text-foreground">P.S.</strong> – {t('intro')}
             </p>
 
-            <p className="italic">
-              You don&apos;t want hype. You want clarity.<br />
-              You don&apos;t want to guess. You want data.<br />
-              You don&apos;t want to waste time. You want to ship and iterate.
+            <p className="italic" style={{ whiteSpace: 'pre-line' }}>
+              {t('qualities')}
             </p>
 
             <p>
-              $29-99 is less than a dinner. But it might unlock $10k in revenue.
+              {t('value')}
             </p>
 
             <p className="text-xl font-semibold text-foreground">
-              The decision is yours.
+              {t('decision')}
             </p>
 
             <hr className="border-border my-8" />
 
             <p>
-              <strong className="text-foreground">P.P.S.</strong> – I built this after getting 0 sign-ups on my own landing page.
+              <strong className="text-foreground">P.P.S.</strong> – {t('ppsIntro')}
             </p>
 
             <p className="italic">
-              7 years coding. Zero marketing skills.
+              {t('backstory')}
             </p>
 
             <p>
-              I needed feedback that didn&apos;t cost $800 or take a week.
+              {t('motivation')}
             </p>
 
             <p>
-              So I built this tool for myself and now I&apos;m sharing it with you.
+              {t('solution')}
             </p>
 
             <p className="font-medium text-foreground">
-              No BS. Just a tool that helps you convert.
+              {t('closing')}
             </p>
 
             <p className="text-right text-xl font-semibold text-foreground mt-8">
-              – Jakub
+              {t('signature')}
             </p>
           </div>
         </div>
