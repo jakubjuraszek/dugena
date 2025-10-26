@@ -22,8 +22,14 @@ import { Target } from 'lucide-react';
  */
 export function HeroSection() {
   return (
-    <Section background="white" id="hero">
-      <div className="text-center max-w-4xl mx-auto">
+    <Section background="white" id="hero" className="relative overflow-hidden">
+      {/* Decorative gradient backgrounds - subtle, ambient */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-20" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20" />
+      </div>
+
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-4xl font-bold mb-8 leading-tight tracking-tighter text-slate-900">
           You built a product. Nobody's converting.
         </h1>

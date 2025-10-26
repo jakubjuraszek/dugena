@@ -47,13 +47,13 @@ export function Card({ children, className = '', featured = false, badge, hover 
     : 'border border-slate-200';
 
   const shadowClasses = featured
-    ? 'shadow-lg'
+    ? 'shadow-lg hover:shadow-xl'
     : hover
     ? 'shadow-sm hover:shadow-md'
     : 'shadow-sm';
 
   const scaleClasses = featured
-    ? 'transform scale-105'
+    ? 'transform scale-105 md:scale-110 z-10'
     : '';
 
   const transitionClasses = hover ? 'transition-all duration-200' : '';
