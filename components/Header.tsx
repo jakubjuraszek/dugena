@@ -10,12 +10,18 @@ import { LanguageSwitcher } from './LanguageSwitcher';
  * DESIGN DECISIONS:
  * - Fixed position: Always visible, professional presence
  * - Backdrop blur: Modern, premium feel (iOS/macOS aesthetic)
- * - Logo: Gradient box + FileText icon (placeholder, recognizable)
+ * - Logo: Gradient box + FileText icon (clickable, scrolls to top)
  * - CTA: "Get Started" → smooth scroll to pricing
  * - Language Switcher: PL/EN toggle in header
  *
+ * INTERACTIONS:
+ * - Logo click: Smooth scroll to top (standard UX pattern)
+ * - CTA button: Smooth scroll to pricing section
+ * - Logo hover: Subtle opacity change (80%) for feedback
+ *
  * RATIONALE:
  * - Fixed header = trust signal (page looks "done" not "in progress")
+ * - Clickable logo = standard web convention (back to top/home)
  * - Gradient logo = professional (not just text)
  * - Backdrop blur = depth, polish
  * - Get Started CTA = always accessible conversion point
@@ -35,19 +41,27 @@ export function Header() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/50 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
+          {/* Logo - clickable, scrolls to top */}
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
+            aria-label="Scroll to top"
+          >
             <div className="w-8 h-8 rounded bg-zinc-900 border-l-2 border-primary flex items-center justify-center shadow-sm">
               <FileText className="w-5 h-5 text-primary" />
             </div>
             <span className="font-bold text-lg text-foreground tracking-tight">
               {t('logoText')}
             </span>
-          </div>
+          </button>
 
           {/* Right side: Language Switcher + CTA */}
           <div className="flex items-center gap-4">
