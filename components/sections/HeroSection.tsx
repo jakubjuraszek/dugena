@@ -41,15 +41,25 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-grid opacity-[0.05] pointer-events-none" />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-none tracking-tight text-foreground">
-          {t('title').split('\n').map((line, i) => (
-            <span key={i}>
-              {line}
-              {i === 0 && <br />}
-            </span>
-          ))}
+        {/* Prefix text - small, subdued */}
+        <p className="text-xl md:text-2xl text-gray-400 mb-6 font-medium tracking-tight">
+          {t('titlePrefix')}
+        </p>
+
+        {/* Main headline - dramatic, word by word */}
+        <h1 className="mb-12 space-y-2">
+          <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-none tracking-tight">
+            {t('titleLine1')}
+          </div>
+          <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-none tracking-tight">
+            {t('titleLine2')}
+          </div>
+          <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-none tracking-tight">
+            {t('titleLine3')}
+          </div>
         </h1>
 
+        {/* Subtitle - unchanged */}
         <p className="text-xl md:text-2xl font-medium text-white leading-relaxed max-w-2xl mx-auto mb-12 tracking-tight">
           {t('subtitle')}
         </p>

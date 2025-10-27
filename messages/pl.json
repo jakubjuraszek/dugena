@@ -12,7 +12,10 @@
     "ctaButton": "Rozpocznij"
   },
   "hero": {
-    "title": "Zbudowałeś produkt.\nNikt się nie zapisuje.",
+    "titlePrefix": "Zbudowałeś produkt.",
+    "titleLine1": "Nikt.",
+    "titleLine2": "Nie.",
+    "titleLine3": "Kupuje.",
     "subtitle": "AI analizuje Twoją landing page w 60 sekund.\nZobacz dokładnie co zabija Twoje konwersje.\nNapraw to dzisiaj.\n\nOd 119 PLN.",
     "ctaPrimary": "Zamów Audyt - 119 PLN",
     "ctaSecondary": "Zobacz Jak To Działa ↓",

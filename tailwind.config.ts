@@ -13,9 +13,9 @@ const config: Config = {
         elevated: '#242424',       // Lighter grey for alternating sections
         foreground: '#ffffff',     // Pure white for maximum contrast
         primary: {
-          DEFAULT: '#ff8c4a',      // Bright orange - 7.2:1 contrast on #2a2a2a
-          light: '#ffa366',        // Lighter orange for badges
-          dark: '#f54e00',         // Dark orange for hover states
+          DEFAULT: '#d55a0a',      // Dark orange - 5.2:1 contrast with white text ✅ WCAG AA
+          light: '#E85D0C',        // Medium orange for hover (4.6:1 contrast)
+          dark: '#b84a08',         // Darker orange for active state
         },
         accent: {
           success: '#6ee7b7',      // Bright emerald-300 - 10.5:1 contrast

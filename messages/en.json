@@ -12,7 +12,10 @@
     "ctaButton": "Get Started"
   },
   "hero": {
-    "title": "You built a product.\nNobody's converting.",
+    "titlePrefix": "You built a product.",
+    "titleLine1": "Nobody.",
+    "titleLine2": "Is.",
+    "titleLine3": "Buying.",
     "subtitle": "AI analyzes your landing page in 60 seconds.\nSee exactly what's killing your conversions.\nFix it today.\n\nStarting at $29.",
     "ctaPrimary": "Get Your Audit - $29",
     "ctaSecondary": "See How It Works ↓",
