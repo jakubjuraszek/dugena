@@ -2,6 +2,8 @@
 
 import { FileText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import Link from 'next/link';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 /**
@@ -33,6 +35,7 @@ import { LanguageSwitcher } from './LanguageSwitcher';
  */
 export function Header() {
   const t = useTranslations('header');
+  const locale = useLocale();
 
   const scrollToPricing = () => {
     const pricingSection = document.getElementById('pricing');
@@ -41,19 +44,15 @@ export function Header() {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/50 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo - clickable, scrolls to top */}
-          <button
-            onClick={scrollToTop}
+          {/* Logo - clickable, goes to homepage */}
+          <Link
+            href={`/${locale}`}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
-            aria-label="Scroll to top"
+            aria-label="Go to homepage"
           >
             <div className="w-8 h-8 rounded bg-zinc-900 border-l-2 border-primary flex items-center justify-center shadow-sm">
               <FileText className="w-5 h-5 text-primary" />
@@ -61,7 +60,7 @@ export function Header() {
             <span className="font-bold text-lg text-foreground tracking-tight">
               {t('logoText')}
             </span>
-          </button>
+          </Link>
 
           {/* Right side: Language Switcher + CTA */}
           <div className="flex items-center gap-4">

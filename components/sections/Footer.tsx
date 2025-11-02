@@ -19,16 +19,19 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-wrap justify-center md:justify-start gap-8 text-sm">
-            <a href="#faq" className="text-muted hover:text-white transition-colors">
+            <a href="#faq" className="text-muted hover:text-primary transition-colors">
               {t('faq')}
             </a>
-            <a href="/privacy" className="text-muted hover:text-white transition-colors">
-              {t('privacy')}
-            </a>
-            <a href="/terms" className="text-muted hover:text-white transition-colors">
+            <a href="/terms" className="text-muted hover:text-primary transition-colors">
               {t('terms')}
             </a>
-            <a href="mailto:hi@landingpageauditor.com" className="text-muted hover:text-white transition-colors">
+            <a href="/privacy" className="text-muted hover:text-primary transition-colors">
+              {t('privacy')}
+            </a>
+            <a href="/refund" className="text-muted hover:text-primary transition-colors">
+              {t('refund')}
+            </a>
+            <a href="mailto:support@convertfix.app" className="text-muted hover:text-primary transition-colors">
               {t('contact')}
             </a>
           </div>

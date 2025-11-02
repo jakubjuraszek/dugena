@@ -17,7 +17,7 @@
     "titleLine2": "Nie.",
     "titleLine3": "Kupuje.",
     "subtitle": "AI analizuje Twoją landing page w 60 sekund.\nZobacz dokładnie co zabija Twoje konwersje.\nNapraw to dzisiaj.\n\nOd 119 PLN.",
-    "ctaPrimary": "Zamów Audyt - 119 PLN",
+    "ctaPrimary": "Zamów Audyt - {price}",
     "ctaSecondary": "Zobacz Jak To Działa ↓",
     "socialProof": "Wytrenowane na 1000+ udanych produktach SaaS"
   },
@@ -102,7 +102,7 @@
     "currencyPLN": "PLN zł",
     "tiers": {
       "quick": {
-        "name": "Audyt Quick",
+        "name": "Audyt Szybki",
         "price": {
           "usd": "$29",
           "pln": "119 PLN"
@@ -113,14 +113,14 @@
           "Analiza 10 punktów konwersji",
           "Raport PDF (5-7 stron)",
           "Mapa problemów (P0/P1/P2)",
-          "Top 3 Quick Wins",
-          "Before/After dla top 3 problemów",
+          "Top 3 najlepsze działania",
+          "Przed/Po dla top 3 problemów",
           "Dostawa w 60 sekund"
         ],
-        "cta": "Zamów Quick Audit - {price}"
+        "cta": "Zamów Audyt Szybki - {price}"
       },
       "professional": {
-        "name": "Audyt Professional",
+        "name": "Audyt Profesjonalny",
         "price": {
           "usd": "$49",
           "pln": "199 PLN"
@@ -129,16 +129,16 @@
         "points": "20",
         "badge": "⭐ NAJPOPULARNIEJSZY",
         "features": [
-          "Wszystko z Quick, PLUS:",
+          "Wszystko z Szybkiego, PLUS:",
           "Analiza 20 punktów (vs 10)",
           "Raport PDF (10-15 stron)",
-          "Before/After dla KAŻDEGO problemu",
-          "Top 5 Quick Wins",
+          "Przed/Po dla KAŻDEGO problemu",
+          "Top 5 najlepszych działań",
           "Porównanie z konkurencją",
           "50% zniżki na re-test za 7 dni",
           "Priorytetowe wsparcie email"
         ],
-        "cta": "Zamów Professional Audit - {price}"
+        "cta": "Zamów Audyt Profesjonalny - {price}"
       },
       "premium": {
         "name": "Audyt Premium",
@@ -149,17 +149,17 @@
         "description": "Profesjonalne insighty + wsparcie",
         "points": "30",
         "features": [
-          "Wszystko z Professional, PLUS:",
+          "Wszystko z Profesjonalnego, PLUS:",
           "Głęboka analiza 30 punktów (vs 20)",
           "Raport PDF (20-25 stron)",
-          "Video Walkthrough (5-10 min)",
+          "Przewodnik wideo (5-10 min)",
           "3 alternatywne nagłówki",
           "3 alternatywne CTA",
           "Dedykowana analiza mobile",
           "DARMOWY re-test w ciągu 30 dni",
           "Wsparcie priorytetowe (odpowiedź 24h)"
         ],
-        "cta": "Zamów Premium Audit - {price}"
+        "cta": "Zamów Audyt Premium - {price}"
       }
     },
     "allPackages": "Wszystkie pakiety zawierają: 30-dniowa gwarancja zwrotu • Natychmiastowa dostawa • Konkretne instrukcje poprawek"
@@ -175,14 +175,14 @@
         "description": "Ogólny feedback, pułapka lead gen"
       },
       {
-        "name": "Quick Audit",
+        "name": "Audyt Szybki",
         "subtitle": "NASZ PRODUKT",
         "time": "60 sek",
         "price": "119 PLN",
         "description": "10-punktowa analiza AI, konkretne poprawki"
       },
       {
-        "name": "Professional Audit",
+        "name": "Audyt Profesjonalny",
         "subtitle": "⭐ NAJLEPSZA WARTOŚĆ",
         "badge": "NAJPOPULARNIEJSZY",
         "time": "60 sek",
@@ -190,7 +190,7 @@
         "description": "20 punktów + konkurencja + re-test"
       },
       {
-        "name": "Premium Audit",
+        "name": "Audyt Premium",
         "subtitle": "NASZ PRODUKT",
         "time": "90 sek",
         "price": "399 PLN",
@@ -355,9 +355,9 @@
   "finalCTA": {
     "title": "Gotowy Naprawić Swoje Konwersje?",
     "subtitle": "Wybierz swój pakiet:",
-    "quickCTA": "Quick Audit - 119 PLN",
-    "professionalCTA": "Professional Audit - 199 PLN ⭐",
-    "premiumCTA": "Premium Audit - 399 PLN",
+    "quickCTA": "Audyt Szybki - 119 PLN",
+    "professionalCTA": "Audyt Profesjonalny - 199 PLN ⭐",
+    "premiumCTA": "Audyt Premium - 399 PLN",
     "guarantee": "30-dniowa gwarancja zwrotu • Natychmiastowa dostawa • Bez subskrypcji"
   },
   "ps": {
@@ -376,8 +376,25 @@
     "faq": "FAQ",
     "privacy": "Polityka Prywatności",
     "terms": "Warunki Usługi",
+    "refund": "Polityka Zwrotów",
     "contact": "Kontakt",
     "copyright": "© 2025 ConvertFix. Stworzony przez foundera, dla founderów.",
     "location": "Zbudowany we Wrocławiu, Polska 🇵🇱"
+  },
+  "legal": {
+    "backToHome": "← Wróć do Strony Głównej",
+    "lastUpdated": "Ostatnia Aktualizacja",
+    "terms": {
+      "title": "Warunki Usługi",
+      "description": "Warunki korzystania z ConvertFix"
+    },
+    "privacy": {
+      "title": "Polityka Prywatności",
+      "description": "Jak zbieramy, używamy i chronimy Twoje dane"
+    },
+    "refund": {
+      "title": "Polityka Zwrotów",
+      "description": "14-dniowa gwarancja zwrotu pieniędzy i proces zwrotu"
+    }
   }
 }

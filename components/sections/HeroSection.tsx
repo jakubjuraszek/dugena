@@ -66,7 +66,7 @@ export function HeroSection() {
 
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
           <Button variant="primary" href="#pricing">
-            Get Your Audit - {quickPrice}
+            {t('ctaPrimary', { price: quickPrice })}
           </Button>
           <Button variant="secondary" href="#how-it-works">
             {t('ctaSecondary')}

@@ -17,7 +17,7 @@
     "titleLine2": "Is.",
     "titleLine3": "Buying.",
     "subtitle": "AI analyzes your landing page in 60 seconds.\nSee exactly what's killing your conversions.\nFix it today.\n\nStarting at $29.",
-    "ctaPrimary": "Get Your Audit - $29",
+    "ctaPrimary": "Get Your Audit - {price}",
     "ctaSecondary": "See How It Works ↓",
     "socialProof": "Trained on 1,000+ successful SaaS launches"
   },
@@ -376,8 +376,25 @@
     "faq": "FAQ",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
+    "refund": "Refund Policy",
     "contact": "Contact",
     "copyright": "© 2025 ConvertFix. Made by a founder, for founders.",
     "location": "Built in Wrocław, Poland 🇵🇱"
+  },
+  "legal": {
+    "backToHome": "← Back to Home",
+    "lastUpdated": "Last Updated",
+    "terms": {
+      "title": "Terms of Service",
+      "description": "Terms and conditions for using ConvertFix"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How we collect, use, and protect your data"
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "description": "14-day money-back guarantee and refund process"
+    }
   }
 }
