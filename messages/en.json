@@ -159,7 +159,8 @@
           "FREE re-test within 30 days",
           "Priority support (24h response)"
         ],
-        "cta": "Get Premium Audit - {price}"
+        "cta": "Get Premium Audit - {price}",
+        "comingSoon": "Available mid-December 2025"
       }
     },
     "allPackages": "All packages include: 30-day money-back guarantee • Instant delivery • Specific fix instructions"

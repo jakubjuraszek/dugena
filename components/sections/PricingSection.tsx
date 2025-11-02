@@ -94,7 +94,7 @@ export function PricingSection() {
             cta={t('tiers.professional.cta', { price: prices.professional })}
           />
 
-          {/* Premium Audit */}
+          {/* Premium Audit - Coming Soon */}
           <PricingCard
             name={t('tiers.premium.name')}
             price={prices.premium}
@@ -102,6 +102,8 @@ export function PricingSection() {
             points={parseInt(t('tiers.premium.points'))}
             features={t.raw('tiers.premium.features') as string[]}
             cta={t('tiers.premium.cta', { price: prices.premium })}
+            disabled={true}
+            comingSoonText={t('tiers.premium.comingSoon')}
           />
         </div>
 

@@ -159,7 +159,8 @@
           "DARMOWY re-test w ciągu 30 dni",
           "Wsparcie priorytetowe (odpowiedź 24h)"
         ],
-        "cta": "Zamów Audyt Premium - {price}"
+        "cta": "Zamów Audyt Premium - {price}",
+        "comingSoon": "Dostępny w połowie grudnia 2025"
       }
     },
     "allPackages": "Wszystkie pakiety zawierają: 30-dniowa gwarancja zwrotu • Natychmiastowa dostawa • Konkretne instrukcje poprawek"

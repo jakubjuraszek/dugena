@@ -13,6 +13,8 @@ interface PricingCardProps {
   badge?: string
   cta: string
   onClick?: () => void
+  disabled?: boolean
+  comingSoonText?: string
 }
 
 export function PricingCard({
@@ -24,19 +26,32 @@ export function PricingCard({
   popular = false,
   badge,
   cta,
-  onClick
+  onClick,
+  disabled = false,
+  comingSoonText
 }: PricingCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: disabled ? 0.7 : 1, y: 0 }}
       viewport={{ once: true }}
       className="relative h-full"
+      style={{ opacity: disabled ? 0.7 : 1 }}
     >
-      {popular && badge && (
+      {/* Popular badge */}
+      {popular && badge && !disabled && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
           <div className="bg-primary text-white text-sm font-bold px-4 py-1 rounded">
             {badge}
+          </div>
+        </div>
+      )}
+
+      {/* In Development badge */}
+      {disabled && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+          <div className="bg-muted text-muted-foreground text-xs font-bold px-3 py-1 rounded border border-border">
+            IN DEVELOPMENT
           </div>
         </div>
       )}
@@ -77,18 +92,28 @@ export function PricingCard({
             </ul>
           </div>
 
-          <button
-            onClick={onClick}
-            className={`
-              w-full py-3 px-6 rounded-md font-bold transition-all mt-auto
-              ${popular
-                ? 'bg-primary hover:bg-primary-light text-white shadow-sm hover:shadow-md hover:scale-[1.02]'
-                : 'bg-card border border-border hover:border-primary hover:bg-primary/10'
-              }
-            `}
-          >
-            {cta}
-          </button>
+          <div className="mt-auto">
+            <button
+              onClick={disabled ? undefined : onClick}
+              disabled={disabled}
+              className={`
+                w-full py-3 px-6 rounded-md font-bold transition-all
+                ${disabled
+                  ? 'bg-muted text-muted-foreground cursor-not-allowed border border-border'
+                  : popular
+                    ? 'bg-primary hover:bg-primary-light text-white shadow-sm hover:shadow-md hover:scale-[1.02]'
+                    : 'bg-card border border-border hover:border-primary hover:bg-primary/10'
+                }
+              `}
+            >
+              {disabled ? 'Coming Soon' : cta}
+            </button>
+            {disabled && comingSoonText && (
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                {comingSoonText}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
