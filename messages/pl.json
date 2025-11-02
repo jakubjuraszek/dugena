@@ -384,5 +384,23 @@
       "title": "Polityka Zwrotów",
       "description": "14-dniowa gwarancja zwrotu pieniędzy i proces zwrotu"
     }
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "subtitle": "Masz pytanie? Chcesz przekazać feedback? Jesteśmy tu by pomóc.",
+    "formTitle": "Wyślij wiadomość",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "emailLabel": "Email",
+    "emailPlaceholder": "twoj@email.com",
+    "messageLabel": "Wiadomość",
+    "messagePlaceholder": "Powiedz nam co Ci chodzi po głowie...",
+    "submitButton": "Wyślij Wiadomość",
+    "submitting": "Wysyłanie...",
+    "successMessage": "Dzięki! Odezwiemy się w ciągu 24 godzin.",
+    "errorMessage": "Coś poszło nie tak. Spróbuj ponownie lub napisz do nas bezpośrednio.",
+    "orEmailTitle": "Lub napisz bezpośrednio",
+    "emailAddress": "support@convertfix.app",
+    "responseTime": "Zazwyczaj odpowiadamy w ciągu 24 godzin"
   }
 }

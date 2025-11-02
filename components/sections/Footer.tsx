@@ -31,7 +31,7 @@ export function Footer() {
             <a href="/refund" className="text-muted hover:text-primary transition-colors">
               {t('refund')}
             </a>
-            <a href="mailto:support@convertfix.app" className="text-muted hover:text-primary transition-colors">
+            <a href="/contact" className="text-muted hover:text-primary transition-colors">
               {t('contact')}
             </a>
           </div>

@@ -384,5 +384,23 @@
       "title": "Refund Policy",
       "description": "14-day money-back guarantee and refund process"
     }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question? Want to give feedback? We're here to help.",
+    "formTitle": "Send us a message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us what's on your mind...",
+    "submitButton": "Send Message",
+    "submitting": "Sending...",
+    "successMessage": "Thanks! We'll get back to you within 24 hours.",
+    "errorMessage": "Something went wrong. Please try again or email us directly.",
+    "orEmailTitle": "Or email us directly",
+    "emailAddress": "support@convertfix.app",
+    "responseTime": "We typically respond within 24 hours"
   }
 }
