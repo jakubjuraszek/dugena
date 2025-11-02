@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   try {
     // Parse request body
     const body = await request.json();
-    const { url } = body;
+    const { url, locale = 'en' } = body;
 
     // Validate URL
     if (!url || typeof url !== 'string') {
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     // Step 3: Generate PDF
     console.log('📑 Step 3/3: Generating PDF...');
-    const pdfBuffer = await generatePDF(url, analysis, 'professional');
+    const pdfBuffer = await generatePDF(url, analysis, 'professional', locale);
 
     console.log(`✅ Audit complete for: ${url}`);
 
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
     const filename = `convertfix-audit-${domain}.pdf`;
 
     // Return PDF as downloadable file
-    return new Response(pdfBuffer, {
+    return new Response(pdfBuffer as unknown as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,

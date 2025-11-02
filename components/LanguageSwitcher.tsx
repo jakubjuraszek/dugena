@@ -2,12 +2,13 @@
 
 import { usePathname, useRouter } from '@/i18n/routing';
 import { useParams } from 'next/navigation';
+import { Globe } from 'lucide-react';
 
 /**
  * LANGUAGE SWITCHER COMPONENT
  *
  * Allows users to switch between Polish (PL) and English (EN).
- * - Highlights active language
+ * - Select-based interface for better UX
  * - Preserves current path when switching
  * - Uses next-intl routing utilities for type-safe navigation
  */
@@ -22,35 +23,33 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex gap-2">
-      <button
-        onClick={() => switchLanguage('pl')}
-        className={`
-          px-3 py-1.5 rounded-md font-bold text-sm transition-all
-          ${
-            currentLocale === 'pl'
-              ? 'bg-primary text-white shadow-sm'
-              : 'bg-transparent text-muted hover:text-white border border-border hover:border-primary/30'
-          }
-        `}
-        aria-label="Switch to Polish"
-      >
-        PL
-      </button>
-      <button
-        onClick={() => switchLanguage('en')}
-        className={`
-          px-3 py-1.5 rounded-md font-bold text-sm transition-all
-          ${
-            currentLocale === 'en'
-              ? 'bg-primary text-white shadow-sm'
-              : 'bg-transparent text-muted hover:text-white border border-border hover:border-primary/30'
-          }
-        `}
-        aria-label="Switch to English"
-      >
-        EN
-      </button>
+    <div className="relative">
+      <div className="flex items-center gap-2">
+        <Globe className="w-4 h-4 text-muted" />
+        <select
+          value={currentLocale}
+          onChange={(e) => switchLanguage(e.target.value as 'pl' | 'en')}
+          className="
+            bg-card border border-border rounded-md
+            px-3 py-1.5 pr-8
+            text-sm font-bold text-foreground
+            cursor-pointer
+            hover:border-primary/50
+            focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+            transition-all
+            appearance-none
+          "
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'right 8px center',
+          }}
+          aria-label="Select language"
+        >
+          <option value="pl">PL</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
     </div>
   );
 }

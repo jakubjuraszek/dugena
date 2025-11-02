@@ -247,9 +247,9 @@
   },
   "socialProof": {
     "title": "Co Mówią Beta Testerzy",
-    "subtitle": "Jesteśmy w beta. Pierwsze 100 osób dostaje dożywotni dostęp do aktualizacji.",
+    "subtitle": "Jesteśmy w beta. Pierwsze 20 osób dostaje dożywotni dostęp do aktualizacji.",
     "placeholderTitle": "Opinie beta wkrótce...",
-    "placeholderText": "Bądź w pierwszej setce.\nZdobądź wczesną cenę.\nPomóż kształtować produkt.",
+    "placeholderText": "Bądź w pierwszej dwudziestce.\nZdobądź wczesną cenę.\nPomóż kształtować produkt.",
     "trustSignals": [
       "Wytrenowane na 1000+ udanych produktach",
       "30-dniowa gwarancja zwrotu pieniędzy",
@@ -325,33 +325,20 @@
     ]
   },
   "betaPricing": {
-    "title": "Cena Beta (Pierwsze 100 Osób)",
-    "intro": [
-      "Będę z Tobą szczery:",
-      "To nowy produkt.",
-      "",
-      "Spędziłem 7 lat kodując. Wiem jak budować produkty.",
-      "Ale nie wiem czy TY uznasz to za wartościowe dopóki nie spróbujesz.",
-      "",
-      "Więc mamy taki deal:"
-    ],
-    "benefitsTitle": "Pierwsze 100 Osób Dostaje:",
+    "title": "Oferta Early Access",
+    "subtitle": "(Tylko 20 Miejsc)",
+    "dealIntro": "Chcesz 50% zniżki na zawsze?",
+    "couponCode": "Kod",
     "benefits": [
-      "Pełny dostęp do wszystkich funkcji (10/20/30-punktowe audyty)",
-      "Cenę beta zablokowaną na zawsze (bez podwyżek)",
-      "Darmowy dostęp do przyszłych aktualizacji (video walkthroughs, głęboka analiza konkurencji)",
-      "Bezpośredni kontakt ze mną po feedback/propozycje funkcji",
-      "Wczesny dostęp do funkcji v2.0 (sugestie testów A/B, analiza heatmap)"
+      "Professional Audit za 99 zł (zamiast 199 zł)",
+      "Cena zablokowana NA ZAWSZE",
+      "Darmowe upgrade do nowych funkcji",
+      "Priorytetowe wsparcie",
+      "Dożywotnie aktualizacje"
     ],
-    "askTitle": "W zamian proszę o:",
-    "asks": [
-      "Twój szczery feedback (co zadziałało, co nie)",
-      "Opinię jeśli pomoże Ci konwertować (opcjonalnie, ale docenię)",
-      "Cierpliwość jeśli będzie bug (naprawię tego samego dnia)"
-    ],
-    "closing": "To bootstrapper do bootstrappera.\nBez bzdur. Tylko narzędzie które pomaga konwertować.",
+    "cta": "Zamów Audyt za 99 zł →",
     "spotsText": "{taken} / {total} miejsc zajętych",
-    "spotsNote": "(aktualizowane codziennie)"
+    "spotsNote": "Tylko pierwsze 20 osób"
   },
   "finalCTA": {
     "title": "Gotowy Naprawić Swoje Konwersje?",

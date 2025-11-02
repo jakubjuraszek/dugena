@@ -2,8 +2,12 @@
 
 import { useState, FormEvent } from 'react';
 import { FileText, Download, AlertCircle } from 'lucide-react';
+import { useParams } from 'next/navigation';
 
 export default function AuditPage() {
+  const params = useParams();
+  const locale = params.locale as string;
+
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -17,7 +21,7 @@ export default function AuditPage() {
       const response = await fetch('/api/generate-pdf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url, locale }),
       });
 
       if (!response.ok) {
@@ -120,7 +124,7 @@ export default function AuditPage() {
         <div className="mt-8 text-center">
           <p className="text-sm text-dimmed mb-2">Try these examples:</p>
           <div className="flex flex-wrap gap-2 justify-center">
-            {['https://linear.app', 'https://vercel.com', 'https://stripe.com'].map((exampleUrl) => (
+            {['https://linear.app', 'https://vercel.com', 'https://paddle.com'].map((exampleUrl) => (
               <button
                 key={exampleUrl}
                 onClick={() => setUrl(exampleUrl)}

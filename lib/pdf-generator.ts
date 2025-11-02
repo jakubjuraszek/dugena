@@ -10,11 +10,12 @@ import type { AuditResult } from './ai-analyzer';
 export async function generatePDF(
   url: string,
   auditResult: AuditResult,
-  tier: 'quick' | 'professional' | 'premium'
+  tier: 'quick' | 'professional' | 'premium',
+  locale: string = 'en'
 ): Promise<Buffer> {
-  console.log(`📄 Generating ${tier} PDF report for ${url}...`);
+  console.log(`📄 Generating ${tier} PDF report for ${url} in ${locale}...`);
 
-  const html = generateHTML(url, auditResult, tier);
+  const html = generateHTML(url, auditResult, tier, locale);
 
   let browser;
   try {
@@ -29,9 +30,8 @@ export async function generatePDF(
 
       browser = await puppeteerCore.default.launch({
         args: chromium.default.args,
-        defaultViewport: chromium.default.defaultViewport,
         executablePath: await chromium.default.executablePath(),
-        headless: chromium.default.headless,
+        headless: true,
       });
     } else {
       // Local development: use full puppeteer
@@ -59,7 +59,7 @@ export async function generatePDF(
     });
 
     console.log(`✅ PDF generated successfully (${pdfBuffer.length} bytes)`);
-    return pdfBuffer;
+    return Buffer.from(pdfBuffer);
   } finally {
     if (browser) {
       await browser.close();
@@ -70,13 +70,75 @@ export async function generatePDF(
 function generateHTML(
   url: string,
   result: AuditResult,
-  tier: string
+  tier: string,
+  locale: string = 'en'
 ): string {
-  const date = new Date().toLocaleDateString('en-US', {
+  // Map locale to date format
+  const localeMap: Record<string, string> = {
+    'pl': 'pl-PL',
+    'en': 'en-US',
+  };
+  const dateLocale = localeMap[locale] || 'en-US';
+
+  const date = new Date().toLocaleDateString(dateLocale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   });
+
+  // Translations
+  const translations: Record<string, Record<string, string>> = {
+    en: {
+      auditReport: 'Landing Page Audit Report',
+      conversionScore: 'Conversion Score',
+      tier: 'TIER',
+      generatedOn: 'Generated on',
+      executiveSummary: 'Executive Summary',
+      overview: '📊 Overview',
+      criticalIssues: 'Critical Issues (P0)',
+      importantIssues: 'Important Issues (P1)',
+      quickWins: 'Quick Wins',
+      top3Critical: '🔴 Top 3 Critical Issues',
+      critical: '● CRITICAL',
+      important: '● IMPORTANT',
+      fix: 'Fix',
+      before: '❌ Before',
+      after: '✅ After',
+      quickWinsTitle: '⚡ Quick Wins (Implement Today!)',
+      impact: 'impact',
+      allCriticalIssues: '🔴 All Critical Issues',
+      criticalIssuesDetailed: 'Critical Issues (P0) - Detailed Analysis',
+      importantIssuesDetailed: 'Important Issues (P1) - Detailed Analysis',
+      importantIssuesTitle: '🟡 Important Issues',
+      footer: 'Professional Landing Page Audits • Generated',
+    },
+    pl: {
+      auditReport: 'Raport Audytu Landing Page',
+      conversionScore: 'Wynik Konwersji',
+      tier: 'PAKIET',
+      generatedOn: 'Wygenerowano',
+      executiveSummary: 'Podsumowanie Wykonawcze',
+      overview: '📊 Przegląd',
+      criticalIssues: 'Problemy Krytyczne (P0)',
+      importantIssues: 'Ważne Problemy (P1)',
+      quickWins: 'Szybkie Wygrane',
+      top3Critical: '🔴 Top 3 Problemy Krytyczne',
+      critical: '● KRYTYCZNY',
+      important: '● WAŻNY',
+      fix: 'Rozwiązanie',
+      before: '❌ Przed',
+      after: '✅ Po',
+      quickWinsTitle: '⚡ Szybkie Wygrane (Wdróż Dzisiaj!)',
+      impact: 'wpływ',
+      allCriticalIssues: '🔴 Wszystkie Problemy Krytyczne',
+      criticalIssuesDetailed: 'Problemy Krytyczne (P0) - Szczegółowa Analiza',
+      importantIssuesDetailed: 'Ważne Problemy (P1) - Szczegółowa Analiza',
+      importantIssuesTitle: '🟡 Ważne Problemy',
+      footer: 'Profesjonalne Audyty Landing Page • Wygenerowano',
+    },
+  };
+
+  const t = translations[locale] || translations.en;
 
   const p0Issues = result.problems.filter((p) => p.priority === 'P0');
   const p1Issues = result.problems.filter((p) => p.priority === 'P1');
@@ -472,48 +534,48 @@ function generateHTML(
   <!-- Cover Page -->
   <div class="page cover">
     <div class="cover-logo">ConvertFix</div>
-    <div class="cover-title">Landing Page Audit Report</div>
+    <div class="cover-title">${t.auditReport}</div>
     <div class="cover-url">${url}</div>
 
     <div class="cover-score">
-      <div class="score-label">Conversion Score</div>
+      <div class="score-label">${t.conversionScore}</div>
       <div>
         <span class="score-value">${result.overallScore}</span>
         <span class="score-total">/100</span>
       </div>
     </div>
 
-    <div class="cover-tier">${tier.toUpperCase()} TIER</div>
+    <div class="cover-tier">${tier.toUpperCase()} ${t.tier}</div>
 
-    <div class="cover-date">Generated on ${date}</div>
+    <div class="cover-date">${t.generatedOn} ${date}</div>
   </div>
 
   <!-- Executive Summary -->
   <div class="page">
     <div class="header">
       <div class="header-logo">ConvertFix</div>
-      <div class="header-subtitle">Executive Summary</div>
+      <div class="header-subtitle">${t.executiveSummary}</div>
     </div>
 
     <div class="section">
-      <h1>📊 Overview</h1>
+      <h1>${t.overview}</h1>
 
       <div class="summary-stats">
         <div class="stat">
           <div class="stat-value" style="color: #ef4444;">${p0Issues.length}</div>
-          <div class="stat-label">Critical Issues (P0)</div>
+          <div class="stat-label">${t.criticalIssues}</div>
         </div>
         <div class="stat">
           <div class="stat-value" style="color: #f59e0b;">${p1Issues.length}</div>
-          <div class="stat-label">Important Issues (P1)</div>
+          <div class="stat-label">${t.importantIssues}</div>
         </div>
         <div class="stat">
           <div class="stat-value" style="color: #10b981;">${result.quickWins.length}</div>
-          <div class="stat-label">Quick Wins</div>
+          <div class="stat-label">${t.quickWins}</div>
         </div>
       </div>
 
-      <h2>🔴 Top 3 Critical Issues</h2>
+      <h2>${t.top3Critical}</h2>
       ${p0Issues
         .slice(0, 3)
         .map(
@@ -521,20 +583,20 @@ function generateHTML(
         <div class="issue">
           <div class="issue-header">
             <span class="issue-id">${issue.id.toUpperCase()}</span>
-            <span class="priority-p0">● CRITICAL</span>
+            <span class="priority-p0">${t.critical}</span>
             <span class="issue-category">${issue.category}</span>
           </div>
           <div class="issue-title">${issue.issue}</div>
           <div class="issue-impact">${issue.impact}</div>
-          <div class="issue-fix"><strong>Fix:</strong> ${issue.fix}</div>
+          <div class="issue-fix"><strong>${t.fix}:</strong> ${issue.fix}</div>
 
           <div class="examples">
             <div class="example example-before">
-              <div class="example-label">❌ Before</div>
+              <div class="example-label">${t.before}</div>
               <div class="example-text">${issue.beforeExample}</div>
             </div>
             <div class="example example-after">
-              <div class="example-label">✅ After</div>
+              <div class="example-label">${t.after}</div>
               <div class="example-text">${issue.afterExample}</div>
             </div>
           </div>
@@ -543,7 +605,7 @@ function generateHTML(
         )
         .join('')}
 
-      <h2>⚡ Quick Wins (Implement Today!)</h2>
+      <h2>${t.quickWinsTitle}</h2>
       ${result.quickWins
         .map(
           (win) => `
@@ -552,7 +614,7 @@ function generateHTML(
             <div class="quick-win-title">${win.change}</div>
             <div class="quick-win-badges">
               <span class="badge badge-effort">⏱ ${win.effort}</span>
-              <span class="badge badge-impact-${win.impact}">📈 ${win.impact.toUpperCase()} impact</span>
+              <span class="badge badge-impact-${win.impact}">📈 ${win.impact.toUpperCase()} ${t.impact}</span>
             </div>
           </div>
         </div>
@@ -562,7 +624,7 @@ function generateHTML(
     </div>
 
     <div class="footer">
-      <strong>ConvertFix</strong> • Professional Landing Page Audits • Generated ${date}
+      <strong>ConvertFix</strong> • ${t.footer} ${date}
     </div>
   </div>
 
@@ -573,11 +635,11 @@ function generateHTML(
   <div class="page">
     <div class="header">
       <div class="header-logo">ConvertFix</div>
-      <div class="header-subtitle">Critical Issues (P0) - Detailed Analysis</div>
+      <div class="header-subtitle">${t.criticalIssuesDetailed}</div>
     </div>
 
     <div class="section">
-      <h1>🔴 All Critical Issues</h1>
+      <h1>${t.allCriticalIssues}</h1>
       ${p0Issues
         .slice(3)
         .map(
@@ -585,20 +647,20 @@ function generateHTML(
         <div class="issue">
           <div class="issue-header">
             <span class="issue-id">${issue.id.toUpperCase()}</span>
-            <span class="priority-p0">● CRITICAL</span>
+            <span class="priority-p0">${t.critical}</span>
             <span class="issue-category">${issue.category}</span>
           </div>
           <div class="issue-title">${issue.issue}</div>
           <div class="issue-impact">${issue.impact}</div>
-          <div class="issue-fix"><strong>Fix:</strong> ${issue.fix}</div>
+          <div class="issue-fix"><strong>${t.fix}:</strong> ${issue.fix}</div>
 
           <div class="examples">
             <div class="example example-before">
-              <div class="example-label">❌ Before</div>
+              <div class="example-label">${t.before}</div>
               <div class="example-text">${issue.beforeExample}</div>
             </div>
             <div class="example example-after">
-              <div class="example-label">✅ After</div>
+              <div class="example-label">${t.after}</div>
               <div class="example-text">${issue.afterExample}</div>
             </div>
           </div>
@@ -609,7 +671,7 @@ function generateHTML(
     </div>
 
     <div class="footer">
-      <strong>ConvertFix</strong> • Professional Landing Page Audits • Generated ${date}
+      <strong>ConvertFix</strong> • ${t.footer} ${date}
     </div>
   </div>
   `
@@ -623,31 +685,31 @@ function generateHTML(
   <div class="page">
     <div class="header">
       <div class="header-logo">ConvertFix</div>
-      <div class="header-subtitle">Important Issues (P1) - Detailed Analysis</div>
+      <div class="header-subtitle">${t.importantIssuesDetailed}</div>
     </div>
 
     <div class="section">
-      <h1>🟡 Important Issues</h1>
+      <h1>${t.importantIssuesTitle}</h1>
       ${p1Issues
         .map(
           (issue) => `
         <div class="issue">
           <div class="issue-header">
             <span class="issue-id">${issue.id.toUpperCase()}</span>
-            <span class="priority-p1">● IMPORTANT</span>
+            <span class="priority-p1">${t.important}</span>
             <span class="issue-category">${issue.category}</span>
           </div>
           <div class="issue-title">${issue.issue}</div>
           <div class="issue-impact">${issue.impact}</div>
-          <div class="issue-fix"><strong>Fix:</strong> ${issue.fix}</div>
+          <div class="issue-fix"><strong>${t.fix}:</strong> ${issue.fix}</div>
 
           <div class="examples">
             <div class="example example-before">
-              <div class="example-label">❌ Before</div>
+              <div class="example-label">${t.before}</div>
               <div class="example-text">${issue.beforeExample}</div>
             </div>
             <div class="example example-after">
-              <div class="example-label">✅ After</div>
+              <div class="example-label">${t.after}</div>
               <div class="example-text">${issue.afterExample}</div>
             </div>
           </div>
@@ -658,7 +720,7 @@ function generateHTML(
     </div>
 
     <div class="footer">
-      <strong>ConvertFix</strong> • Professional Landing Page Audits • Generated ${date}
+      <strong>ConvertFix</strong> • ${t.footer} ${date}
     </div>
   </div>
   `

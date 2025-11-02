@@ -247,9 +247,9 @@
   },
   "socialProof": {
     "title": "What Beta Testers Say",
-    "subtitle": "We're in beta. First 100 customers get lifetime access to updates.",
+    "subtitle": "We're in beta. First 20 customers get lifetime access to updates.",
     "placeholderTitle": "Beta testimonials coming soon...",
-    "placeholderText": "Be one of the first 100.\nGet early pricing.\nHelp shape the product.",
+    "placeholderText": "Be one of the first 20.\nGet early pricing.\nHelp shape the product.",
     "trustSignals": [
       "Trained on 1,000+ successful launches",
       "30-day money-back guarantee",
@@ -325,33 +325,20 @@
     ]
   },
   "betaPricing": {
-    "title": "Beta Pricing (First 100 Customers)",
-    "intro": [
-      "I'm being honest with you:",
-      "This is a new product.",
-      "",
-      "I've spent 7 years coding. I know how to build products.",
-      "But I don't know if YOU will find this valuable until you try it.",
-      "",
-      "So here's the deal:"
-    ],
-    "benefitsTitle": "First 100 Customers Get:",
+    "title": "Early Access Deal",
+    "subtitle": "(Only 20 Spots)",
+    "dealIntro": "Want 50% off forever?",
+    "couponCode": "Code",
     "benefits": [
-      "Full access to all features (10/20/30-point audits)",
-      "Beta pricing locked forever (no price increases)",
-      "Free access to future updates (video walkthroughs, competitor deep-dives)",
-      "Direct line to me for feedback/feature requests",
-      "Early access to v2.0 features (A/B test suggestions, heatmap analysis)"
+      "Professional Audit for $25 (instead of $49)",
+      "Price locked FOREVER",
+      "Free upgrade to new features",
+      "Priority support",
+      "Lifetime updates"
     ],
-    "askTitle": "In exchange, I ask for:",
-    "asks": [
-      "Your honest feedback (what worked, what didn't)",
-      "A testimonial if it helps you convert (optional, but appreciated)",
-      "Patience if there's a bug (I'll fix it same-day)"
-    ],
-    "closing": "This is bootstrapper-to-bootstrapper.\nNo BS. Just a tool that helps you convert.",
+    "cta": "Get Your Audit for $25 →",
     "spotsText": "{taken} / {total} spots taken",
-    "spotsNote": "(updated daily)"
+    "spotsNote": "First 20 people only"
   },
   "finalCTA": {
     "title": "Ready to Fix Your Conversions?",

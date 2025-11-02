@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 
 interface PricingCardProps {
   name: string
@@ -30,6 +32,18 @@ export function PricingCard({
   disabled = false,
   comingSoonText
 }: PricingCardProps) {
+  const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick()
+    } else if (!disabled) {
+      router.push(`/${locale}/audit`)
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -94,7 +108,7 @@ export function PricingCard({
 
           <div className="mt-auto">
             <button
-              onClick={disabled ? undefined : onClick}
+              onClick={handleClick}
               disabled={disabled}
               className={`
                 w-full py-3 px-6 rounded-md font-bold transition-all
