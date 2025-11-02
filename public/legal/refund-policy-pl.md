@@ -12,9 +12,9 @@ Jeśli z jakiegokolwiek powodu nie jesteś zadowolony ze swojego raportu audytu,
 **Bez zadawania pytań. Bez konieczności długich wyjaśnień.**
 
 Dotyczy to wszystkich trzech poziomów audytu:
-- Quick Audit (120 PLN)
-- Professional Audit (200 PLN)
-- Premium Audit (400 PLN)
+- Quick Audit (119 PLN)
+- Professional Audit (199 PLN)
+- Premium Audit (399 PLN)
 
 ## 2. Jak Poprosić o Zwrot Pieniędzy
 
@@ -94,7 +94,7 @@ Najpierw spróbujemy rozwiązać problem. Jeśli nie można go rozwiązać, wyda
 
 Obecnie **nie** oferujemy częściowych zwrotów. Zwroty są zawsze pełnymi zwrotami ceny zakupu.
 
-Jeśli zakupiłeś **Premium Audit (400 PLN)**, ale uważasz, że **Professional Audit (200 PLN)** byłby wystarczający, zwrócimy pełne 400 PLN (nie tylko różnicę).
+Jeśli zakupiłeś **Premium Audit (399 PLN)**, ale uważasz, że **Professional Audit (199 PLN)** byłby wystarczający, zwrócimy pełne 399 PLN (nie tylko różnicę).
 
 ## 7. Obciążenia Zwrotne
 

@@ -12,9 +12,9 @@ Uzyskując dostęp lub korzystając z ConvertFix, potwierdzasz, że przeczytałe
 
 ConvertFix zapewnia automatyczną analizę stron docelowych zasilaną przez sztuczną inteligencję. Nasza Usługa obejmuje:
 
-- **Quick Audit (120 PLN):** 10-punktowa analiza konwersji dostarczana jako raport PDF
-- **Professional Audit (200 PLN):** 20-punktowa analiza konwersji z przykładami przed/po
-- **Premium Audit (400 PLN):** 30-punktowa analiza z wideo przewodnikiem i sugestiami tekstów
+- **Quick Audit (119 PLN):** 10-punktowa analiza konwersji dostarczana jako raport PDF
+- **Professional Audit (199 PLN):** 20-punktowa analiza konwersji z przykładami przed/po
+- **Premium Audit (399 PLN):** 30-punktowa analiza z wideo przewodnikiem i sugestiami tekstów
 
 Wszystkie raporty są generowane przy użyciu sztucznej inteligencji i dostarczane e-mailem w ciągu 60-90 sekund od zakupu.
 
