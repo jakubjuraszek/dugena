@@ -24,11 +24,11 @@ export default function AuditPage() {
       emailLabel: 'Email Address',
       emailPlaceholder: 'your@email.com',
       emailHelper: "We'll send the PDF to this email (2-3 minutes)",
-      buttonIdle: 'Queue Audit',
-      buttonLoading: 'Queueing audit...',
-      successTitle: 'Audit Queued!',
-      successMessage: 'Check your email in 2-3 minutes. The PDF will arrive shortly.',
-      generateAnother: 'Generate Another Audit',
+      buttonIdle: 'Analyze Page',
+      buttonLoading: 'Starting analysis...',
+      successTitle: 'Analysis Started',
+      successMessage: 'Your audit will arrive via email in 2-3 minutes.',
+      goHome: 'Back to Home',
       betaInfo: 'Free beta testing - No payment required',
       tryExamples: 'Try these examples:',
     },
@@ -40,11 +40,11 @@ export default function AuditPage() {
       emailLabel: 'Adres Email',
       emailPlaceholder: 'twoj@email.com',
       emailHelper: 'Wyślemy PDF na ten email (2-3 minuty)',
-      buttonIdle: 'Zakolejkuj Audyt',
-      buttonLoading: 'Kolejkowanie audytu...',
-      successTitle: 'Audyt Zakolejkowany!',
-      successMessage: 'Sprawdź email za 2-3 minuty. PDF zostanie wkrótce wysłany.',
-      generateAnother: 'Wygeneruj Kolejny Audyt',
+      buttonIdle: 'Analizuj Stronę',
+      buttonLoading: 'Rozpoczynanie analizy...',
+      successTitle: 'Analiza Rozpoczęta',
+      successMessage: 'Twój audyt przyjdzie emailem za 2-3 minuty.',
+      goHome: 'Powrót do Strony Głównej',
       betaInfo: 'Darmowy test beta - Bez płatności',
       tryExamples: 'Wypróbuj przykłady:',
     },
@@ -99,20 +99,16 @@ export default function AuditPage() {
 
         {/* Success Message */}
         {success && (
-          <div className="mb-8 bg-green-500/10 border border-green-500/20 rounded-2xl p-6">
-            <div className="flex items-start gap-3 mb-3">
-              <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="text-lg font-semibold text-green-400 mb-1">{t.successTitle}</h3>
-                <p className="text-sm text-green-300">{t.successMessage}</p>
-              </div>
-            </div>
-            <button
-              onClick={() => setSuccess(false)}
-              className="w-full mt-4 bg-green-500/20 hover:bg-green-500/30 text-green-400 font-medium px-4 py-2 rounded-lg transition-colors"
+          <div className="mb-8 bg-card border border-primary/20 rounded-2xl p-8 text-center">
+            <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-foreground mb-2">{t.successTitle}</h3>
+            <p className="text-muted mb-6">{t.successMessage}</p>
+            <a
+              href={`/${locale}`}
+              className="inline-block bg-primary hover:bg-primary-light text-white font-semibold px-6 py-3 rounded-lg transition-colors"
             >
-              {t.generateAnother}
-            </button>
+              {t.goHome}
+            </a>
           </div>
         )}
 
