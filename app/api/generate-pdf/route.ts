@@ -1,18 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { scrapePage } from '@/lib/scraper';
-import { analyzeProfessional } from '@/lib/ai-analyzer';
-import { generatePDF } from '@/lib/pdf-generator';
+import { addAuditToQueue } from '@/lib/queue';
+import { randomUUID } from 'crypto';
 
 export async function POST(request: NextRequest) {
   try {
     // Parse request body
     const body = await request.json();
-    const { url, locale = 'en' } = body;
+    const { url, email, locale = 'en' } = body;
 
     // Validate URL
     if (!url || typeof url !== 'string') {
       return NextResponse.json(
         { message: 'URL is required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate Email
+    if (!email || typeof email !== 'string') {
+      return NextResponse.json(
+        { message: 'Email is required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format (basic check)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { message: 'Invalid email format' },
         { status: 400 }
       );
     }
@@ -30,41 +46,43 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log(`🚀 Starting audit for: ${url}`);
+    // Generate unique job ID
+    const jobId = randomUUID();
 
-    // Step 1: Scrape landing page
-    console.log('📄 Step 1/3: Scraping...');
-    const scraped = await scrapePage(url);
+    console.log(`🚀 Queueing audit: ${jobId}`);
+    console.log(`   URL: ${url}`);
+    console.log(`   Email: ${email}`);
+    console.log(`   Locale: ${locale}`);
 
-    // Step 2: Run professional analysis
-    console.log('🤖 Step 2/3: Analyzing...');
-    const analysis = await analyzeProfessional(scraped);
-
-    // Step 3: Generate PDF
-    console.log('📑 Step 3/3: Generating PDF...');
-    const pdfBuffer = await generatePDF(url, analysis, 'professional', locale);
-
-    console.log(`✅ Audit complete for: ${url}`);
-
-    // Extract domain for filename
-    const domain = new URL(url).hostname.replace('www.', '');
-    const filename = `convertfix-audit-${domain}.pdf`;
-
-    // Return PDF as downloadable file
-    return new Response(pdfBuffer as unknown as BodyInit, {
-      headers: {
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="${filename}"`,
-        'Content-Length': pdfBuffer.length.toString(),
-      },
+    // Queue the audit job to QStash
+    await addAuditToQueue({
+      id: jobId,
+      url,
+      email,
+      tier: 'professional', // Beta users get professional tier
+      locale,
+      createdAt: new Date().toISOString(),
     });
+
+    console.log(`✅ Audit queued successfully: ${jobId}`);
+
+    // Return instant success response
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Audit queued successfully',
+        jobId,
+        estimatedTime: '2-3 minutes',
+      },
+      { status: 200 }
+    );
   } catch (error: any) {
-    console.error('❌ PDF generation failed:', error);
+    console.error('❌ Failed to queue audit:', error);
 
     // Return error response
     return NextResponse.json(
       {
-        message: error.message || 'Failed to generate PDF',
+        message: error.message || 'Failed to queue audit',
         details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
       },
       { status: 500 }
