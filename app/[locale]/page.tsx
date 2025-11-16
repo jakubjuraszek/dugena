@@ -13,6 +13,7 @@ import { BetaPricingSection } from '@/components/sections/BetaPricingSection';
 import { FinalCTASection } from '@/components/sections/FinalCTASection';
 import { PSSection } from '@/components/sections/PSSection';
 import { Footer } from '@/components/sections/Footer';
+import { CheckoutSuccessBanner } from '@/components/CheckoutSuccessBanner';
 
 /**
  * LANDING PAGE AUDITOR - Main Page (i18n enabled)
@@ -57,6 +58,7 @@ export default function Home() {
 
       {/* Main content */}
       <div className="relative">
+        <CheckoutSuccessBanner />
         <Header />
         <HeroSection />
         <ProblemSection />

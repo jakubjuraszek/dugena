@@ -20,23 +20,43 @@ import crypto from 'crypto';
 
 /**
  * Verify Paddle webhook signature
- * Prevents unauthorized webhook calls
+ * Paddle Billing uses ts + h1 format in Paddle-Signature header
+ * Format: "ts=1234567890;h1=abc123..."
  */
 function verifyPaddleSignature(
   payload: string,
-  signature: string | null,
+  signatureHeader: string | null,
   secret: string
 ): boolean {
-  if (!signature) return false;
+  if (!signatureHeader) return false;
 
-  const hmac = crypto.createHmac('sha256', secret);
-  hmac.update(payload);
-  const expectedSignature = hmac.digest('hex');
+  try {
+    // Parse signature header: "ts=1234567890;h1=abc123..."
+    const parts = signatureHeader.split(';');
+    const tsPrefix = parts.find(p => p.startsWith('ts='));
+    const h1Prefix = parts.find(p => p.startsWith('h1='));
 
-  return crypto.timingSafeEqual(
-    Buffer.from(signature),
-    Buffer.from(expectedSignature)
-  );
+    if (!tsPrefix || !h1Prefix) return false;
+
+    const timestamp = tsPrefix.replace('ts=', '');
+    const signature = h1Prefix.replace('h1=', '');
+
+    // Construct signed payload: timestamp + payload
+    const signedPayload = `${timestamp}:${payload}`;
+
+    // Compute HMAC
+    const hmac = crypto.createHmac('sha256', secret);
+    hmac.update(signedPayload);
+    const expectedSignature = hmac.digest('hex');
+
+    return crypto.timingSafeEqual(
+      Buffer.from(signature),
+      Buffer.from(expectedSignature)
+    );
+  } catch (error) {
+    console.error('Signature verification error:', error);
+    return false;
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -74,21 +94,24 @@ export async function POST(request: NextRequest) {
     }
 
     // Extract customer email and custom data
-    const customerEmail = data.data?.customer?.email;
-    const customData = data.data?.custom_data;
+    // Paddle Billing structure: { data: { customer_id, custom_data: {...} } }
+    const transaction = data.data;
+    const customerEmail = transaction?.customer_email;
+    const customData = transaction?.custom;
 
     if (!customerEmail) {
-      console.error('❌ Missing customer email in webhook');
+      console.error('❌ Missing customer email in webhook', JSON.stringify(data, null, 2));
       return NextResponse.json(
         { error: 'Missing customer email' },
         { status: 400 }
       );
     }
 
-    // Custom data should contain: { url, tier }
+    // Custom data should contain: { landingPageUrl, tier, locale }
     // These are passed when creating the Paddle checkout
-    const url = customData?.url;
+    const url = customData?.landingPageUrl;
     const tier = customData?.tier as 'quick' | 'professional';
+    const locale = customData?.locale || 'en'; // Default to 'en' if not provided
 
     if (!url || !tier) {
       console.error('❌ Missing custom_data (url or tier) in webhook');
@@ -104,6 +127,7 @@ export async function POST(request: NextRequest) {
       url,
       email: customerEmail,
       tier,
+      locale,
       createdAt: new Date().toISOString(),
     };
 

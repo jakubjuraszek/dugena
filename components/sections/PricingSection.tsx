@@ -4,6 +4,8 @@ import { Section } from '../Section';
 import { PricingCard } from '../PricingCard';
 import { useTranslations } from 'next-intl';
 import { useCurrency } from '../CurrencyContext';
+import { useParams } from 'next/navigation';
+import { openPaddleCheckout } from '@/lib/paddle';
 
 /**
  * PRICING SECTION - ⭐ MOST IMPORTANT
@@ -28,11 +30,25 @@ import { useCurrency } from '../CurrencyContext';
 export function PricingSection() {
   const t = useTranslations('pricing');
   const { currency, setCurrency } = useCurrency();
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
 
   const prices = {
     quick: currency === 'USD' ? t('tiers.quick.price.usd') : t('tiers.quick.price.pln'),
     professional: currency === 'USD' ? t('tiers.professional.price.usd') : t('tiers.professional.price.pln'),
     premium: currency === 'USD' ? t('tiers.premium.price.usd') : t('tiers.premium.price.pln'),
+  };
+
+  // Direct checkout handler - no modal needed with inline input
+  const handleCheckout = async (tier: 'quick' | 'professional', url: string) => {
+    // URL validation is now handled in PricingCard component
+    try {
+      await openPaddleCheckout(tier, url, locale);
+    } catch (error) {
+      console.error('Checkout failed:', error);
+      // TODO: Show inline error instead of alert
+      alert('Failed to open checkout. Please try again.');
+    }
   };
 
   return (
@@ -80,6 +96,8 @@ export function PricingSection() {
             points={parseInt(t('tiers.quick.points'))}
             features={t.raw('tiers.quick.features') as string[]}
             cta={t('tiers.quick.cta', { price: prices.quick })}
+            tier="quick"
+            onClick={(url) => handleCheckout('quick', url)}
           />
 
           {/* Professional Audit - FEATURED */}
@@ -92,6 +110,8 @@ export function PricingSection() {
             badge={t('tiers.professional.badge')}
             features={t.raw('tiers.professional.features') as string[]}
             cta={t('tiers.professional.cta', { price: prices.professional })}
+            tier="professional"
+            onClick={(url) => handleCheckout('professional', url)}
           />
 
           {/* Premium Audit - Coming Soon */}
@@ -102,6 +122,7 @@ export function PricingSection() {
             points={parseInt(t('tiers.premium.points'))}
             features={t.raw('tiers.premium.features') as string[]}
             cta={t('tiers.premium.cta', { price: prices.premium })}
+            tier="premium"
             disabled={true}
             comingSoonText={t('tiers.premium.comingSoon')}
           />

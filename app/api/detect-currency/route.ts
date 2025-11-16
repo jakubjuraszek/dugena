@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+// Mark as dynamic route (uses request.headers)
+export const dynamic = 'force-dynamic';
+
 /**
  * GEO-DETECTION API - Detect user currency (USD/PLN)
  *

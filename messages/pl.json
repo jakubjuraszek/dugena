@@ -402,5 +402,22 @@
     "orEmailTitle": "Lub napisz bezpośrednio",
     "emailAddress": "support@convertfix.app",
     "responseTime": "Zazwyczaj odpowiadamy w ciągu 24 godzin"
+  },
+  "checkout": {
+    "success": {
+      "title": "Płatność zakończona sukcesem!",
+      "message": "Twój audyt landing page zostanie wysłany na podany email w ciągu 24 godzin. Sprawdź skrzynkę odbiorczą (i spam)."
+    },
+    "modal": {
+      "title": "Podaj URL swojej strony",
+      "subtitle": "Przeanalizujemy tę stronę i wyślemy Ci szczegółowy audyt w PDF.",
+      "urlLabel": "URL Strony Docelowej",
+      "urlPlaceholder": "https://twojastrona.com",
+      "continueButton": "Przejdź do Płatności",
+      "cancelButton": "Anuluj",
+      "invalidUrl": "Podaj prawidłowy URL zaczynający się od http:// lub https://",
+      "tierQuick": "Audyt Quick - {price}",
+      "tierProfessional": "Audyt Professional - {price}"
+    }
   }
 }

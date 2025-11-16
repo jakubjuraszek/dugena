@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, Check, Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useParams } from 'next/navigation'
 
@@ -14,9 +15,10 @@ interface PricingCardProps {
   popular?: boolean
   badge?: string
   cta: string
-  onClick?: () => void
+  onClick?: (url: string) => void
   disabled?: boolean
   comingSoonText?: string
+  tier?: 'quick' | 'professional' | 'premium'
 }
 
 export function PricingCard({
@@ -30,27 +32,64 @@ export function PricingCard({
   cta,
   onClick,
   disabled = false,
-  comingSoonText
+  comingSoonText,
+  tier
 }: PricingCardProps) {
   const router = useRouter()
   const params = useParams()
   const locale = params.locale as string
 
-  const handleClick = () => {
-    if (onClick) {
-      onClick()
-    } else if (!disabled) {
+  // URL input state
+  const [url, setUrl] = useState('')
+  const [isValid, setIsValid] = useState(false)
+  const [showError, setShowError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const validateUrl = (value: string) => {
+    const urlRegex = /^https?:\/\/.+/
+    return urlRegex.test(value)
+  }
+
+  const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setUrl(value)
+    setIsValid(validateUrl(value))
+    setShowError(false) // Hide error when user types
+  }
+
+  const handleClick = async () => {
+    if (disabled || isLoading) return
+
+    // If tier is set and onClick is provided, validate and pass URL
+    if (tier && onClick) {
+      if (!url || !isValid) {
+        setShowError(true)
+        return
+      }
+
+      // Set loading state
+      setIsLoading(true)
+
+      try {
+        await onClick(url)
+      } catch (error) {
+        console.error('Checkout error:', error)
+      } finally {
+        // Reset loading after 2 seconds (Paddle checkout should be open by then)
+        setTimeout(() => {
+          setIsLoading(false)
+        }, 2000)
+      }
+    } else if (!onClick && !disabled) {
       router.push(`/${locale}/audit`)
     }
   }
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: disabled ? 0.7 : 1, y: 0 }}
-      viewport={{ once: true }}
+      initial={false}
+      animate={{ opacity: disabled ? 0.7 : 1 }}
       className="relative h-full"
-      style={{ opacity: disabled ? 0.7 : 1 }}
     >
       {/* Popular badge */}
       {popular && badge && !disabled && (
@@ -107,20 +146,64 @@ export function PricingCard({
           </div>
 
           <div className="mt-auto">
+            {/* Inline URL Input - Premium Design */}
+            {!disabled && tier && (
+              <div className="mb-4">
+                <div className="relative">
+                  <input
+                    type="url"
+                    value={url}
+                    onChange={handleUrlChange}
+                    placeholder="https://yoursite.com"
+                    className={`
+                      w-full px-6 py-4
+                      bg-card
+                      text-white text-base font-medium
+                      border-2 rounded-md
+                      transition-all duration-200
+                      focus:outline-none focus:ring-4 focus:ring-primary/20
+                      placeholder:text-muted-foreground
+                      ${showError
+                        ? 'border-destructive shadow-[0_0_0_3px_rgba(239,68,68,0.1)] animate-shake'
+                        : isValid
+                          ? 'border-accent-success'
+                          : 'border-border hover:border-primary/50'
+                      }
+                      ${isValid ? 'pr-14' : ''}
+                      focus:border-primary
+                      shadow-sm hover:shadow-md
+                    `}
+                  />
+                  {isValid && (
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                      <CheckCircle className="w-6 h-6 text-accent-success" />
+                    </div>
+                  )}
+                </div>
+                {showError && (
+                  <p className="text-xs text-destructive mt-2 ml-1 font-medium animate-in fade-in slide-in-from-top-1 duration-200">
+                    Please enter a valid URL (must start with http:// or https://)
+                  </p>
+                )}
+              </div>
+            )}
+
             <button
               onClick={handleClick}
-              disabled={disabled}
+              disabled={disabled || isLoading}
               className={`
-                w-full py-3 px-6 rounded-md font-bold transition-all
-                ${disabled
-                  ? 'bg-muted text-muted-foreground cursor-not-allowed border border-border'
+                w-full py-4 px-6 rounded-md font-bold transition-all duration-200
+                flex items-center justify-center gap-2
+                ${disabled || isLoading
+                  ? 'bg-muted text-muted-foreground cursor-not-allowed border border-border opacity-50'
                   : popular
-                    ? 'bg-primary hover:bg-primary-light text-white shadow-sm hover:shadow-md hover:scale-[1.02]'
-                    : 'bg-card border border-border hover:border-primary hover:bg-primary/10'
+                    ? 'bg-primary hover:bg-primary-light text-white shadow-lg hover:shadow-xl shadow-primary/20 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-primary/20'
+                    : 'bg-card border-2 border-border hover:border-primary hover:bg-primary/10 text-white shadow-sm hover:shadow-md hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-primary/20'
                 }
               `}
             >
-              {disabled ? 'Coming Soon' : cta}
+              {isLoading && <Loader2 className="w-5 h-5 animate-spin" />}
+              {disabled ? 'Coming Soon' : isLoading ? 'Opening Checkout...' : cta}
             </button>
             {disabled && comingSoonText && (
               <p className="text-xs text-muted-foreground text-center mt-2">

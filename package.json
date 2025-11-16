@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@paddle/paddle-js": "^1.4.2",
     "@sparticuz/chromium": "^141.0.0",
     "@upstash/qstash": "^2.8.4",
     "framer-motion": "^11.11.17",
@@ -22,7 +23,7 @@
     "react-dom": "^18.3.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "resend": "^6.4.0"
+    "resend": "^6.4.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",

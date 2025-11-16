@@ -402,5 +402,22 @@
     "orEmailTitle": "Or email us directly",
     "emailAddress": "support@convertfix.app",
     "responseTime": "We typically respond within 24 hours"
+  },
+  "checkout": {
+    "success": {
+      "title": "Payment Successful!",
+      "message": "Your landing page audit will be sent to your email within 24 hours. Check your inbox (and spam folder)."
+    },
+    "modal": {
+      "title": "Enter Your Landing Page URL",
+      "subtitle": "We'll analyze this page and send you a detailed PDF audit.",
+      "urlLabel": "Landing Page URL",
+      "urlPlaceholder": "https://yoursite.com",
+      "continueButton": "Continue to Payment",
+      "cancelButton": "Cancel",
+      "invalidUrl": "Please enter a valid URL starting with http:// or https://",
+      "tierQuick": "Quick Audit - {price}",
+      "tierProfessional": "Professional Audit - {price}"
+    }
   }
 }

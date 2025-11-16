@@ -48,7 +48,7 @@ export async function addAuditToQueue(job: AuditJob): Promise<void> {
   }
 
   // PRODUCTION: Use QStash
-  const workerUrl = `${process.env.NEXT_PUBLIC_URL}/api/workers/process-audit`;
+  const workerUrl = `${process.env.NEXT_PUBLIC_URL}/api/qstash/audit-worker`;
 
   try {
     await qstash.publishJSON({
