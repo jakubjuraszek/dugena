@@ -19,8 +19,6 @@ import { verifySignatureAppRouter } from '@upstash/qstash/nextjs';
 import type { AuditJob } from '@/lib/queue';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 /**
  * QStash Worker - Process Audit Job
  *
@@ -28,6 +26,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
  */
 async function handler(request: NextRequest) {
   console.log('🔧 Audit worker started');
+
+  // Initialize Resend inside handler (not in module scope)
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     // 1. Parse job data
