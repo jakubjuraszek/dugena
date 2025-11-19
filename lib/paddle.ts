@@ -26,6 +26,7 @@ export async function getPaddle(): Promise<Paddle | undefined | null> {
 
   try {
     console.log(`🔧 Initializing Paddle in ${environment} mode...`);
+    console.log(`🔑 Token: ${clientToken.substring(0, 10)}... (length: ${clientToken.length})`);
 
     // Initialize Paddle Billing SDK with client-side token
     paddleInstance = await initializePaddle({
