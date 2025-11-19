@@ -14,24 +14,23 @@ export async function getPaddle(): Promise<Paddle | undefined | null> {
   }
 
   // Get environment variables
-  // Paddle Billing (new API) uses numeric Seller ID
-  const sellerId = process.env.NEXT_PUBLIC_PADDLE_VENDOR_ID;
+  // Paddle Billing requires client-side token (test_xxx or live_xxx)
+  const clientToken = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN;
   const environment = process.env.NEXT_PUBLIC_PADDLE_ENVIRONMENT as 'sandbox' | 'production';
 
-  if (!sellerId) {
-    console.error('❌ Missing NEXT_PUBLIC_PADDLE_VENDOR_ID');
-    console.error('Get it from: https://sandbox-vendors.paddle.com/ → Developer Tools');
+  if (!clientToken) {
+    console.error('❌ Missing NEXT_PUBLIC_PADDLE_CLIENT_TOKEN');
+    console.error('Get it from: https://sandbox-vendors.paddle.com/ → Developer Tools → Authentication');
     return null;
   }
 
   try {
-    console.log(`🔧 Initializing Paddle in ${environment} mode with Seller ID: ${sellerId}...`);
+    console.log(`🔧 Initializing Paddle in ${environment} mode...`);
 
-    // Initialize Paddle Billing SDK
-    // For Paddle Billing, use numeric Seller ID (not client token)
+    // Initialize Paddle Billing SDK with client-side token
     paddleInstance = await initializePaddle({
       environment: environment || 'sandbox',
-      token: sellerId,
+      token: clientToken,
     });
 
     if (paddleInstance) {
