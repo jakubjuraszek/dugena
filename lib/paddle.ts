@@ -32,6 +32,7 @@ export async function getPaddle(): Promise<Paddle | undefined | null> {
     paddleInstance = await initializePaddle({
       environment: environment || 'sandbox',
       token: clientToken,
+      pwCustomer: {}, // Required for Paddle Retain - empty object for guest checkout
     });
 
     if (paddleInstance) {
