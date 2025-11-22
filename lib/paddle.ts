@@ -64,6 +64,7 @@ export function getPriceId(tier: 'quick' | 'professional'): string | null {
  * @param tier - 'quick' or 'professional'
  * @param landingPageUrl - URL of the landing page to audit
  * @param locale - User's locale ('en' or 'pl')
+ * @param currency - User's currency ('USD' or 'PLN')
  * @param onSuccess - Callback on successful payment
  * @param onError - Callback on payment error
  */
@@ -71,6 +72,7 @@ export async function openPaddleCheckout(
   tier: 'quick' | 'professional',
   landingPageUrl: string,
   locale: string,
+  currency: 'USD' | 'PLN',
   onSuccess?: () => void,
   onError?: (error: any) => void
 ): Promise<void> {
@@ -99,10 +101,17 @@ export async function openPaddleCheckout(
         },
       ],
       // Paddle Billing requires 'custom' key for custom data
-      custom: {
+      customData: {
         landingPageUrl,
         tier,
         locale,
+        currency,
+      },
+      // Override country to match detected currency
+      customer: {
+        address: {
+          countryCode: currency === 'PLN' ? 'PL' : 'US',
+        },
       },
       settings: {
         successUrl: `${window.location.origin}/${locale}?checkout=success`,
@@ -112,13 +121,15 @@ export async function openPaddleCheckout(
         // Locale for checkout UI
         locale: locale === 'pl' ? 'pl' : 'en',
       },
-    };
+    } as any; // Type assertion to bypass Paddle's strict types for customer override
 
     console.log('🛒 Opening Paddle checkout with:', {
       priceId,
       landingPageUrl,
       tier,
       locale,
+      currency,
+      countryCode: currency === 'PLN' ? 'PL' : 'US',
       successUrl: checkoutData.settings.successUrl,
     });
 

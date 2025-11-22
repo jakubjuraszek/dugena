@@ -26,7 +26,7 @@ export function HowItWorksSection() {
 
   const steps = t.raw('steps') as Step[];
 
-  // Get dynamic prices
+  // Show single currency based on geo-detection
   const quickPrice = currency === 'USD' ? tPricing('tiers.quick.price.usd') : tPricing('tiers.quick.price.pln');
   const professionalPrice = currency === 'USD' ? tPricing('tiers.professional.price.usd') : tPricing('tiers.professional.price.pln');
   const premiumPrice = currency === 'USD' ? tPricing('tiers.premium.price.usd') : tPricing('tiers.premium.price.pln');

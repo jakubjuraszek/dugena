@@ -7,48 +7,31 @@ export const dynamic = 'force-dynamic';
  * GEO-DETECTION API - Detect user currency (USD/PLN)
  *
  * IMPLEMENTATION:
- * - Uses ipapi.co for geo detection (free tier: 1000 req/day)
+ * - Uses Vercel geo headers (x-vercel-ip-country)
+ * - No external API calls, no rate limits
  * - Returns PLN for Poland, USD for everyone else
- * - Fallback to USD if detection fails
+ * - Fallback to USD if header not available (local dev)
  *
  * USAGE:
- * - Called client-side on mount
- * - Updates currency state in PricingSection
- *
- * ALTERNATIVE (if ipapi.co limits hit):
- * - Use Vercel edge config
- * - Use CloudFlare geolocation headers
- * - Use browser language (navigator.language)
+ * - Called client-side on mount via CurrencyContext
+ * - Updates currency state across all sections
  */
 export async function GET(request: Request) {
   try {
-    // Get client IP from headers
-    const forwarded = request.headers.get('x-forwarded-for');
-    const ip = forwarded ? forwarded.split(',')[0] : '8.8.8.8'; // Fallback to Google DNS for testing
+    // Get country from Vercel geo headers
+    const country = request.headers.get('x-vercel-ip-country');
 
-    // Call ipapi.co
-    const response = await fetch(`https://ipapi.co/${ip}/json/`, {
-      headers: {
-        'User-Agent': 'Landing Page Auditor/1.0',
-      },
-    });
-
-    if (!response.ok) {
-      // Fallback to USD if API fails
-      return NextResponse.json({ currency: 'USD', detected: false });
-    }
-
-    const data = await response.json();
-    const currency = data.country_code === 'PL' ? 'PLN' : 'USD';
+    // Determine currency based on country
+    const currency = country === 'PL' ? 'PLN' : 'USD';
 
     return NextResponse.json({
       currency,
-      detected: true,
-      country: data.country_code,
+      detected: !!country,
+      country: country || 'unknown',
     });
   } catch (error) {
     console.error('Currency detection error:', error);
     // Fallback to USD on error
-    return NextResponse.json({ currency: 'USD', detected: false });
+    return NextResponse.json({ currency: 'USD', detected: false, country: 'unknown' });
   }
 }

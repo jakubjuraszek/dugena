@@ -32,7 +32,7 @@ export function ComparisonSection() {
 
   const items = t.raw('items') as ComparisonItem[];
 
-  // Get dynamic prices based on currency
+  // Show single currency based on geo-detection
   const prices = {
     quick: currency === 'USD' ? tPricing('tiers.quick.price.usd') : tPricing('tiers.quick.price.pln'),
     professional: currency === 'USD' ? tPricing('tiers.professional.price.usd') : tPricing('tiers.professional.price.pln'),

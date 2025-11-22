@@ -15,7 +15,7 @@ import { openPaddleCheckout } from '@/lib/paddle';
  * - 3-column grid desktop, stacked mobile
  * - Badge absolute positioning (top-right)
  * - Full feature lists (transparency = trust)
- * - Currency toggle for USD/PLN
+ * - Single currency display based on geo-detection
  *
  * VISUAL HIERARCHY:
  * - Professional (center) is visually largest
@@ -29,10 +29,11 @@ import { openPaddleCheckout } from '@/lib/paddle';
  */
 export function PricingSection() {
   const t = useTranslations('pricing');
-  const { currency, setCurrency } = useCurrency();
+  const { currency } = useCurrency();
   const params = useParams();
   const locale = (params.locale as string) || 'en';
 
+  // Show single currency based on geo-detection
   const prices = {
     quick: currency === 'USD' ? t('tiers.quick.price.usd') : t('tiers.quick.price.pln'),
     professional: currency === 'USD' ? t('tiers.professional.price.usd') : t('tiers.professional.price.pln'),
@@ -43,7 +44,7 @@ export function PricingSection() {
   const handleCheckout = async (tier: 'quick' | 'professional', url: string) => {
     // URL validation is now handled in PricingCard component
     try {
-      await openPaddleCheckout(tier, url, locale);
+      await openPaddleCheckout(tier, url, locale, currency);
     } catch (error) {
       console.error('Checkout failed:', error);
       // TODO: Show inline error instead of alert
@@ -58,33 +59,9 @@ export function PricingSection() {
           <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight text-white">
             {t('title')}
           </h2>
-          <p className="text-xl font-medium text-white leading-relaxed mb-6 tracking-tight">
-            {t('subtitle', { currency: currency === 'USD' ? t('tiers.quick.price.usd') : t('tiers.quick.price.pln') })}
+          <p className="text-xl font-medium text-white leading-relaxed mb-12 tracking-tight">
+            {t('subtitle', { currency: prices.quick })}
           </p>
-
-          {/* Currency Toggle */}
-          <div className="flex justify-center gap-2 mb-8">
-            <button
-              onClick={() => setCurrency('USD')}
-              className={`px-4 py-2 rounded-md font-bold transition-all ${
-                currency === 'USD'
-                  ? 'bg-primary text-white shadow-sm hover:scale-[1.02]'
-                  : 'bg-card text-white hover:bg-cardHover border border-border hover:border-primary/30'
-              }`}
-            >
-              {t('currencyUSD')}
-            </button>
-            <button
-              onClick={() => setCurrency('PLN')}
-              className={`px-4 py-2 rounded-md font-bold transition-all ${
-                currency === 'PLN'
-                  ? 'bg-primary text-white shadow-sm hover:scale-[1.02]'
-                  : 'bg-card text-white hover:bg-cardHover border border-border hover:border-primary/30'
-              }`}
-            >
-              {t('currencyPLN')}
-            </button>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-12">
