@@ -1,19 +1,18 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { useLocale } from 'next-intl';
 
 /**
- * CURRENCY CONTEXT - Global Currency State with Geo-Detection
+ * CURRENCY CONTEXT - Global Currency State with Server-Side Detection
  *
  * PURPOSE:
  * - Provides global currency state across all sections
- * - Auto-detects currency via /api/detect-currency (Vercel geo headers)
+ * - Uses server-detected currency from middleware (zero-flash!)
  * - Synchronizes currency across Hero, Pricing, Comparison, FinalCTA, etc.
  *
  * BEHAVIOR:
- * - On mount: Fetches currency from API (geo-detection)
- * - Fallback: Uses locale (pl → PLN, en → USD)
+ * - Initial: Uses server-detected currency from cookie (instant, no flash)
+ * - Background: Optional verification via API (silent, only updates if changed)
  * - All sections use the same currency state
  */
 
@@ -27,39 +26,38 @@ interface CurrencyContextType {
 
 const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined);
 
-export function CurrencyProvider({ children }: { children: ReactNode }) {
-  const locale = useLocale();
+interface CurrencyProviderProps {
+  children: ReactNode;
+  initialCurrency: Currency;
+}
 
-  // Fallback: currency based on locale
-  const getLocaleCurrency = (): Currency => {
-    return locale === 'pl' ? 'PLN' : 'USD';
-  };
+export function CurrencyProvider({ children, initialCurrency }: CurrencyProviderProps) {
+  // Use server-detected currency (zero flash!)
+  const [currency, setCurrency] = useState<Currency>(initialCurrency);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [currency, setCurrency] = useState<Currency>(getLocaleCurrency());
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  // Fetch currency from geo-detection API on mount
+  // Optional: Background verification (silent, no UI change unless necessary)
   useEffect(() => {
-    const detectCurrency = async () => {
+    const verifyCurrency = async () => {
       try {
         const response = await fetch('/api/detect-currency');
         if (response.ok) {
           const data = await response.json();
-          setCurrency(data.currency as Currency);
-        } else {
-          // Fallback to locale-based
-          setCurrency(getLocaleCurrency());
+          // Only update if different from server-detected currency
+          if (data.currency !== currency) {
+            setCurrency(data.currency as Currency);
+            // Update cookie to reflect new detection
+            document.cookie = `user-currency=${data.currency}; max-age=31536000; path=/; samesite=lax`;
+          }
         }
       } catch (error) {
-        console.error('Failed to detect currency:', error);
-        // Fallback to locale-based
-        setCurrency(getLocaleCurrency());
-      } finally {
-        setIsLoading(false);
+        console.error('Currency verification failed:', error);
+        // Keep using server-detected currency (no change)
       }
     };
 
-    detectCurrency();
+    // Silent verification - doesn't affect initial render
+    verifyCurrency();
   }, []);
 
   return (

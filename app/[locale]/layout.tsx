@@ -4,6 +4,7 @@ import { getTranslations, getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
+import { cookies } from 'next/headers'
 import { CurrencyProvider } from '@/components/CurrencyContext'
 import '../globals.css'
 
@@ -59,12 +60,13 @@ export function generateStaticParams() {
 }
 
 /**
- * ROOT LAYOUT with i18n
+ * ROOT LAYOUT with i18n & Currency Detection
  *
  * - Validates locale parameter
  * - Sets html lang attribute based on locale
  * - Applies font variable
  * - Provides NextIntlClientProvider with messages for Client Components
+ * - Reads server-side currency cookie for zero-flash pricing
  */
 export default async function RootLayout({
   children,
@@ -83,11 +85,15 @@ export default async function RootLayout({
   // Load messages for the locale
   const messages = await getMessages();
 
+  // Read currency from cookie (set by middleware)
+  const cookieStore = await cookies();
+  const initialCurrency = (cookieStore.get('user-currency')?.value as 'USD' | 'PLN') || 'USD';
+
   return (
     <html lang={locale} className={spaceGrotesk.variable}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <CurrencyProvider>
+          <CurrencyProvider initialCurrency={initialCurrency}>
             {children}
           </CurrencyProvider>
         </NextIntlClientProvider>
