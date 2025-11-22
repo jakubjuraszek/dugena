@@ -32,6 +32,15 @@ export async function getPaddle(): Promise<Paddle | undefined | null> {
     paddleInstance = await initializePaddle({
       environment: environment || 'sandbox',
       token: clientToken,
+      overrides: {
+        checkout: {
+          assetsBase: 'https://sandbox-assets.paddle.com/checkout',
+          frontendBase: 'https://sandbox-checkout.paddle.com',
+        },
+        profitwell: {
+          snippetBase: 'https://sandbox-js.profitwell.com/js',
+        },
+      },
     });
 
     if (paddleInstance) {
