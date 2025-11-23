@@ -5,6 +5,9 @@
  */
 
 import { Resend } from 'resend';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import type { AuditEmailData } from './email-templates/types';
 
 // Lazy initialization to support dotenv in scripts
 let resend: Resend | null = null;
@@ -24,6 +27,46 @@ export interface AuditEmail {
   tier: 'quick' | 'professional'; // Audit tier
   pdfBuffer: Buffer; // PDF file as buffer
   url: string; // Audited URL (for email content)
+
+  // Optional: Dynamic stats for new template
+  // If not provided, will use legacy template
+  stats?: {
+    issueCount: number;
+    criticalCount: number;
+    quickWinsCount: number;
+    impactPercent: number;
+  };
+}
+
+/**
+ * Load and populate email template with dynamic data
+ */
+function getEmailTemplate(data: AuditEmailData): { html: string; text: string } {
+  const templatesDir = join(__dirname, 'email-templates');
+
+  // Read templates
+  const htmlTemplate = readFileSync(join(templatesDir, 'audit-ready.html'), 'utf-8');
+  const textTemplate = readFileSync(join(templatesDir, 'audit-ready.txt'), 'utf-8');
+
+  // Replace placeholders
+  const replacements: Record<string, string> = {
+    '{{URL}}': data.url,
+    '{{ISSUE_COUNT}}': data.issueCount.toString(),
+    '{{CRITICAL_COUNT}}': data.criticalCount.toString(),
+    '{{QUICK_WINS_COUNT}}': data.quickWinsCount.toString(),
+    '{{IMPACT_PERCENT}}': data.impactPercent.toString(),
+    '{{CTA_URL}}': data.ctaUrl,
+  };
+
+  let html = htmlTemplate;
+  let text = textTemplate;
+
+  Object.entries(replacements).forEach(([placeholder, value]) => {
+    html = html.replace(new RegExp(placeholder, 'g'), value);
+    text = text.replace(new RegExp(placeholder, 'g'), value);
+  });
+
+  return { html, text };
 }
 
 /**
@@ -33,17 +76,34 @@ export interface AuditEmail {
  * @throws Error if RESEND_API_KEY is missing or sending fails
  */
 export async function sendAuditEmail(params: AuditEmail): Promise<void> {
-  const { to, tier, pdfBuffer, url } = params;
+  const { to, tier, pdfBuffer, url, stats } = params;
 
   const tierName = tier === 'quick' ? 'Quick' : 'Professional';
 
   try {
     const client = getResendClient();
-    const result = await client.emails.send({
-      from: 'ConvertFix <onboarding@resend.dev>', // Change if custom domain
-      to,
-      subject: `Your ${tierName} Audit is Ready! 🎉`,
-      html: `
+
+    // Use new template if stats provided, otherwise use legacy template
+    let html: string;
+    let text: string | undefined;
+
+    if (stats) {
+      // New dark-themed template with dynamic stats
+      const templateData: AuditEmailData = {
+        url,
+        issueCount: stats.issueCount,
+        criticalCount: stats.criticalCount,
+        quickWinsCount: stats.quickWinsCount,
+        impactPercent: stats.impactPercent,
+        ctaUrl: '#', // Can be customized to link to dashboard or PDF download page
+      };
+
+      const templates = getEmailTemplate(templateData);
+      html = templates.html;
+      text = templates.text;
+    } else {
+      // Legacy template (backwards compatibility)
+      html = `
         <!DOCTYPE html>
         <html>
           <head>
@@ -153,7 +213,15 @@ export async function sendAuditEmail(params: AuditEmail): Promise<void> {
             </div>
           </body>
         </html>
-      `,
+      `;
+    }
+
+    const result = await client.emails.send({
+      from: 'ConvertFix <onboarding@resend.dev>', // Change if custom domain
+      to,
+      subject: stats ? 'Your ConvertFix Audit is Ready 📊' : `Your ${tierName} Audit is Ready! 🎉`,
+      html,
+      text, // Plain text fallback (only for new template)
       attachments: [
         {
           filename: `convertfix-audit-${tier}.pdf`,

@@ -1,0 +1,32 @@
+CONVERTFIX
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR LANDING PAGE AUDIT IS READY!
+
+We analyzed {{URL}} and found {{ISSUE_COUNT}} conversion issues.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VIEW YOUR AUDIT
+{{CTA_URL}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+QUICK STATS
+
+Critical issues:     {{CRITICAL_COUNT}}
+Quick wins:          {{QUICK_WINS_COUNT}}
+Estimated impact:    +{{IMPACT_PERCENT}}%
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT'S NEXT
+
+• Start with the top 3 quick wins
+• Questions? Reply to this email
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ConvertFix
+No subscription. No spam. Just results.
