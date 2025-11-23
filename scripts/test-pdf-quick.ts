@@ -12,7 +12,7 @@ const mockResult = {
       beforeExample: 'Your headline says: "Modern software development"',
       afterExample: 'Transform your development process with 30% faster issue resolution and seamless project delivery',
       priority: 'P0' as const,
-      category: 'Messaging'
+      category: 'messaging' as const
     },
     {
       id: 'p2',
@@ -22,7 +22,7 @@ const mockResult = {
       beforeExample: 'No visible social proof in hero section',
       afterExample: '"Trusted by 2,847+ product teams at Google, Stripe, and Shopify"',
       priority: 'P0' as const,
-      category: 'Trust'
+      category: 'trust' as const
     },
     {
       id: 'p3',
@@ -32,7 +32,7 @@ const mockResult = {
       beforeExample: 'Button says: "Get Started"',
       afterExample: '"Start building faster" or "See your first insight in 60 seconds"',
       priority: 'P0' as const,
-      category: 'CTA'
+      category: 'cta' as const
     },
   ],
   quickWins: [
